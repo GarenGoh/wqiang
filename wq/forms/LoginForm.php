@@ -2,8 +2,8 @@
 
 namespace app\forms;
 
-use Yii;
 use app\models\User;
+use Yii;
 use yii\web\Cookie;
 
 /**
@@ -88,8 +88,8 @@ class LoginForm extends BaseForm
     {
         if ($this->validate()) {
             $user = $this->getUser();
-            $result = Yii::$app->userService->login($user, $this->is_remember);
-
+            //$result = Yii::$app->userService->login($user, $this->is_remember);//wuqiang
+            $result = Yii::$app->user->login($user, $this->is_remember ? 14*24*3600 : 0);
             if ($result) {
                 $time = time() + (14*24*3600);
                 $usernameCookie = new Cookie();

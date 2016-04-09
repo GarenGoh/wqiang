@@ -29,4 +29,5 @@ phpunit.phar
 *.log
 *.rdb
 config/config.php
+config/config-b.php
 web/images/*

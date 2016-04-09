@@ -22,12 +22,12 @@ $currentUser = Yii::$app->user->getIdentity();
 </head>
 <body>
 <?php $this->beginBody() ?>
-    <div style="background-color: #15a085;height: 190px;width: 100%;padding-top: 15px;">
+    <div style="background-color: #15a085;height: 190px;width: 100%;padding-top: 15px;" class="col-md-12">
         <div style="height: 160px;width: 160px;border-radius: 160px;background-color: #fff;margin-left: auto;margin-right: auto;overflow:hidden">
             <img style="height: 160px;width: 160px;" src="<?=Yii::$app->params['logoUrl']?>">
         </div>
     </div>
-    <div style="height: 50px;background-color: #05435c">
+    <div style="height: 50px;background-color: #05435c" class="col-md-12">
         <ul style="margin: 0;padding: 10px 5px 0 5%;">
             <li style="float: left;font-size: 19px;list-style-type: none;"><a href="<?=Yii::$app->homeUrl?>" style="color: #fff;padding: 0 30px 0;">首页</a></li>
             <li style="float: left;font-size: 19px;list-style-type: none;"><a href="#" style="color: #fff;padding: 0 30px 0;">PHP</a></li>
@@ -48,8 +48,8 @@ $currentUser = Yii::$app->user->getIdentity();
             <?php }}?>
         </ul>
     </div>
-    <div class="content-wrapper container" id="<?=isset($this->params['pageId']) ? $this->params['pageId']:''?>">
-        <div class="col-md-12" style="text-align: center">
+    <div class="content-wrapper container col-md-12" id="<?=isset($this->params['pageId']) ? $this->params['pageId']:''?>" style="margin: 0;padding: 0;">
+        <div class="col-md-12" style="text-align: center;">
             <?php
             $type = '';
             $message = '';
@@ -64,10 +64,10 @@ $currentUser = Yii::$app->user->getIdentity();
            <?php }
             ?>
         </div>
-        <?= $content ?>
+            <?=$content ?>
     </div>
-<footer style="background-color: #05435c;height: 200px;width: 100%;padding: 30px 30px 0;margin-top: 10px;">
-    <div class="col-md-4" style=";">
+<footer style="background-color: #05435c;height: 200px;width: 100%;padding: 30px 30px 0;" class="col-md-12">
+    <div class="col-md-4" style="">
         <ul >
             <li style="font-size: 20px;list-style-type: none;margin-bottom: 60px;"><a href="#" style="color: #fff">关于我</a></li>
             <li style="font-size: 20px;list-style-type: none;"><a href="#" style="color: #fff">联系我</a></li>
@@ -88,6 +88,7 @@ $currentUser = Yii::$app->user->getIdentity();
             <li style="float: left;list-style-type: none;border: solid 1px #ddd;margin-right: 5px;margin-bottom: 10px; "><a href="#" style="color: #fff;padding: 5px;">Linux</a></li>
             <li style="float: left;list-style-type: none;border: solid 1px #ddd;margin-right: 5px;margin-bottom: 10px; "><a href="#" style="color: #fff;padding: 5px;">服务器</a></li>
             <li style="float: left;list-style-type: none;border: solid 1px #ddd;margin-right: 5px;margin-bottom: 10px; "><a href="#" style="color: #fff;padding: 5px;">哈哈哈</a></li>
+            <li style="float: left;list-style-type: none;margin-right: 5px;margin-bottom: 10px; "><a href="http://www.miitbeian.gov.cn/" style="color: #fff;padding: 5px;">京ICP备16014638号-1</a></li>
         </ul>
     </div>
     <div class="col-md-4" style=";">

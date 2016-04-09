@@ -15,6 +15,6 @@ class Admin extends Module
         parent::init();
 
         Yii::$app->user->loginUrl = '/'.ADMIN_NAME.'/site/login';
-        $app = Yii::$app;
+        //$app = Yii::$app;
     }
 }

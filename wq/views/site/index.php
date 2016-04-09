@@ -4,21 +4,4 @@
 
 $this->title = 'Garen 的主页';
 ?>
-<p class="col-md-6" style="background: red">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
-<p class="col-md-6" style="background: blue">这是主页的内容。</p>
+<img src='/images/admin1.jpg' style="width: 100%;">

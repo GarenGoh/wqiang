@@ -10,7 +10,7 @@ class WebUser extends BaseWebUser
 {
     public function can($permissionName, $params = [], $allowCaching = true)
     {
-        /* @var $user \app\models\User*/
+        /* @var $user \app\models\User */
 
         $user = $this->getIdentity();
 
@@ -23,10 +23,12 @@ class WebUser extends BaseWebUser
         }
 
         if (($permissionName == User::ROLE_MEMBER && $user->role_id == User::ROLE_MEMBER)
-            || ($permissionName == User::ROLE_MANAGER && $user->role_id == User::ROLE_MANAGER)) {
+            || ($permissionName == User::ROLE_MANAGER && $user->role_id == User::ROLE_MANAGER)
+        ) {
             return true;
         } else {
             return false;
         }
     }
+
 }

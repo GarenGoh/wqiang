@@ -3,8 +3,9 @@ namespace app\components;
 
 use app\models\User;
 use Yii;
+use yii\base\Component;
 
-class UserService
+class UserService extends Component
 {
     public $rootIds = [];
 

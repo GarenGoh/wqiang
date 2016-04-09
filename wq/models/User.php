@@ -142,7 +142,7 @@ class User extends BaseActiveRecord implements IdentityInterface
         return parent::beforeSave($insert);
     }
 
-    public function findByAccount($account)
+    public static function findByAccount($account)
     {
         $attributeName = 'username';
 
@@ -158,7 +158,6 @@ class User extends BaseActiveRecord implements IdentityInterface
         }
 
         $where = [$attributeName => $account];
-
         return static::find()->andWhere($where)->one();
     }
 

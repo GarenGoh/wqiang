@@ -45,5 +45,4 @@ $config = yii\helpers\ArrayHelper::merge(
     require(__DIR__ . '/common.php'),
     require(__DIR__ . '/config.php')
 );
-
 return $config;

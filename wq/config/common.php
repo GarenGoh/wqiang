@@ -9,7 +9,7 @@ $config = [
             'class' => 'app\test\Module'
         ],
         ADMIN_NAME => [
-            'class' => 'app\Module\admin\Admin',
+            'class' => 'app\module\admin\Admin',
         ],
     ],
     'params' => require(__DIR__ . '/params.php'),
@@ -26,6 +26,14 @@ $config = [
                 'encryption' => 'ssl',
             ]
         ],
+        'urlManager' => [
+            'enablePrettyUrl'=> true,//使用美化的URL
+            //'showScriptName' => false,//是否显示入口脚本
+            //'enableStrictParsing' => false,
+            //'suffix' => '.html',//后缀，如果设置了此项，那么浏览器地址栏就必须带上.html后缀，否则会报404错误
+            'rules' => [
+            ],
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -40,14 +48,6 @@ $config = [
         ],
         'userService' => [
             'class' => 'app\components\UserService'
-        ],
-        'urlManager' => [
-            'enablePrettyUrl'=> true,//使用美化的URL
-            'showScriptName' => false,//隐藏index.php
-            //'enableStrictParsing' => false,
-            //'suffix' => '.html',//后缀，如果设置了此项，那么浏览器地址栏就必须带上.html后缀，否则会报404错误
-            'rules' => [
-            ],
         ],
     ]
 ];
