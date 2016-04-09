@@ -28,6 +28,7 @@ class UserService extends Component
     {
 
         $result = Yii::$app->user->login($user, $isRemember ? 14*24*3600 : 0);
+
         if ($result) {
             $user->logged_at = time();
             $user->save();
