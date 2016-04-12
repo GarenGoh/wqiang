@@ -161,7 +161,14 @@ class User extends BaseActiveRecord implements IdentityInterface
         return static::find()->andWhere($where)->one();
     }
 
-
+    public static function getRoleMap($status = null)
+    {
+        $map = [
+            static::ROLE_MEMBER => '成员',
+            static::ROLE_MANAGER => '管理',
+        ];
+        return !empty($status) && $map[$status] ? $map[$status] :$map;
+    }
 
 
 
