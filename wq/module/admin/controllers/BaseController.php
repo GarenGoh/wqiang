@@ -31,4 +31,14 @@ abstract class BaseController extends Controller
             ]
         ];
     }
+
+    public function goBack($defaultUrl = null)
+    {
+        $returnUrl = Yii::$app->request->get('return_url', null);
+        if ($returnUrl) {
+            return Yii::$app->getResponse()->redirect($returnUrl);
+        } else {
+            return Yii::$app->getResponse()->redirect(Yii::$app->request->getReferrer());
+        }
+    }
 }

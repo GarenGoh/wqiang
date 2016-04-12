@@ -132,7 +132,7 @@ $this->registerJs($js, View::POS_END);
     </div>
     <div class="col-md-12 item">
         <ul>
-            <li class="navbar left" style="height: 20px;"><a href="<?=Yii::$app->homeUrl?>">首页</a></li>
+            <li class="navbar left"><a href="<?=Yii::$app->homeUrl?>">首页</a></li>
             <li class="navbar left"><a href="#" >PHP</a></li>
             <li class="navbar left"><a href="#" >前端</a></li>
             <li class="navbar left"><a href="#" >关于我</a></li>
