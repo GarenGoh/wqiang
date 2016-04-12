@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4602dd73-2058-43c1-955f-fb4323cab08d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/models/User.php" afterPath="$PROJECT_DIR$/wq/models/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/views/layouts/main.php" afterPath="$PROJECT_DIR$/wq/views/layouts/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/module/admin/views/user/update.php" afterPath="$PROJECT_DIR$/wq/module/admin/views/user/update.php" />
     </list>
     <ignored path="wqiang.iws" />
@@ -31,18 +32,18 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wq/module/admin/controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.5" vertical-offset="1135" max-vertical-offset="1785">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state vertical-scroll-proportion="-3.9230769" vertical-offset="1003" max-vertical-offset="1887">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="update.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wq/module/admin/views/user/update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.37971014" vertical-offset="403" max-vertical-offset="748">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state vertical-scroll-proportion="-3.490909" vertical-offset="216" max-vertical-offset="748">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -51,8 +52,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wq/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="2703" max-vertical-offset="3077">
-              <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.090909" vertical-offset="837" max-vertical-offset="3077">
+              <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -71,38 +72,68 @@
       <file leaf-file-name="ActiveField.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wq/vendor/yiisoft/yii2/widgets/ActiveField.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="93.30769" vertical-offset="10484" max-vertical-offset="12869">
-              <caret line="474" column="20" selection-start-line="474" selection-start-column="20" selection-end-line="474" selection-end-column="20" />
+            <state vertical-scroll-proportion="-2.090909" vertical-offset="6243" max-vertical-offset="12869">
+              <caret line="374" column="50" selection-start-line="374" selection-start-column="48" selection-end-line="374" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Url.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/helpers/Url.php">
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wq/config/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="544">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/components/UserService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="1190">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+            <state vertical-scroll-proportion="3.2692308" vertical-offset="119" max-vertical-offset="561">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/module/admin/views/user/index.php">
+        <entry file="file://$PROJECT_DIR$/wq/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1479">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="221">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wq/views/layouts/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.461538" vertical-offset="2176" max-vertical-offset="3859">
+              <caret line="144" column="96" selection-start-line="144" selection-start-column="96" selection-end-line="144" selection-end-column="96" />
+              <folding>
+                <marker date="1460480222000" expanded="true" signature="268:284" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="292:309" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="315:392" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="399:533" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="544:576" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="583:627" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="637:675" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="690:733" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="750:785" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="807:828" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="842:966" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="982:1036" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="1045:1124" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="1135:1176" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="1188:1207" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="1218:1247" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="1256:1355" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="1374:1450" placeholder="{...}" />
+                <marker date="1460480222000" expanded="true" signature="1468:1526" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wq/components/UserService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3315508" vertical-offset="692" max-vertical-offset="1190">
+              <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -113,16 +144,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-17.807692" vertical-offset="251" max-vertical-offset="850">
               <caret line="42" column="5" selection-start-line="34" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/config/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="918">
-              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -148,9 +169,10 @@
         <option value="$PROJECT_DIR$/wq/module/admin/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/wq/helpers/Url.php" />
         <option value="$PROJECT_DIR$/wq/components/UserService.php" />
+        <option value="$PROJECT_DIR$/wq/module/admin/views/user/update.php" />
         <option value="$PROJECT_DIR$/wq/module/admin/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/wq/models/User.php" />
-        <option value="$PROJECT_DIR$/wq/module/admin/views/user/update.php" />
+        <option value="$PROJECT_DIR$/wq/views/layouts/main.php" />
       </list>
     </option>
   </component>
@@ -234,11 +256,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="site" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -256,7 +278,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -510,14 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="561">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/module/admin/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.624374" vertical-offset="0" max-vertical-offset="935">
@@ -581,26 +599,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/components/UserService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="1190">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/vendor/yiisoft/yii2/base/Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33222038" vertical-offset="11837" max-vertical-offset="16847">
           <caret line="708" column="20" selection-start-line="708" selection-start-column="20" selection-end-line="708" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wq/module/admin/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.5" vertical-offset="1135" max-vertical-offset="1785">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -613,14 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/vendor/yiisoft/yii2/widgets/ActiveField.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="93.30769" vertical-offset="10484" max-vertical-offset="12869">
-          <caret line="474" column="20" selection-start-line="474" selection-start-column="20" selection-end-line="474" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/models/BaseActiveRecord.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.115385" vertical-offset="85" max-vertical-offset="867">
@@ -629,18 +623,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wq/vendor/yiisoft/yii2/widgets/ActiveField.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.090909" vertical-offset="6243" max-vertical-offset="12869">
+          <caret line="374" column="50" selection-start-line="374" selection-start-column="48" selection-end-line="374" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/module/admin/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769" vertical-offset="1003" max-vertical-offset="1887">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wq/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="2703" max-vertical-offset="3077">
-          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.090909" vertical-offset="837" max-vertical-offset="3077">
+          <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wq/module/admin/views/user/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.37971014" vertical-offset="403" max-vertical-offset="748">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state vertical-scroll-proportion="-3.490909" vertical-offset="216" max-vertical-offset="748">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.2692308" vertical-offset="119" max-vertical-offset="561">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="2176" max-vertical-offset="3859">
+          <caret line="144" column="96" selection-start-line="144" selection-start-column="96" selection-end-line="144" selection-end-column="96" />
+          <folding>
+            <marker date="1460480222000" expanded="true" signature="268:284" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="292:309" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="315:392" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="399:533" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="544:576" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="583:627" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="637:675" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="690:733" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="750:785" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="807:828" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="842:966" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="982:1036" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="1045:1124" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="1135:1176" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="1188:1207" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="1218:1247" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="1256:1355" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="1374:1450" placeholder="{...}" />
+            <marker date="1460480222000" expanded="true" signature="1468:1526" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/components/UserService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3315508" vertical-offset="692" max-vertical-offset="1190">
+          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
           <folding />
         </state>
       </provider>

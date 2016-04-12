@@ -70,7 +70,7 @@ class User extends BaseActiveRecord implements IdentityInterface
                 return !empty($this->mobile) && !$this->hasErrors();//对比$_mobilePattern
             }],
             ['username', 'default', 'value' => function() {
-                $username = 'yii_';
+                $username = 'W_';
                 $username .= isset($this->email) ? str_replace(array("@","."),"",$this->email) : rand(10000,99999);
                 return $username;
             }],

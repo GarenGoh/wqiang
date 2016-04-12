@@ -142,7 +142,7 @@ $this->registerJs($js, View::POS_END);
             <li class="navbar right"><a href="<?=Url::to(['site/register'])?>" class="login">注册</a></li>
             <li class="navbar right"><a href="<?=Url::to(['site/login'])?>" class="login">登录</a></li>
             <?php
-            }else{ if($currentUser->role_id == User::ROLE_MANAGER){
+            }else{ if($currentUser->role_id == User::ROLE_MANAGER || Yii::$app->userService->isRoot($currentUser->id)){
             ?>
             <li class="navbar right"><a href="<?=Url::to(['site/logout'])?>" class="login">退出</a>]</li>
             <li class="navbar right">[<a href="<?=Url::to(['admin/site'])?>" class="login">后台</a>|</li>

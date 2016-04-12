@@ -67,8 +67,15 @@ class UserController extends BaseController
     public function actionCreate()
     {
         $user = new User();
-        if(Yii::$app->request->isGet) {
-
+        if($attributes = Yii::$app->request->post('User')) {
+            $result = Yii::$app->userService->save($user,$attributes);
+            if($result) {
+                $this->success('用户信息更改成功！');
+                $this->goBack();
+            }else{
+                $this->error('用户信息更改失败！');
+                $this->goBack();
+            }
         }
         return $this->render('update',[
             'model' => $user
@@ -80,8 +87,7 @@ class UserController extends BaseController
         $user = $this->loadUser();
 
         if($attributes = Yii::$app->request->post('User')) {
-            $user->setAttributes($attributes);
-            $result = Yii::$app->userService->save($user);
+            $result = Yii::$app->userService->save($user,$attributes);
             if($result) {
                 $this->success('用户信息更改成功！');
                 $this->goBack();
