@@ -5,17 +5,13 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace app\assets;
+namespace app\module\admin\asset;
 
 use yii\web\AssetBundle;
 
-/**
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
- */
-class AppAsset extends AssetBundle
+class AdminAsset extends AssetBundle
 {
-    public $sourcePath = '@frontend/app/dist';
+    public $sourcePath = '@frontend/admin/dist';
 
     public $css = [
         'styles/app.css',

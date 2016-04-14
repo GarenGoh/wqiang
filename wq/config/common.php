@@ -1,5 +1,5 @@
 <?php
-Yii::setAlias('@frontends', dirname(__DIR__) . '/frontends');
+Yii::setAlias('@frontend', dirname(__DIR__) . '/frontend');
 define('ADMIN_NAME', 'admin');
 
 $config = [

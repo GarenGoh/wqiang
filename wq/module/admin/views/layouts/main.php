@@ -5,9 +5,9 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use app\assets\AppAsset;
+use app\module\admin\asset\AdminAsset;
 
-AppAsset::register($this);
+AdminAsset::register($this);
 $currentUser = Yii::$app->user->getIdentity();
 ?>
 <?php $this->beginPage() ?>
