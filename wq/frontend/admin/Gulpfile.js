@@ -2,7 +2,6 @@ var gulp = require('gulp'),
   less = require('gulp-less'),
   useref = require('gulp-useref'),
   csso = require('gulp-csso'),
-  minify = require('gulp-minify-css'),
   gulpif = require('gulp-if'),
   size = require('gulp-size'),
   del = require('del'),
@@ -24,7 +23,7 @@ gulp.task('less', function () {
 gulp.task('useref', ['less'], function () {
   return gulp.src(app.src + '*.html')
     .pipe(useref())
-    .pipe(gulpif('*.css', minify()))
+    .pipe(gulpif('*.css', csso()))
     .pipe(gulp.dest(app.src + 'dist'))
     .pipe(size());
 });
