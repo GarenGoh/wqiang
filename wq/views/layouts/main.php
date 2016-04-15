@@ -10,95 +10,6 @@ use app\models\User;
 use yii\web\View;
 AppAsset::register($this);
 $currentUser = Yii::$app->user->getIdentity();
-$css = <<< CSS
-.left {
-float: left;
-}
-.right {
-float: right;
-}
-.top {
-background-color: #15a085;
-height: 190px;
-width: 100%;
-padding-top: 15px;
-}
-.logo {
-height: 160px;
-width: 160px;
-border-radius: 160px;
-background-color: #fff;
-margin-left: auto;
-margin-right: auto;
-overflow:hidden;
-}
-.logo img {
-height: 160px;
-width: 160px;
-}
-.item {
-height: 50px;
-background-color: #05435c;
-}
-.item ul {
-margin: 0;
-padding: 10px 5px 0 5%;
-}
-.item .navbar {
-font-size: 19px;
-list-style-type: none;
-}
-.item .navbar a {
-color: #fff;
-padding: 0 30px 0;
-}
-.item .navbar .login {
-padding: 0 5px 0;
-}
-.user-avatar {
-background: #fff;
-float: right;
-border: solid 1px #ddd;
-overflow:hidden;
-width: 30px;
-height: 30px;
-border-radius: 15px;
-}
-.flash-message {
-width: 40%;
-margin-left: auto;
-margin-right: auto;
-}
-.footer {
-background-color: #05435c;
-height: auto;
-width: 100%;
-padding: 30px 30px 0;
-}
-.footer p {
-color: #fff;margin: 0;font-size: 20px
-}
-.footer ul {
-padding-left: 0
-}
-.footer a {
-color: #fff;padding: 5px;
-}
-.hot li {
-float: left;list-style-type: none;border: solid 1px #ddd;margin-right: 5px;margin-bottom: 10px;
-}
-.friendly-link li {
-float: left;list-style-type: none;margin-right: 5px;margin-bottom: 10px;
-}
-
-.message .alert {
-    display: none;
-    width: 40%;
-    margin: 0 auto;
-}
-CSS;
-$this->registerCss($css);
-
 $js = '
     $(".on").bind("click",function(){
         var iID=setInterval(article, 1000);
@@ -125,6 +36,7 @@ $this->registerJs($js, View::POS_END);
 </head>
 <body>
 <?php $this->beginBody() ?>
+    <nav id="top">
     <div class="col-md-12 top">
         <div class="logo">
             <img src="<?=Yii::$app->params['logoUrl']?>">
@@ -153,6 +65,7 @@ $this->registerJs($js, View::POS_END);
             <?php }}?>
         </ul>
     </div>
+    </nav>
     <div class="content-wrapper container col-md-12" id="<?=isset($this->params['pageId']) ? $this->params['pageId']:''?>" style="margin: 0;padding: 0;">
         <div style="text-align: center;">
             <?php
@@ -165,13 +78,13 @@ $this->registerJs($js, View::POS_END);
                 $type = 'error';
             }
             if ($message && $type) {?>
-                <p class="flash-message" style="background-color: <?=$type=='error'?'#ff7974' : '#49b9f9'?>"><?=$message?></p>
+                <p style="width: 40%;margin-left: auto;margin-right: auto;background-color: <?=$type=='error'?'#ff7974' : '#49b9f9'?>"><?=$message?></p>
            <?php }
             ?>
         </div>
             <?=$content ?>
     </div>
-<footer class="col-md-12 footer">
+<footer class="col-md-12" id="footer">
     <div class="col-md-4" >
         <ul>
             <li style="font-size: 20px;list-style-type: none;margin-bottom: 60px;"><a href="#">关于我</a></li>

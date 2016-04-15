@@ -1,5 +1,4 @@
-.idea
+.idea/
 *.log
 *.rdb
-.idea/workspace.xml
 .DS_Store
