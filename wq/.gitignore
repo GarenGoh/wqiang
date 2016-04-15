@@ -31,4 +31,3 @@ phpunit.phar
 config/config.php
 config/config-b.php
 web/images/*
-frontend/*
