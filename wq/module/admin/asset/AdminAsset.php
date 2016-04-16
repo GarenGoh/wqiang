@@ -22,7 +22,7 @@ class AdminAsset extends AssetBundle
     ];
 
     public $depends = [
-        'yii\web\YiiAsset',//载入Yii js jQuery
+        //'yii\web\YiiAsset',//载入yii.js jquery.js
         //'yii\bootstrap\BootstrapAsset',//载入Bootstrap css
     ];
 }

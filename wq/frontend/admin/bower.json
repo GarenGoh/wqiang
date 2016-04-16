@@ -18,6 +18,10 @@
   "devDependencies": {
     "jquery": "^2.2.3",
     "bootstrap": "^3.3.6",
-    "selectize": "^0.12.1"
+    "selectize": "^0.12.1",
+    "font-awesome": "^4.6.1",
+    "simditor": "^2.3.6",
+    "jquery-ui": "^1.11.4",
+    "blueimp-file-upload": "^9.12.3"
   }
 }
