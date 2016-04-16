@@ -1,14 +1,15 @@
 <?php
 use yii\helpers\Html;
 use yii\grid\GridView;
-use app\models\User;
+use app\models\Article;
+
 ?>
 <div>
     <div class="header col-md-12">
-        <h1 class="title">用户管理</h1>
-        <?= Html::a('<i class="fa fa-plus"></i> 创建用户', ['user/create', 'role' => Yii::$app->request->getQueryParam('role')], ['class' => 'btn btn-danger pull-right'])?>
+        <h1 class="title">文章管理</h1>
+        <?= Html::a('<i class="fa fa-plus"></i> 创建文章', ['article/create'], ['class' => 'btn btn-danger pull-right'])?>
     </div>
-    <div class="col-md-10" style="float: left">
+    <div class="col-md-10">
         <div class="table-responsive">
             <?= GridView::widget([
                 'pager' => [
@@ -23,40 +24,38 @@ use app\models\User;
                 'dataProvider' => $dataProvider,
                 'columns' => [
                     'id',
-                    'username',
-                    'name',
+                    'title',
+                    'creator_id',
                     [
-                        'attribute' => 'email',
+                        'attribute' => 'category',
                         'content' => function($model) {
-                            return '<span class="text-'.($model->is_email_enable?'success':'danger').'">'.$model->email.'</span>';
-                        }
-                    ],
-                    [
-                        'attribute' => 'mobile',
-                        'content' => function($model) {
-                            return '<span class="text-'.($model->is_mobile_enable?'success':'danger').'">'.$model->mobile.'</span>';
+                            return Article::getCategoryMap($model->category_id);
                         }
                     ],
                     [
                         'attribute' => 'is_enable',
                         'content' => function($model) {
                             $status = $model->is_enable ? 'success' : 'danger';
-                            return '<span class="text-'.$status.'">'.User::getBooleanMap($model->is_enable).'</span>';
+                            return '<span class="text-'.$status.'">'.Article::getBooleanMap($model->is_enable).'</span>';
                         }
                     ],
+                    [
+                        'attribute' => 'is_hot',
+                        'content' => function($model) {
+                            $status = $model->is_hot ? 'success' : 'danger';
+                            return '<span class="text-'.$status.'">'.Article::getBooleanMap($model->is_hot).'</span>';
+                        }
+                    ],
+                    'read_count',
                     [
                         'attribute' => 'created_at',
                         'format' => ['date', 'php:Y/m/d']
                     ],
                     [
-                        'attribute' => 'logged_at',
-                        'format' => ['date', 'php:Y/m/d']
-                    ],
-                    [
                         'content' => function($model) {
                             $buttons = [];
-                            $buttons[] = Html::a('修改', ['user/update', 'id' => $model->id]);
-                            $buttons[] = Html::a('删除', ['user/delete', 'id' => $model->id], ['data-method' => 'post', 'data-confirm' => '确定要删除吗？']);
+                            $buttons[] = Html::a('修改', ['article/update', 'id' => $model->id]);
+                            $buttons[] = Html::a('删除', ['article/delete', 'id' => $model->id], ['data-method' => 'post', 'data-confirm' => '确定要删除吗？']);
                             return implode('&nbsp;&nbsp;', $buttons);
                         }
                     ],
@@ -64,6 +63,6 @@ use app\models\User;
             ]); ?>
         </div>
     </div>
-    <div class="col-md-2" style="float: left">
+    <div class="col-md-2">
     </div>
 </div>

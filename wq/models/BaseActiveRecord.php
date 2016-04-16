@@ -19,7 +19,7 @@ abstract class BaseActiveRecord extends ActiveRecord
             static::BOOLEAN_YES => '是',
             static::BOOLEAN_NO => '否',
         ];
-        return !empty($status) && $map[$status] ? $map[$status] :$map;
+        return !is_null($status) && $map[$status] ? $map[$status] :$map;
     }
 
     /*

@@ -41,6 +41,9 @@ $config = [
         'userService' => [
             'class' => 'app\components\UserService'
         ],
+        'articleService' => [
+            'class' => 'app\components\ArticleService'
+        ],
     ]
 ];
 

@@ -12,7 +12,7 @@ class m160413_074341_article extends BaseMigration
             'title'         => "varchar(200)            NOT NULL COMMENT '标题'",
             'keywords'      => "varchar(255)                NULL COMMENT '关键词'",
             'summary'       => "text                        NULL COMMENT '摘要'",
-            'description'   => "text                        NULL COMMENT '内容'",
+            'content'       => "text                        NULL COMMENT '内容'",
             'read_count'    => "int(10)        UNSIGNED NOT NULL DEFAULT 0 COMMENT '阅读次数'",
             'creator_id'    => "int(10)        UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建用户ID'",
             'created_at'    => "int(10)        UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间'",
