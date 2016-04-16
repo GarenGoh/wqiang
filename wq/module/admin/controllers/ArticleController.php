@@ -19,5 +19,45 @@ class ArticleController extends BaseController
             'dataProvider' => $dataProvider
         ]);
     }
+
+    public function loadArticle()
+    {
+        $id =Yii::$app->request->getQueryParam('id');
+        if($id) {
+            $article = Yii::$app->articleService->search(['id' => $id])->one();
+            if($article) {
+                return $article;
+            }else{
+                $this->error('没有该文章');
+                $this->goBack();
+            }
+        }else{
+            $this->error('缺少参数：id');
+            $this->goBack();
+        }
+    }
+
+    public function actionDelete()
+    {
+        $article = $this->loadArticle();
+
+        $result = Yii::$app->articleService->delete($article);
+        if($result) {
+            $this->success('删除成功！');
+            $this->goBack();
+        }else{
+            $this->error('删除失败！');
+            $this->goBack();
+        }
+    }
+
+    public function actionUpdate()
+    {
+        $article = $this->loadArticle();
+
+        return $this->render('update',[
+            'model' => $article
+        ]);
+    }
 }
 ?>

@@ -41,6 +41,21 @@ $currentUser = Yii::$app->user->getIdentity();
     </div>
 </div>
     <div style="margin: 0;">
+        <div style="text-align: center;">
+            <?php
+            $type = '';
+            $message = '';
+            if ($message = Yii::$app->session->getFlash('app_success_flash_message')) {
+                $type = 'success';
+            } else {
+                $message = Yii::$app->session->getFlash('app_error_flash_message');
+                $type = 'error';
+            }
+            if ($message && $type) {?>
+                <p style="width: 40%;margin-left: auto;margin-right: auto;background-color: <?=$type=='error'?'#ff7974' : '#49b9f9'?>"><?=$message?></p>
+            <?php }
+            ?>
+        </div>
         <?= $content ?>
     </div>
 <?php $this->endBody() ?>

@@ -55,8 +55,7 @@ class UserService extends Component
 
     public function delete(User $user)
     {
-        $result = $user->delete();
-        return $result;
+        return $user->delete();
     }
 
 }

@@ -1,5 +1,5 @@
 <?php
-use yii\helpers\Html;
+use app\helpers\Html;
 use yii\grid\GridView;
 use app\models\Article;
 
@@ -24,7 +24,12 @@ use app\models\Article;
                 'dataProvider' => $dataProvider,
                 'columns' => [
                     'id',
-                    'title',
+                    [
+                        'attribute' => 'title',
+                        'content' => function($model) {
+                            return Html::string($model->title,10);
+                        }
+                    ],
                     'creator_id',
                     [
                         'attribute' => 'category',

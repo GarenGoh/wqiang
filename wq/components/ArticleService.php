@@ -15,5 +15,10 @@ class ArticleService extends Component
         }
         return $query;
     }
+
+    public function delete(Article $article)
+    {
+        return $article->delete();
+    }
 }
 ?>
