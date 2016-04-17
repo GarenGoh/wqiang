@@ -58,6 +58,12 @@ class UserService extends Component
         return $user->delete();
     }
 
+    public function getId()
+    {
+        $id = Yii::$app->user->getId();
+        return $id ? $id : 0;
+    }
+
 }
 
 ?>

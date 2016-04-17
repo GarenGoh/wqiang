@@ -20,5 +20,13 @@ class ArticleService extends Component
     {
         return $article->delete();
     }
+
+    public function save(Article $article, $attributes)
+    {
+        if($attributes) {
+            $article->setAttributes($attributes,false);
+            return $article->save();
+        }
+    }
 }
 ?>

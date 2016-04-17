@@ -1,6 +1,7 @@
 <?php
 namespace app\module\admin\controllers;
 
+use app\models\Article;
 use Yii;
 use yii\data\ActiveDataProvider;
 
@@ -55,7 +56,38 @@ class ArticleController extends BaseController
     {
         $article = $this->loadArticle();
 
+        if(Yii::$app->request->isPost){
+            $attributes = Yii::$app->request->getBodyParam('Article');
+            $result =Yii::$app->articleService->save($article, $attributes);
+            if($result){
+                $this->success('修改成功！');
+                $this->goBack();
+            }else{
+                $this->error('修改失败！');
+                $this->goBack();
+            }
+        }
         return $this->render('update',[
+            'model' => $article
+        ]);
+    }
+
+    public function actionCreate()
+    {
+        $article = new Article();
+
+        if(Yii::$app->request->isPost) {
+            $attributes = Yii::$app->request->getBodyParam('Article');
+            $result =Yii::$app->articleService->save($article, $attributes);
+            if($result){
+                $this->success('修改成功！');
+                $this->goBack();
+            }else{
+                $this->error('修改失败！');
+                $this->goBack();
+            }
+        }
+        return $this->render('update', [
             'model' => $article
         ]);
     }

@@ -1,6 +1,8 @@
 <?php
 namespace app\models;
 
+use Yii;
+
 class Article extends BaseActiveRecord
 {
     const CATEGORY_PHP = 0;
@@ -39,6 +41,20 @@ class Article extends BaseActiveRecord
             static::CATEGORY_JS => 'JavaScript',
         ];
         return !is_null($status) && $map[$status] ? $map[$status] : $map;
+    }
+
+    public function rules()
+    {
+        return [
+            [['category_id', 'is_hot', 'read_count'], 'default', 'value' => 0],
+            [['is_enable'], 'default', 'value' => 1],
+            [['title'], 'required'],
+            [['content'], 'string'],
+            [['title'], 'string', 'max' => 200],
+            [['keywords'], 'string', 'max' => 100],
+            ['created_at', 'default', 'value' => time()],
+            ['creator_id', 'default', 'value' => Yii::$app->userService->getId()]
+        ];
     }
 }
 ?>
