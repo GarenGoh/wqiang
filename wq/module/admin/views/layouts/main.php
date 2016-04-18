@@ -4,7 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\helpers\Url;
+use app\helpers\Url;
 use app\module\admin\asset\AdminAsset;
 
 AdminAsset::register($this);
@@ -34,7 +34,7 @@ $currentUser = Yii::$app->user->getIdentity();
         <ul style="padding: 20px 5px 0;margin: 0">
             <li style="list-style-type: none;float: left;margin-right: 40px;margin-bottom: -2px;"><a href="<?=Url::to(['site/index'])?>"><img style="height: 60px;margin-top: -20px;" src="<?=Yii::$app->params['logoUrl']?>"></a></li>
             <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="<?=Url::to(['user/index'])?>" style="color: #fff;text-decoration : none">用&nbsp;&nbsp;户</a></li>
-            <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="/admin/article/index" style="color: #fff;text-decoration : none">文&nbsp;&nbsp;章</a></li>
+            <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="<?=Url::to(['article/index'])?>" style="color: #fff;text-decoration : none">文&nbsp;&nbsp;章</a></li>
             <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="/admin/advert/index" style="color: #fff;text-decoration : none">广&nbsp;告&nbsp;位</a></li>
             <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="/admin/page/index" style="color: #fff;text-decoration : none">页&nbsp;&nbsp;面</a></li>
         </ul>

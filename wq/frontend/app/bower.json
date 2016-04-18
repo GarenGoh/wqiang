@@ -17,6 +17,8 @@
   ],
   "devDependencies": {
     "jquery": "^2.2.3",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.1",
+    "bootstrap-extension": "^1.0.3"
   }
 }

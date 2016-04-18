@@ -5,9 +5,9 @@
 
 use yii\helpers\Html;
 use app\assets\AppAsset;
-use yii\helpers\Url;
 use app\models\User;
 use yii\web\View;
+use app\helpers\Url;
 AppAsset::register($this);
 $currentUser = Yii::$app->user->getIdentity();
 $js = '
@@ -42,10 +42,10 @@ $this->registerJs($js, View::POS_END);
             <img src="<?=Yii::$app->params['logoUrl']?>">
         </div>
     </div>
-    <div class="col-md-12 item">
+    <div class="col-md-12 item " id="test">
         <ul>
             <li class="navbar left"><a href="<?=Yii::$app->homeUrl?>">首页</a></li>
-            <li class="navbar left"><a href="#" >PHP</a></li>
+            <li class="navbar left"><a href="<?=Url::to(['article/php'])?>" >PHP</a></li>
             <li class="navbar left"><a href="#" >前端</a></li>
             <li class="navbar left"><a href="#" >关于我</a></li>
             <li class="navbar left"><a href="javascript:void(0)" class="on">on</a></li>
@@ -127,7 +127,13 @@ $this->registerJs($js, View::POS_END);
         </ul>
     </div>
 </footer>
-
+<?php
+$js = "
+$('#test').sticky({
+    'top': 0
+});";
+$this->registerJs($js, View::POS_END);
+?>
 <?php $this->endBody() ?>
 </body>
 </html>
