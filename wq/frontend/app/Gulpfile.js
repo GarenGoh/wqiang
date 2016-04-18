@@ -23,7 +23,7 @@ gulp.task('less', function () {
     .pipe(less())
     .pipe(autoprefixer())
     .pipe(gulp.dest(app.src + 'styles'))
-    .pipe(size());
+    .pipe(size({title:'less:'}));
 });
 
 gulp.task('useref', ['less'], function () {
@@ -33,7 +33,7 @@ gulp.task('useref', ['less'], function () {
     .pipe(gulpif('*.css', csso()))
     .pipe(gulpif('*.js', gulp.dest(app.dist)))
     .pipe(gulpif('*.css', gulp.dest(app.dist)))
-    .pipe(size());
+    .pipe(size({title:'useref:'}));
 });
 
 gulp.task('del', function (callback) {
@@ -46,11 +46,11 @@ gulp.task('del', function (callback) {
 gulp.task('copy', function () {
   gulp.src(app.bower + 'font-awesome/fonts/*')
     .pipe(gulp.dest(app.dist + 'fonts'))
-    .pipe(size());
+    .pipe(size({title:'copyFont:'}));
 
   gulp.src(app.src + 'images/*')
     .pipe(gulp.dest(app.dist + 'images'))
-    .pipe(size());
+    .pipe(size({title:'copyImages:'}));
 });
 
 gulp.task('connect', function () {
@@ -69,8 +69,8 @@ gulp.task('watch', function () {
 
 gulp.task('reload', function () {
   gulp.src(app.src + '*.html')
-    .pipe(connect.reload())
-    .pipe(size({title:'reload:',showFiles:true}));
+    .pipe(connect.reload());
+
   gulp.src(app.frontend + 'index.html')
     .pipe(connect.reload())
 });

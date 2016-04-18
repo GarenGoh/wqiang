@@ -82,7 +82,9 @@ $this->registerJs($js, View::POS_END);
            <?php }
             ?>
         </div>
+        <div style="margin: 20px 30px;">
             <?=$content ?>
+        </div>
     </div>
 <footer class="col-md-12" id="footer">
     <div class="col-md-4" >
