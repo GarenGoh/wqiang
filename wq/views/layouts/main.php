@@ -42,7 +42,7 @@ $this->registerJs($js, View::POS_END);
             <img src="<?=Yii::$app->params['logoUrl']?>">
         </div>
     </div>
-    <div class="col-md-12 item " id="test">
+    <div class="col-md-12 item " id="navbar">
         <ul>
             <li class="navbar left"><a href="<?=Yii::$app->homeUrl?>">首页</a></li>
             <li class="navbar left"><a href="<?=Url::to(['article/php'])?>" >PHP</a></li>
@@ -129,7 +129,7 @@ $this->registerJs($js, View::POS_END);
 </footer>
 <?php
 $js = "
-$('#test').sticky({
+$('#navbar').sticky({
     'top': 0
 });";
 $this->registerJs($js, View::POS_END);

@@ -14,6 +14,7 @@ var gulp = require('gulp'),
 var app = {
   src: './',
   dist: '../dist/app/',
+  frontend: '../',
   bower: 'vendor/bower/'
 };
 
@@ -54,7 +55,7 @@ gulp.task('copy', function () {
 
 gulp.task('connect', function () {
   connect.server({
-    root: app.dist,
+    root: app.frontend,
     port: 5000,
     livereload: true
   });
@@ -62,7 +63,16 @@ gulp.task('connect', function () {
 
 gulp.task('watch', function () {
   gulp.watch([app.src + 'lesses/**/*.less'], ['less', 'reload']);
-  gulp.watch([app.src + '*.html'], ['reload'])
+  gulp.watch([app.src + '*.html'], ['reload']);
+  gulp.watch([app.frontend + '*.html'], ['reload'])
+});
+
+gulp.task('reload', function () {
+  gulp.src(app.src + '*.html')
+    .pipe(connect.reload())
+    .pipe(size({title:'reload:',showFiles:true}));
+  gulp.src(app.frontend + 'index.html')
+    .pipe(connect.reload())
 });
 
 gulp.task('build', ['del'],function() {
