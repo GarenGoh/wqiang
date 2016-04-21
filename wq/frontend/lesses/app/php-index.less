@@ -1,0 +1,64 @@
+#php-index {
+  @img-width: 180px;
+  @img-height: 140px;
+  .primary-block {
+    .category {
+      margin-top: 0;
+      width: 100%;
+      background: #F1B73A;
+      border-left: #E8A211 10px solid
+    }
+    .item {
+      padding:30px 0 40px;
+      border-bottom: solid 1px #ddd;
+      img {
+        width: @img-width;
+        height: @img-height;
+      }
+      .right {
+        margin-left: -(@img-width);
+        padding-left: @img-width+20px;
+        .summary {
+          max-height: 60px;
+          overflow: hidden;
+        }
+        .leaf {
+          color: #01b838
+        }
+        .clock {
+          color: #567efc
+        }
+        .comment {
+          color: #f8b838
+        }
+        .eye {
+          color: #aaa
+        }
+      }
+    }
+  }
+
+  .secondary-block {
+    .hot-article {
+      .head {
+        background: #FB4F4F;
+        h3 {
+          margin: 0;
+        }
+      }
+      .body {
+        border-top: #FB4F4F 2px solid;
+        padding: 0;
+        ul {
+          padding:20px 0;
+          li {
+            list-style-type:none;
+            border-bottom: solid 1px #ddd;
+            padding-bottom: 4px;
+            padding-top: 10px
+          }
+        }
+      }
+    }
+  }
+}

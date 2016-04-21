@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
@@ -6,59 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- build:css /styles/app.css -->
     <link rel="stylesheet" href="styles/bootstrap.css">
-    <link rel="stylesheet" href="styles/app.css">
     <link rel="stylesheet" href="vendor/bower/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="styles/app.css">
     <!-- endbuild -->
     <title>Base</title>
   </head>
   <body>
-    <nav id="top" style="z-index: 99;position: relative">
+    <nav id="app-top">
       <div class="top">
         <div class="logo">
-          <img src="../dist/app/images/logo.png">
+          <img src="images/logo.png">
         </div>
       </div>
       <div class="item" id="navbar">
         <ul>
-          <li class="nav left"><a href="#">首页</a></li>
-          <li class="nav left"><a href="#" >PHP</a></li>
-          <li class="nav left"><a href="#" >前端</a></li>
-          <li class="nav left"><a href="#" >关于我</a></li>
-          <li class="nav left"><a href="javascript:void(0)" class="on">on</a></li>
-          <li class="nav left"><a href="#" id="test"></a></li>
-          <li class="nav right"><a href="#" class="login">注册</a></li>
-          <li class="nav right"><a href="#" class="login">登录</a></li>
+          <li class="nav pull-left"><a href="#">首页</a></li>
+          <li class="nav pull-left"><a href="#" >PHP</a></li>
+          <li class="nav pull-left"><a href="#" >前端</a></li>
+          <li class="nav pull-left"><a href="#" >关于我</a></li>
+          <li class="nav pull-right"><a href="#" class="login">注册</a></li>
+          <li class="nav pull-right"><a href="#" class="login">登录</a></li>
         </ul>
       </div>
     </nav>
-    <div class="content-wrapper container navbar-collapse collapse content" id="content">
-      <div id="article-index">
-        <div class="col-md-9">
-          <div style="width: 100%; background: #F1B73A; border-left: #E8A211 10px solid">
-            <h1 style="margin-top: 0">PHP</h1>
+    <div class="content-wrapper container" id="php-index">
+        <div class="col-md-9 primary-block">
+          <div class="h1 category">
+            PHP
           </div>
-          <article>
-            <div class="" style="width: 180px;float: left">
-              <img src="images/06.jpg" style="width: 180px; height: 140px;">
+          <article class="col-md-12 item">
+            <div class="pull-left">
+              <a href="#"><img src="images/06.jpg"></a>
             </div>
-            <div style="float: left;margin-left: -180px;padding-left: 200px;" class="col-md-12">
+            <div class="col-md-12 pull-left right">
               <h4>安装PHP的curl扩展</h4>
-              <p>博客中百度链接自动提交用到了curl，而自己安装PHP的时候并没有安装curl模块。通过查询PHP官方文档，得知编译PHP的时候需要带上-with-curl参数，才可以把curl模块编译进去。但是…</p>
-              <p><i class="fa fa-newspaper-o"></i>php学习  2016-04-04 评论（32）浏览（323）阅读原文>></p>
+              <p class="summary">中百度链接自动百度链接自动提交用到了curl，而自己安装PHP的时候并没有安装curl模块。通过查询PHP官方文档，得知编译PHP的时候需要带上-with-curl参数，才可以把curl模块编译进去。但是…</p>
+              <p ><i class="fa fa-leaf leaf"></i> php学习&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-clock-o clock"></i> 2016-04-04&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-comment-o comment"></i> 评论（32）&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-eye eye"></i>浏览（323）&nbsp;&nbsp;&nbsp;
+              <a class="pull-right" href="#">阅读原文>></a>
+              </p>
+            </div>
+          </article>
+          <article class="col-md-12 item">
+            <div class="pull-left">
+              <a href="#"><img src="images/06.jpg"></a>
+            </div>
+            <div class="col-md-12 pull-left right">
+              <h4>安装PHP的curl扩展</h4>
+              <p class="summary">中百度链接自动百度链接自动提交用到了curl，而自己安装PHP的时候并没有安装curl模块。通过查询PHP官方文档，得知编译PHP的时候需要带上-with-curl参数，才可以把curl模块编译进去。但是…</p>
+              <p ><i class="fa fa-leaf leaf"></i> php学习&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-clock-o clock"></i> 2016-04-04&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-comment-o comment"></i> 评论（32）&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-eye eye"></i>浏览（323）&nbsp;&nbsp;&nbsp;
+              <a class="pull-right" href="#">阅读原文>></a>
+              </p>
             </div>
           </article>
         </div>
-        <div class="col-md-3">
-          <div class="hot col-md-6" style="background: #FB4F4F;">
-            <h3 style="margin: 0;">热门文章</h3>
-          </div>
-          <div class="col-md-12" style="border-top: #FB4F4F 2px solid">
-
+        <div class="col-md-3 secondary-block">
+          <div class="hot-article">
+            <div class="head col-md-6">
+              <h3>热门文章</h3>
+            </div>
+            <div class="col-md-12 body">
+              <ul>
+                <li>博客中百度链接自动提交用到了</li>
+                <li>博客中百度链接自动提交用到了</li>
+                <li>博客中百度链接自动提交用到了</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
     </div>
-    <footer class="col-md-12" id="footer">
+    <footer class="col-md-12" id="app-footer">
       <div class="col-md-4" >
         <ul>
           <li style="font-size: 20px;list-style-type: none;margin-bottom: 60px;"><a href="#">关于我</a></li>
