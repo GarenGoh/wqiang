@@ -7,6 +7,7 @@ return [
     'adminTitle' => '后台管理',
     'logoUrl' => '/images/logo.png',
     'defaultAvatarUrl' => '/images/avatar.png',
+    'defaultImageUrl' => 'http://wqiang.net/images/1.jpg',
     '404Image' => '/images/404Image.png'
 ];
 ?>

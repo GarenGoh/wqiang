@@ -10,20 +10,6 @@ use yii\web\View;
 use app\helpers\Url;
 AppAsset::register($this);
 $currentUser = Yii::$app->user->getIdentity();
-$js = '
-    $(".on").bind("click",function(){
-        var iID=setInterval(article, 1000);
-        $(".off").bind("click",function(){
-            clearInterval(iID);
-        });
-    });
-
-    function article(){
-        $("#test").html(Date());
-    }
-';
-
-$this->registerJs($js, View::POS_END);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -37,20 +23,18 @@ $this->registerJs($js, View::POS_END);
 </head>
 <body>
 <?php $this->beginBody() ?>
-    <nav id="top">
-    <div class="col-md-12 top">
+    <nav id="app-top">
+    <div class="top">
         <div class="logo">
             <img src="<?=Yii::$app->params['logoUrl']?>">
         </div>
     </div>
-    <div class="col-md-12 item " id="navbar">
+    <div class="item" id="navbar">
         <ul>
             <li class="nav pull-left"><a href="<?=Yii::$app->homeUrl?>">首页</a></li>
             <li class="nav pull-left"><a href="<?=Url::to(['article/php'])?>" >PHP</a></li>
             <li class="nav pull-left"><a href="#" >前端</a></li>
             <li class="nav pull-left"><a href="#" >关于我</a></li>
-            <li class="nav pull-left"><a href="javascript:void(0)" class="on">on</a></li>
-            <li class="nav pull-left"><a href="#" id="test"></a></li>
             <?php if(Yii::$app->user->isGuest){ ?>
             <li class="nav pull-right"><a href="<?=Url::to(['site/register'])?>" class="login">注册</a></li>
             <li class="nav pull-right"><a href="<?=Url::to(['site/login'])?>" class="login">登录</a></li>
@@ -67,7 +51,7 @@ $this->registerJs($js, View::POS_END);
         </ul>
     </div>
     </nav>
-    <div class="content-wrapper container col-md-12" id="<?=isset($this->params['pageId']) ? $this->params['pageId']:''?>" style="margin: 0;padding: 0;">
+    <div class="content-wrapper container" id="<?=isset($this->params['pageId']) ? $this->params['pageId']:''?>">
         <div style="text-align: center;">
             <?php
             $type = '';
@@ -83,11 +67,9 @@ $this->registerJs($js, View::POS_END);
            <?php }
             ?>
         </div>
-        <div style="margin: 20px 30px;">
             <?=$content ?>
-        </div>
     </div>
-<footer class="col-md-12" id="footer">
+<footer class="col-md-12" id="app-footer">
     <div class="col-md-4" >
         <ul>
             <li style="font-size: 20px;list-style-type: none;margin-bottom: 60px;"><a href="#">关于我</a></li>
@@ -131,12 +113,12 @@ $this->registerJs($js, View::POS_END);
     </div>
 </footer>
 <?php
-$js = "
+/*$js = "
 $('#navbar').sticky({
     'top': 0
 });";
 $this->registerJs($js, View::POS_END);
-?>
+*/?>
 <?php $this->endBody() ?>
 </body>
 </html>
