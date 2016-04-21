@@ -3,27 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- build:css /styles/app.css -->
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/app.css">
-    <title>Base</title>
+    <!-- endbuild -->
+    <title>common-app</title>
   </head>
   <body>
     <nav id="top" style="z-index: 99;position: relative">
       <div class="top">
         <div class="logo">
-          <img src="../dist/app/images/logo.png">
+          <img src="/images/logo.png">
         </div>
       </div>
       <div class="item" id="navbar">
         <ul>
-          <li class="nav left" style="height: 10px"><a href="#">首页</a></li>
-          <li class="nav left"><a href="#" >PHP</a></li>
-          <li class="nav left"><a href="#" >前端</a></li>
-          <li class="nav left"><a href="#" >关于我</a></li>
-          <li class="nav left"><a href="javascript:void(0)" class="on">on</a></li>
-          <li class="nav left"><a href="#" id="test"></a></li>
-          <li class="nav right"><a href="#" class="login">注册</a></li>
-          <li class="nav right"><a href="#" class="login">登录</a></li>
+          <li class="nav pull-left" style="height: 10px"><a href="#">首页</a></li>
+          <li class="nav pull-left"><a href="#" >PHP</a></li>
+          <li class="nav pull-left"><a href="#" >前端</a></li>
+          <li class="nav pull-left"><a href="#" >关于我</a></li>
+          <li class="nav pull-left"><a href="javascript:void(0)" class="on">on</a></li>
+          <li class="nav pull-left"><a href="#" id="test"></a></li>
+          <li class="nav pull-right"><a href="#" class="login">注册</a></li>
+          <li class="nav pull-right"><a href="#" class="login">登录</a></li>
         </ul>
       </div>
     </nav>
@@ -131,6 +133,7 @@
         </ul>
       </div>
     </footer>
+    <!-- build:js /scripts/app.js -->
     <script src="vendor/bower/jquery/dist/jquery.js"></script>
     <script src="vendor/bower/bootstrap/js/transition.js"></script>
     <script src="vendor/bower/bootstrap/js/modal.js"></script>
@@ -142,6 +145,7 @@
     <script src="vendor/bower/bootstrap/js/tooltip.js"></script>
     <script src="vendor/bower/bootstrap/js/popover.js"></script>
     <script src="vendor/bower/bootstrap-extension/dist/js/bootstrap-extension.js"></script>
+    <!-- endbuild -->
    <script>
 $('#navbar').sticky({
     'top': 0

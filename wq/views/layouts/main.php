@@ -45,23 +45,23 @@ $this->registerJs($js, View::POS_END);
     </div>
     <div class="col-md-12 item " id="navbar">
         <ul>
-            <li class="navbar left"><a href="<?=Yii::$app->homeUrl?>">首页</a></li>
-            <li class="navbar left"><a href="<?=Url::to(['article/php'])?>" >PHP</a></li>
-            <li class="navbar left"><a href="#" >前端</a></li>
-            <li class="navbar left"><a href="#" >关于我</a></li>
-            <li class="navbar left"><a href="javascript:void(0)" class="on">on</a></li>
-            <li class="navbar left"><a href="#" id="test"></a></li>
+            <li class="nav pull-left"><a href="<?=Yii::$app->homeUrl?>">首页</a></li>
+            <li class="nav pull-left"><a href="<?=Url::to(['article/php'])?>" >PHP</a></li>
+            <li class="nav pull-left"><a href="#" >前端</a></li>
+            <li class="nav pull-left"><a href="#" >关于我</a></li>
+            <li class="nav pull-left"><a href="javascript:void(0)" class="on">on</a></li>
+            <li class="nav pull-left"><a href="#" id="test"></a></li>
             <?php if(Yii::$app->user->isGuest){ ?>
-            <li class="navbar right"><a href="<?=Url::to(['site/register'])?>" class="login">注册</a></li>
-            <li class="navbar right"><a href="<?=Url::to(['site/login'])?>" class="login">登录</a></li>
+            <li class="nav pull-right"><a href="<?=Url::to(['site/register'])?>" class="login">注册</a></li>
+            <li class="nav pull-right"><a href="<?=Url::to(['site/login'])?>" class="login">登录</a></li>
             <?php
             }else{ if($currentUser->role_id == User::ROLE_MANAGER || Yii::$app->userService->isRoot($currentUser->id)){
             ?>
-            <li class="navbar right"><a href="<?=Url::to(['site/logout'])?>" class="login">退出</a>]</li>
-            <li class="navbar right">[<a href="<?=Url::to(['admin/site'])?>" class="login">后台</a>|</li>
+            <li class="nav pull-right"><a href="<?=Url::to(['site/logout'])?>" class="login">退出</a>]</li>
+            <li class="nav pull-right">[<a href="<?=Url::to(['admin/site'])?>" class="login">后台</a>|</li>
             <img class="user-avatar" src="<?=$currentUser->avatar_url?$currentUser->avatar_url:Yii::$app->params['defaultAvatarUrl']?>">
             <?php }else{?>
-                <li class="right navbar"><a href="<?=Url::to(['site/logout'])?>" class="login">退出</a></li>
+                <li class="pull-right nav"><a href="<?=Url::to(['site/logout'])?>" class="login">退出</a></li>
                 <img class="user-avatar" src="<?=$currentUser->avatar_url?$currentUser->avatar_url:Yii::$app->params['defaultAvatarUrl']?>">
             <?php }}?>
         </ul>

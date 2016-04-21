@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- build:css /styles/app.css -->
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="vendor/bower/font-awesome/css/font-awesome.css">
+    <!-- endbuild -->
     <title>Base</title>
   </head>
   <body>
@@ -35,7 +38,14 @@
             <h1 style="margin-top: 0">PHP</h1>
           </div>
           <article>
-
+            <div class="" style="width: 180px;float: left">
+              <img src="images/06.jpg" style="width: 180px; height: 140px;">
+            </div>
+            <div style="float: left;margin-left: -180px;padding-left: 200px;" class="col-md-12">
+              <h4>安装PHP的curl扩展</h4>
+              <p>博客中百度链接自动提交用到了curl，而自己安装PHP的时候并没有安装curl模块。通过查询PHP官方文档，得知编译PHP的时候需要带上-with-curl参数，才可以把curl模块编译进去。但是…</p>
+              <p><i class="fa fa-newspaper-o"></i>php学习  2016-04-04 评论（32）浏览（323）阅读原文>></p>
+            </div>
           </article>
         </div>
         <div class="col-md-3">
@@ -91,6 +101,7 @@
         </ul>
       </div>
     </footer>
+    <!-- build:js /scripts/app.js -->
     <script src="vendor/bower/jquery/dist/jquery.js"></script>
     <script src="vendor/bower/bootstrap/js/transition.js"></script>
     <script src="vendor/bower/bootstrap/js/modal.js"></script>
@@ -102,6 +113,7 @@
     <script src="vendor/bower/bootstrap/js/tooltip.js"></script>
     <script src="vendor/bower/bootstrap/js/popover.js"></script>
     <script src="vendor/bower/bootstrap-extension/dist/js/bootstrap-extension.js"></script>
+    <!-- endbuild -->
     <script>
       $('#navbar').sticky({
         'top': 0

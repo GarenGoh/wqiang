@@ -3,7 +3,6 @@ var gulp = require('gulp'),
   useref = require('gulp-useref'),
   csso = require('gulp-csso'),
   uglify = require('gulp-uglify'),
-  minify = require('gulp-minify-css'),
   gulpif = require('gulp-if'),
   size = require('gulp-size'),
   del = require('del'),
@@ -11,68 +10,63 @@ var gulp = require('gulp'),
   watch = require('gulp-watch'),
   autoprefixer = require('gulp-autoprefixer');
 
-var app = {
+var path = {
   src: './',
-  dist: '../dist/app/',
-  frontend: '../',
+  dist: 'dist/',
   bower: 'vendor/bower/'
 };
 
 gulp.task('less', function () {
-  gulp.src(app.src + 'lesses/*.less')
+  gulp.src(path.src + 'lesses/*.less')
     .pipe(less())
     .pipe(autoprefixer())
-    .pipe(gulp.dest(app.src + 'styles'))
+    .pipe(gulp.dest(path.src + 'styles'))
     .pipe(size({title:'less:'}));
 });
 
 gulp.task('useref', ['less'], function () {
-  return gulp.src(app.src + '*.html')
+  return gulp.src(path.src + '*.html')
     .pipe(useref())
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', csso()))
-    .pipe(gulpif('*.js', gulp.dest(app.dist)))
-    .pipe(gulpif('*.css', gulp.dest(app.dist)))
+    .pipe(gulpif('*.js', gulp.dest(path.dist)))
+    .pipe(gulpif('*.css', gulp.dest(path.dist)))
     .pipe(size({title:'useref:'}));
 });
 
 gulp.task('del', function (callback) {
   var map = [
-    app.dist
+    path.dist
   ];
   return del(map, {force: true}, callback);
 });
 
 gulp.task('copy', function () {
-  gulp.src(app.bower + 'font-awesome/fonts/*')
-    .pipe(gulp.dest(app.dist + 'fonts'))
+  gulp.src(path.bower + 'font-awesome/fonts/*')
+    .pipe(gulp.dest(path.dist + 'fonts'))
     .pipe(size({title:'copyFont:'}));
 
-  gulp.src(app.src + 'images/*')
-    .pipe(gulp.dest(app.dist + 'images'))
+  gulp.src(path.src + 'images/*')
+    .pipe(gulp.dest(path.dist + 'images'))
     .pipe(size({title:'copyImages:'}));
 });
 
 gulp.task('connect', function () {
   connect.server({
-    root: app.frontend,
+    root: path.src,
     port: 5000,
     livereload: true
   });
 });
 
 gulp.task('watch', function () {
-  gulp.watch([app.src + 'lesses/**/*.less'], ['less', 'reload']);
-  gulp.watch([app.src + '*.html'], ['reload']);
-  gulp.watch([app.frontend + '*.html'], ['reload'])
+  gulp.watch([path.src + 'lesses/**/*.less'], ['less', 'reload']);
+  gulp.watch([path.src + '*.html'], ['reload']);
 });
 
 gulp.task('reload', function () {
-  gulp.src(app.src + '*.html')
+  gulp.src(path.src + '*.html')
     .pipe(connect.reload());
-
-  gulp.src(app.frontend + 'index.html')
-    .pipe(connect.reload())
 });
 
 gulp.task('build', ['del'],function() {

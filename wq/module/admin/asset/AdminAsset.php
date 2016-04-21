@@ -11,14 +11,14 @@ use yii\web\AssetBundle;
 
 class AdminAsset extends AssetBundle
 {
-    public $sourcePath = '@frontend/admin/dist';
+    public $sourcePath = '@frontend/dist';
 
     public $css = [
-        'styles/app.css',
+        'styles/admin.css',
     ];
 
     public $js = [
-        'scripts/app.js',
+        'scripts/admin.js',
     ];
 
     public $depends = [
