@@ -25,7 +25,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('useref', ['less'], function () {
-  return gulp.src(path.src + '*.html')
+  return gulp.src(path.src + 'test.html')
     .pipe(useref())
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', csso()))
@@ -45,10 +45,6 @@ gulp.task('copy', function () {
   gulp.src(path.bower + 'font-awesome/fonts/*')
     .pipe(gulp.dest(path.dist + 'fonts'))
     .pipe(size({title:'copyFont:'}));
-
-  gulp.src(path.src + 'images/*')
-    .pipe(gulp.dest(path.dist + 'images'))
-    .pipe(size({title:'copyImages:'}));
 });
 
 gulp.task('connect', function () {

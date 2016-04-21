@@ -7,7 +7,9 @@ class ArticleController extends BaseController
 {
     public function actionPhp()
     {
-        return $this->render('php');
+        return $this->render('index',[
+            'category' => 'php'
+        ]);
     }
 }
 ?>

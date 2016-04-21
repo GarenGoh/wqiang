@@ -14,7 +14,7 @@ $provider = new ActiveDataProvider([
 ]);
 $articles = $provider->getModels();
 
-$this->params['pageId'] = 'php-index'
+$this->params['pageId'] = 'article-index'
 ?>
 <div class="col-md-9 primary-block">
     <div class="h1 category">

@@ -14,11 +14,11 @@ class AdminAsset extends AssetBundle
     public $sourcePath = '@frontend/dist';
 
     public $css = [
-        'styles/admin.css',
+        'styles/app.css',
     ];
 
     public $js = [
-        'scripts/admin.js',
+        'scripts/app.js',
     ];
 
     public $depends = [
