@@ -11,6 +11,9 @@ $config = [
         ADMIN_NAME => [
             'class' => 'app\module\admin\Admin',
         ],
+        'api' => [
+            'class' => 'app\module\api\Api',
+        ],
     ],
     'params' => require(__DIR__ . '/params.php'),
     'components' => [
