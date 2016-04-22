@@ -7,8 +7,7 @@ $form = ActiveForm::begin([
     'action' => Url::to(['api/file/file']),
     'options' => ['enctype' => 'multipart/form-data']]);
 
-echo $form->field($model, 'file')->fileInput(['name' => 'UploadForm[]']);
-echo $form->field($model, 'file')->fileInput(['name' => 'UploadForm[]'])
+echo $form->field($model, 'file')->fileInput();
 
 ?>
 
