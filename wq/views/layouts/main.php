@@ -6,10 +6,11 @@
 use yii\helpers\Html;
 use app\assets\AppAsset;
 use app\models\User;
-use yii\web\View;
 use app\helpers\Url;
+
 AppAsset::register($this);
 $currentUser = Yii::$app->user->getIdentity();
+$navArticle = \app\models\Article::getCategoryMap();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -32,9 +33,10 @@ $currentUser = Yii::$app->user->getIdentity();
     <div class="item" id="navbar">
         <ul>
             <li class="nav pull-left"><a href="<?=Yii::$app->homeUrl?>">首页</a></li>
-            <li class="nav pull-left"><a href="<?=Url::to(['article/php'])?>" >PHP</a></li>
-            <li class="nav pull-left"><a href="#" >前端</a></li>
-            <li class="nav pull-left"><a href="#" >关于我</a></li>
+            <?php foreach($navArticle as $k => $v) {?>
+            <li class="nav pull-left"><a href="<?=Url::to(['article/'.$k])?>" ><?=$v?></a></li>
+            <?php }?>
+            <li class="nav pull-left"><a href="<?=Url::to(['site/about'])?>" >关于我</a></li>
             <?php if(Yii::$app->user->isGuest){ ?>
             <li class="nav pull-right"><a href="<?=Url::to(['site/register'])?>" class="login">注册</a></li>
             <li class="nav pull-right"><a href="<?=Url::to(['site/login'])?>" class="login">登录</a></li>

@@ -34,7 +34,7 @@ use app\models\Article;
                     [
                         'attribute' => 'category',
                         'content' => function($model) {
-                            return Article::getCategoryMap($model->category_id);
+                            return Article::getCategoryMap($model->category);
                         }
                     ],
                     [

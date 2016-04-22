@@ -14,44 +14,34 @@ $provider = new ActiveDataProvider([
 ]);
 $articles = $provider->getModels();
 
-$this->params['pageId'] = 'article-index'
+$this->params['pageId'] = 'article-index';
 ?>
 <div class="col-md-9 primary-block">
     <div class="h1 category">
-        PHP
+        <?=strtoupper($category)?>
     </div>
+    <?php
+    foreach($articles as $a) {
+    ?>
     <article class="col-md-12 item">
         <div class="pull-left">
             <a href="#"><img src="http://wqiang.net/images/1.jpg"></a>
         </div>
         <div class="col-md-12 pull-left right">
-            <h4>安装PHP的curl扩展</h4>
-            <p class="summary">中百度链接自动百度链接自动提交用到了curl，而自己安装PHP的时候并没有安装curl模块。通过查询PHP官方文档，得知编译PHP的时候需要带上-with-curl参数，才可以把curl模块编译进去。但是…</p>
+            <h4><?=$a->title?></h4>
+            <p class="summary"><?=$a->summary?></p>
             <p ><i class="fa fa-leaf leaf"></i> php学习&nbsp;&nbsp;&nbsp;
-                <i class="fa fa-clock-o clock"></i> 2016-04-04&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-clock-o clock"></i> <?=date('Y-m-d',$a->created_at) ?>&nbsp;&nbsp;&nbsp;
                 <i class="fa fa-comment-o comment"></i> 评论（32）&nbsp;&nbsp;&nbsp;
-                <i class="fa fa-eye eye"></i>浏览（323）&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-eye eye"></i>浏览（<?$a->read_count?>）&nbsp;&nbsp;&nbsp;
                 <a class="pull-right" href="#">阅读原文>></a>
             </p>
         </div>
     </article>
-    <article class="col-md-12 item">
-        <div class="pull-left">
-            <a href="#"><img src="http://wqiang.net/images/1.jpg"></a>
-        </div>
-        <div class="col-md-12 pull-left right">
-            <h4>安装PHP的curl扩展</h4>
-            <p class="summary">中百度链接自动百度链接自动提交用到了curl，而自己安装PHP的时候并没有安装curl模块。通过查询PHP官方文档，得知编译PHP的时候需要带上-with-curl参数，才可以把curl模块编译进去。但是…</p>
-            <p ><i class="fa fa-leaf leaf"></i> php学习&nbsp;&nbsp;&nbsp;
-                <i class="fa fa-clock-o clock"></i> 2016-04-04&nbsp;&nbsp;&nbsp;
-                <i class="fa fa-comment-o comment"></i> 评论（32）&nbsp;&nbsp;&nbsp;
-                <i class="fa fa-eye eye"></i>浏览（323）&nbsp;&nbsp;&nbsp;
-                <a class="pull-right" href="#">阅读原文>></a>
-            </p>
-        </div>
-    </article>
+<?php }?>
 </div>
 <div class="col-md-3 secondary-block">
+    <?php ?>
     <div class="hot-article">
         <div class="head col-md-6">
             <h3>热门文章</h3>

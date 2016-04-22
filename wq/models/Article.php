@@ -5,9 +5,11 @@ use Yii;
 
 class Article extends BaseActiveRecord
 {
-    const CATEGORY_PHP = 0;
-    const CATEGORY_FRONTEND = 1;
-    const CATEGORY_JS = 2;
+    const CATEGORY_PHP = "php";
+    const CATEGORY_LINUX = "linux";
+    const CATEGORY_DB = "db";
+    const CATEGORY_FRONTEND = "frontend";
+    const CATEGORY_LEARN = "learn";
 
     public static function tableName()
     {
@@ -23,7 +25,6 @@ class Article extends BaseActiveRecord
             'created_at' => '创建时间',
             'creator_id' => '创建者',
             'content' => '内容',
-            'category_id' => '分类ID',
             'category' => '分类',
             'keywords' => '关键词',
             'summary' => '简介',
@@ -37,8 +38,10 @@ class Article extends BaseActiveRecord
 
         $map = [
             static::CATEGORY_PHP => 'PHP',
+            static::CATEGORY_LINUX => 'Linux',
+            static::CATEGORY_DB => '数据库',
             static::CATEGORY_FRONTEND => '前端',
-            static::CATEGORY_JS => 'JavaScript',
+            static::CATEGORY_LEARN => '学无止境'
         ];
         return !is_null($status) && $map[$status] ? $map[$status] : $map;
     }
@@ -46,7 +49,8 @@ class Article extends BaseActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'is_hot', 'read_count'], 'default', 'value' => 0],
+            [['is_hot', 'read_count'], 'default', 'value' => 0],
+            ['category', 'default', 'value' => static::CATEGORY_LEARN],
             [['is_enable'], 'default', 'value' => 1],
             [['title'], 'required'],
             [['content'], 'string'],
