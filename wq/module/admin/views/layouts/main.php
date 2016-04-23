@@ -35,8 +35,8 @@ $currentUser = Yii::$app->user->getIdentity();
             <li style="list-style-type: none;float: left;margin-right: 40px;margin-bottom: -2px;"><a href="<?=Url::to(['site/index'])?>"><img style="height: 60px;margin-top: -20px;" src="<?=Yii::$app->params['logoUrl']?>"></a></li>
             <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="<?=Url::to(['user/index'])?>" style="color: #fff;text-decoration : none">用&nbsp;&nbsp;户</a></li>
             <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="<?=Url::to(['article/index'])?>" style="color: #fff;text-decoration : none">文&nbsp;&nbsp;章</a></li>
-            <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="/admin/advert/index" style="color: #fff;text-decoration : none">广&nbsp;告&nbsp;位</a></li>
-            <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="/admin/page/index" style="color: #fff;text-decoration : none">页&nbsp;&nbsp;面</a></li>
+            <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="#" style="color: #fff;text-decoration : none">广&nbsp;告&nbsp;位</a></li>
+            <li style="border-top-right-radius: 5px;border-top-left-radius:5px;text-align:center;background-color: #538dc4;font-size: 20px;border: solid #3068a0 1px;width: 100px;list-style-type: none;float: left;margin: 0 15px;padding: 5px;"><a href="#" style="color: #fff;text-decoration : none">页&nbsp;&nbsp;面</a></li>
         </ul>
     </div>
 </div>
@@ -51,9 +51,10 @@ $currentUser = Yii::$app->user->getIdentity();
                 $message = Yii::$app->session->getFlash('app_error_flash_message');
                 $type = 'error';
             }
-            if ($message && $type) {?>
-                <p style="width: 40%;margin-left: auto;margin-right: auto;background-color: <?=$type=='error'?'#ff7974' : '#49b9f9'?>"><?=$message?></p>
-            <?php }
+            if ($message && $type) {
+                $js = "Message.{$type}('".addslashes($message)."');";
+                $this->registerJs($js, \yii\web\View::POS_END);
+            }
             ?>
         </div>
         <?= $content ?>
