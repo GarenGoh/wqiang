@@ -29,5 +29,56 @@ class LoginForm extends Model
         }
         return $this->_user;
     }
+
+    public function rules()
+    {
+        $requireFields = ['account', 'password'];
+
+        $rules = [
+            [$requireFields, 'required'],//必需的
+            [$requireFields, 'filter', 'filter' => 'trim'],//去除前后的空格
+            [$requireFields, 'filter', 'filter' => 'strip_tags'],//去除html标签
+            ['account', 'validateAccount'],
+            ['password', 'validatePassword'],
+        ];
+
+        return $rules;
+    }
+
+    public function validatePassword($attribute, $params)
+    {
+        if ($this->hasErrors()) {
+            return;
+        }
+
+        $user = $this->getUser();
+
+        if (!Yii::$app->security->validatePassword($this->password, $user->password_hash)) {
+            $this->addError($attribute, '密码错误');
+        }
+    }
+
+    public function validateAccount($attribute, $params)
+    {
+        if ($this->hasErrors()) {
+            return;
+        }
+
+        $user = $this->getUser();
+        if (!$user) {
+            $this->addError($attribute, '帐号不存在');
+            return;
+        }
+
+        if (!Yii::$app->userService->isRoot($user->id)) {
+            $this->addError($attribute, '非管理员禁止登录2');
+            return;
+        }
+
+        if (!$user->is_enable) {
+            $this->addError($attribute, '帐号已禁用');
+            return;
+        }
+    }
 }
 ?>

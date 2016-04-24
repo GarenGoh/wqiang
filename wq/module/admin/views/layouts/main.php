@@ -52,8 +52,10 @@ $currentUser = Yii::$app->user->getIdentity();
                 $type = 'error';
             }
             if ($message && $type) {
-                $js = "Message.{$type}('".addslashes($message)."');";
-                $this->registerJs($js, \yii\web\View::POS_END);
+
+                echo '<h1>main</h1>';
+                //$js = "Message.{$type}('".addslashes($message)."');";
+                //$this->registerJs($js, \yii\web\View::POS_END);
             }
             ?>
         </div>
