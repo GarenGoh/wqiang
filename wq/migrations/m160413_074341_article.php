@@ -8,7 +8,7 @@ class m160413_074341_article extends BaseMigration
     {
         $this->createTable('article', [
             'id'            => 'int(10)        UNSIGNED NOT NULL AUTO_INCREMENT',
-            'image_url'     => "varchar(50)                 NULL COMMENT '图片Url'",
+            'image_id'      => "int(10)        UNSIGNED NOT NULL DEFAULT 0 COMMENT '封面ID'",
             'category'      => "text                        NULL COMMENT '分类'",
             'title'         => "varchar(200)            NOT NULL COMMENT '标题'",
             'keywords'      => "varchar(255)                NULL COMMENT '关键词'",

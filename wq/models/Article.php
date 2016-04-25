@@ -30,6 +30,8 @@ class Article extends BaseActiveRecord
             'summary' => '简介',
             'read_count' => '阅读数',
             'is_hot' => '是否热点',
+            'image_url' => '封面地址',
+            'image' => '封面',
         ];
     }
 

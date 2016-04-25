@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="vendor/bower/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="vendor/bower/simditor/styles/simditor.css">
+    <link rel="stylesheet" href="vendor/bower/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="vendor/bower/selectize/dist/css/selectize.bootstrap3.css">
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/app.css">
     <!-- endbuild -->
@@ -19,8 +21,14 @@
 <body>
   <h1 id="wq">编辑器</h1>
   <textarea id="editor" placeholder="这里输入内容" autofocus>初始化内容</textarea>
+  <h1>图标</h1>
   <i class="fa fa-github"></i>
-
+  <h1>图片上传</h1>
+  <div class="upload">
+    <i class="fa fa-picture-o"></i>
+    <i class="fa fa-circle-o-notch fa-spin"></i>
+    <input type="file" name="file" id="file-upload">
+  </div>
   <!-- build:js /scripts/app.js -->
   <script src="vendor/bower/jquery/dist/jquery.js"></script>
   <script src="vendor/bower/jquery-ui/ui/widget.js"></script>
@@ -32,8 +40,17 @@
   <script src="vendor/bower/simditor/lib/simditor.js"></script>
 
   <script src="../vendor/yiisoft/yii2/assets/yii.js"></script>
-  <script src="scripts/message.js"></script>
   <script src="vendor/bower/bootstrap-extension/dist/js/bootstrap-extension.js"></script>
+  <script src="vendor/bower/bootstrap/js/dropdown.js"></script>
+  <script src="vendor/bower/bootstrap/js/alert.js"></script>
+  <script src="vendor/bower/bootstrap/js/button.js"></script>
+
+  <script src="vendor/bower/microplugin/src/microplugin.js"></script>
+  <script src="vendor/bower/sifter/sifter.js"></script>
+  <script src="vendor/bower/selectize/dist/js/selectize.js"></script>
+
+
+  <script src="scripts/message.js"></script>
   <!-- endbuild -->
   <script>
     var editor = new Simditor({
