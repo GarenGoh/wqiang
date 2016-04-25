@@ -71,7 +71,7 @@ class LoginForm extends Model
         }
 
         if (!Yii::$app->userService->isRoot($user->id)) {
-            $this->addError($attribute, '非管理员禁止登录2');
+            $this->addError($attribute, '非管理员禁止登录');
             return;
         }
 

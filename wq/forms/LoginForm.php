@@ -36,9 +36,13 @@ class LoginForm extends BaseForm
         return $rules;
     }
 
-    public function validateAccount()
+    public function validateAccount($attribute)
     {
-        $this->getUser();
+        $user = $this->getUser();
+        if(!$user) {
+            $this->addError($attribute, '没有该账号！');
+            return;
+        }
     }
     /**
      * Validates the password.
@@ -50,8 +54,8 @@ class LoginForm extends BaseForm
     public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
-            $user = $this->getUser();
 
+            $user = $this->getUser();
             if (!$user || !Yii::$app->security->validatePassword($this->password,$user->password_hash)) {
                 $this->addError($attribute, '账号或密码错误！');
             }
