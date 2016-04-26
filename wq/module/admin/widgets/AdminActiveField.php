@@ -37,9 +37,9 @@ class AdminActiveField extends ActiveField
 
     public function file($options = [], $isImage = false)
     {
-        $html = '';
         $fileId = 'file';
-        $prefix = 'article';
+        $prefix = $options['prefix'];
+        $html = '';
         $html .= '<div id="'.$fileId.'" class="upload">';
         $html .= '
         <i class="select fa fa-'.($isImage?'picture-o':'file').'"></i>
@@ -50,7 +50,7 @@ class AdminActiveField extends ActiveField
         $js = "
             var {$fileId} = $('#{$fileId}');
             {$fileId}.find('.input').fileupload({
-            url: '".Url::to(['/api/file/file', 'prefix' => $prefix])."',
+            url: '".Url::to(['/api/file/file', 'prefix' => $prefix, 'name' => $fileId])."',
             start: function() {
                 {$fileId}.find('.file').hide();
                 {$fileId}.find('.select').hide();

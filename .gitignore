@@ -2,5 +2,4 @@
 *.log
 *.rdb
 .DS_Store
-images/*
 minimages/*
