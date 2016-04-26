@@ -32,40 +32,31 @@ class AdminActiveField extends ActiveField
 
     public function image($options = [])
     {
-        $options['accept'] = 'image/*';//$options = ['accept' => 'image/*','prefix' => 'article']
         return $this->file($options, true);
     }
 
     public function file($options = [], $isImage = false)
     {
-        $this->adjustLabelFor($options);//略过
-        $inputId = $this->getAttributeId();//article-image_id
-        $fileId = str_replace('-', '_', 'file-'.$inputId);//file_article_image_id
-        $fileModel = $this->model->getFileModelByAttribute($this->attribute);//例如：$this->model->image； $this->model->logo
-
-        $prefix = isset($options['prefix']) ? $options['prefix'] : 'common';//article
-        $accept = isset($options['accept']) ? $options['accept'] : '*';//image/*
-        $html = Html::activeHiddenInput($this->model, $this->attribute, $options);
-
+        $html = '';
+        $fileId = 'file';
+        $prefix = 'article';
         $html .= '<div id="'.$fileId.'" class="upload">';
-        if ($isImage) {
-            $html .= '<img style="display:'.($fileModel?'':'none').';" class="file" src="'.($fileModel?$fileModel->url:'').'">';
-        }
-        $html .= '<i class="select fa fa-'.($isImage?'picture-o':'file').'"></i><i style="display:none;" class="uploading fa fa-spinner fa-spin"></i>';
-        $html .= '<input type="file" title="请选择一个'.ini_get('upload_max_filesize').'以内的文件" class="input" name="'.$fileId.'" accept="'.$accept.'"></div>';
+        $html .= '
+        <i class="select fa fa-'.($isImage?'picture-o':'file').'"></i>
+        <i style="display:none;" class="uploading fa fa-spinner fa-spin"></i>
+        ';
+        $html .= '<input type="file" class="input" name="'.$fileId.'"></div>';
         $this->parts['{input}'] = $html;
         $js = "
             var {$fileId} = $('#{$fileId}');
-            var {$fileId}_model = $('#{$inputId}');
             {$fileId}.find('.input').fileupload({
-            url: '".Url::to(['/api/files', 'name' => $fileId, 'prefix' => $prefix])."',
+            url: '".Url::to(['/api/file/file', 'prefix' => $prefix])."',
             start: function() {
                 {$fileId}.find('.file').hide();
                 {$fileId}.find('.select').hide();
                 {$fileId}.find('.uploading').show();
             },
             success: function (result, textStatus, jqXHR) {
-                {$fileId}_model.val(result.id);
                 {$fileId}.find('.file').attr('src', result.url);
                 {$fileId}.find('.file').show();
                 Message.success('文件已上传，保存数据后生效！');

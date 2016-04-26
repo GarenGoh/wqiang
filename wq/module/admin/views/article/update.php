@@ -23,7 +23,7 @@ $form = ActiveForm::begin([
     <div class="col-sm-10">
         <h2><?=$model->isNewRecord?"创建":"更新"?>文章</h2>
         <?=$form->field($model, 'title')->textInput()?>
-        <?=$form->field($model, 'image_url', [
+        <?=$form->field($model, 'image_id', [
             'labelOptions' => [
                 'label' => $model->getAttributeLabel('image')
             ]

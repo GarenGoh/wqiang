@@ -19,6 +19,9 @@
     <!-- endbuild -->
   </head>
 <body>
+
+
+
   <h1 id="wq">编辑器</h1>
   <textarea id="editor" placeholder="这里输入内容" autofocus>初始化内容</textarea>
   <h1>图标</h1>
@@ -27,28 +30,33 @@
   <div class="upload">
     <i class="fa fa-picture-o"></i>
     <i class="fa fa-circle-o-notch fa-spin"></i>
-    <input type="file" name="file" id="file-upload">
+    <input type="file" class="input" name="file" id="file-upload">
   </div>
+
+
+
+
   <!-- build:js /scripts/app.js -->
   <script src="vendor/bower/jquery/dist/jquery.js"></script>
+  <script src="../vendor/yiisoft/yii2/assets/yii.js"></script>
+
   <script src="vendor/bower/jquery-ui/ui/widget.js"></script>
   <script src="vendor/bower/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+  <script src="vendor/bower/bootstrap/js/dropdown.js"></script>
+  <script src="vendor/bower/bootstrap/js/alert.js"></script>
+  <script src="vendor/bower/bootstrap/js/button.js"></script>
 
   <script src="vendor/bower/simple-module/lib/module.js"></script>
   <script src="vendor/bower/simple-hotkeys/lib/hotkeys.js"></script>
   <script src="vendor/bower/simple-uploader/lib/uploader.js"></script>
   <script src="vendor/bower/simditor/lib/simditor.js"></script>
 
-  <script src="../vendor/yiisoft/yii2/assets/yii.js"></script>
   <script src="vendor/bower/bootstrap-extension/dist/js/bootstrap-extension.js"></script>
-  <script src="vendor/bower/bootstrap/js/dropdown.js"></script>
-  <script src="vendor/bower/bootstrap/js/alert.js"></script>
-  <script src="vendor/bower/bootstrap/js/button.js"></script>
 
   <script src="vendor/bower/microplugin/src/microplugin.js"></script>
   <script src="vendor/bower/sifter/sifter.js"></script>
   <script src="vendor/bower/selectize/dist/js/selectize.js"></script>
-
 
   <script src="scripts/message.js"></script>
   <!-- endbuild -->

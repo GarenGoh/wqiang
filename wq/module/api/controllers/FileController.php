@@ -12,13 +12,17 @@ class FileController extends Controller
 {
     public function actionFile()
     {
-        $model = new UploadForm();
-        $model->file = UploadedFile::getInstance($model, 'file');
-        $imageName = 'article/'.Tools::getRandChar(8). '.' . $model->file->extension;
-        if ($model->file && $model->validate()) {
-            $result = $model->file->saveAs('images/' . $imageName );
-            if($result) {
-                //Tools::makeThumbnail('images/'.$imageName,'minimages/'.$imageName,'80','70');
+        if($_FILES) {
+            $model = new UploadForm();
+            $model->file = UploadedFile::getInstanceByName('file');
+            $prefix = Yii::$app->request->getQueryParam('prefix');
+
+            $imageName = $prefix.'/'.Tools::getRandChar(8). '.' . $model->file->extension;
+            if ($model->file && $model->validate()) {
+                $result = $model->file->saveAs('images/' . $imageName );
+                if($result) {
+                    //Tools::makeThumbnail('images/'.$imageName,'minimages/'.$imageName,'80','70');
+                }
             }
         }
     }
