@@ -25,6 +25,7 @@ class FileController extends Controller
                 if($result) {
                     //缩略图
                     //Tools::makeThumbnail('images/'.$imageName,'minimages/'.$imageName,'80','70');
+                    return $imageName;
                 }
             }
         }

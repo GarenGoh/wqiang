@@ -1,6 +1,7 @@
 <?php
 
 namespace app\module\admin\widgets;
+use app\helpers\Tools;
 use Yii;
 use yii\bootstrap\ActiveField;
 use app\helpers\Html;
@@ -37,11 +38,14 @@ class AdminActiveField extends ActiveField
 
     public function file($options = [], $isImage = false)
     {
-        $fileId = 'file';
         $prefix = $options['prefix'];
-        $html = '';
+        $fileId = $prefix.'_image';
+        $inputId = 'article-image_id';
+
+        $html = Html::activeHiddenInput($this->model, $this->attribute, $options);
         $html .= '<div id="'.$fileId.'" class="upload">';
         $html .= '
+        <img style="display:none;" class="file" src="">
         <i class="select fa fa-'.($isImage?'picture-o':'file').'"></i>
         <i style="display:none;" class="uploading fa fa-spinner fa-spin"></i>
         ';
@@ -49,6 +53,8 @@ class AdminActiveField extends ActiveField
         $this->parts['{input}'] = $html;
         $js = "
             var {$fileId} = $('#{$fileId}');
+            var {$fileId}_model = $('#{$inputId}');
+
             {$fileId}.find('.input').fileupload({
             url: '".Url::to(['/api/file/file', 'prefix' => $prefix, 'name' => $fileId])."',
             start: function() {
@@ -57,7 +63,8 @@ class AdminActiveField extends ActiveField
                 {$fileId}.find('.uploading').show();
             },
             success: function (result, textStatus, jqXHR) {
-                {$fileId}.find('.file').attr('src', result.url);
+                {$fileId}_model.val(result.id);
+                {$fileId}.find('.file').attr('src', result);
                 {$fileId}.find('.file').show();
                 Message.success('文件已上传，保存数据后生效！');
             },
