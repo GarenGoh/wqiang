@@ -109,4 +109,11 @@ class SiteController extends BaseController
 
         return $this->goHome();
     }
+
+    /*public function actionTest()
+    {
+        Yii::$app->fileService->save();
+
+        return $this->goHome();
+    }*/
 }

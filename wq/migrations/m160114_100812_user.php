@@ -18,7 +18,7 @@ class m160114_100812_user extends BaseMigration
             'is_mobile_enable'  => "tinyint(1)      UNSIGNED NOT NULL DEFAULT 0 COMMENT '手机可用'",
             'password_hash'     => "varchar(64)              NOT NULL COMMENT 'hash密码'",
             'role_id'           => "int(6)          UNSIGNED NOT NULL COMMENT '分类ID'",
-            'avatar_url'        => "varchar(50)                  NULL COMMENT '头像Url'",
+            'avatar_id'         => "int(10)         UNSIGNED NOT NULL DEFAULT 0 COMMENT '头像ID'",
             'is_enable'         => "tinyint         UNSIGNED NOT NULL DEFAULT 1 COMMENT '是否可用'",
             'created_at'        => "int(10)         UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间'",
             'logged_at'         => "int(10)         UNSIGNED NOT NULL DEFAULT 0 COMMENT '登录时间'",

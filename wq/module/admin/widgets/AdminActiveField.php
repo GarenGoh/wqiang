@@ -62,9 +62,10 @@ class AdminActiveField extends ActiveField
                 {$fileId}.find('.select').hide();
                 {$fileId}.find('.uploading').show();
             },
-            success: function (result, textStatus, jqXHR) {
+            success: function (resultJson) {
+                var result=eval('(' + res + ')');
                 {$fileId}_model.val(result.id);
-                {$fileId}.find('.file').attr('src', result);
+                {$fileId}.find('.file').attr('src', result.url);
                 {$fileId}.find('.file').show();
                 Message.success('文件已上传，保存数据后生效！');
             },

@@ -47,6 +47,9 @@ $config = [
         'articleService' => [
             'class' => 'app\components\ArticleService'
         ],
+        'fileService' => [
+            'class' => 'app\components\FileService'
+        ],
     ]
 ];
 
