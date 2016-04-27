@@ -38,7 +38,7 @@ class User extends BaseActiveRecord implements IdentityInterface
             'created_at' => '注册时间',
             'logged_at' => '最近登录',
             'is_enable' => '帐号可用',
-            'avatar_url' => '头像Url',
+            'avatar_id' => '头像ID',
             'avatar' => '头像'
         ];
     }
@@ -170,6 +170,11 @@ class User extends BaseActiveRecord implements IdentityInterface
         return !empty($status) && $map[$status] ? $map[$status] :$map;
     }
 
+    public function getAvatarUrl()
+    {
+        $file = Yii::$app->fileService->search()->one();
 
+        return $file->url;
+    }
 
 }

@@ -40,7 +40,7 @@ class m160114_100812_user extends BaseMigration
                 'role_id' => User::ROLE_MANAGER,
                 'username' => 'admin',
                 'name' => 'Admin',
-                'password' => '1111 ',
+                'password' => '1111',
                 'email' => '188226814@qq.com',
                 'is_enable' => User::BOOLEAN_YES,
             ];

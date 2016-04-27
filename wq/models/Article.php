@@ -62,5 +62,12 @@ class Article extends BaseActiveRecord
             ['creator_id', 'default', 'value' => Yii::$app->userService->getId()]
         ];
     }
+
+    public function getImageUrl()
+    {
+        $file = Yii::$app->fileService->search(['id' => $this->image_id])->one();
+
+        return $file->url;
+    }
 }
 ?>

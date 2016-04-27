@@ -25,7 +25,7 @@ $this->params['pageId'] = 'article-index';
     ?>
     <article class="col-md-12 item">
         <div class="pull-left">
-            <a href="#"><img src="http://wqiang.net/images/1.jpg"></a>
+            <a href="#"><img src="<?=$a->imageUrl?>"></a>
         </div>
         <div class="col-md-12 pull-left right">
             <h4><?=$a->title?></h4>
@@ -33,7 +33,7 @@ $this->params['pageId'] = 'article-index';
             <p ><i class="fa fa-leaf leaf"></i> php学习&nbsp;&nbsp;&nbsp;
                 <i class="fa fa-clock-o clock"></i> <?=date('Y-m-d',$a->created_at) ?>&nbsp;&nbsp;&nbsp;
                 <i class="fa fa-comment-o comment"></i> 评论（32）&nbsp;&nbsp;&nbsp;
-                <i class="fa fa-eye eye"></i>浏览（<?$a->read_count?>）&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-eye eye"></i>浏览（<?=$a->read_count?>）&nbsp;&nbsp;&nbsp;
                 <a class="pull-right" href="#">阅读原文>></a>
             </p>
         </div>

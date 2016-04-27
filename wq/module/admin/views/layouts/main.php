@@ -28,7 +28,7 @@ $currentUser = Yii::$app->user->getIdentity();
         [<a style="color: #eeffde" href="<?=Yii::$app->request->hostInfo?>">前台</a>|<a style="color: #eeffde" href="<?=Url::to(['site/logout'])?>">退出</a>]
     </div>
     <div style="float: right;">
-        <img style="width: 30px;height: 30px;border-radius: 15px;" src="<?=$currentUser->avatar_url?$currentUser->avatar_url:Yii::$app->params['defaultAvatarUrl']?>">
+        <img style="width: 30px;height: 30px;border-radius: 15px;" src="<?=$currentUser->avatar_id?$currentUser->avatarUrl:Yii::$app->params['defaultAvatarUrl']?>">
     </div>
     <div>
         <ul style="padding: 20px 5px 0;margin: 0">

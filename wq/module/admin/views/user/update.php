@@ -26,7 +26,7 @@ $form = ActiveForm::begin([
 <?=$form->field($model, 'mobile')->textInput()?>
 <?=$form->field($model, 'password')->textInput()?>
 <?=$form->field($model, 'role_id')->dropDownList(User::getRoleMap(), ['prompt'=>'请选择角色','style'=>'width:100%'])?>
-<?=$form->field($model, 'avatar_url')->textInput()?>
+<?=$form->field($model, 'avatar_id')->textInput()?>
 <?=$form->field($model, 'is_enable')->dropDownList(User::getBooleanMap(),['prompt'=>'该账号是否可以登录','style'=>'width:100%'])?>
 <?=Html::submitButton('提交保存', [
     'class' => 'btn btn-primary btn-block'

@@ -38,5 +38,16 @@ class FileService extends Component
         print_r($file->url);
         exit;
     }*/
+
+    public function search($where = [])
+    {
+        $query = File::find();
+        if(isset($where['id']) && $where['id']) {
+            $query->andFilterWhere(['id' => $where['id']]);
+        }
+        return $query;
+    }
+
+
 }
 ?>
