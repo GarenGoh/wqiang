@@ -2,6 +2,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\Url;
 
 class Article extends BaseActiveRecord
 {
@@ -68,6 +69,11 @@ class Article extends BaseActiveRecord
         $file = Yii::$app->fileService->search(['id' => $this->image_id])->one();
 
         return $file->url;
+    }
+
+    public function getUrl()
+    {
+        return Url::to(['article/view', 'id' => $this->id]);
     }
 }
 ?>
