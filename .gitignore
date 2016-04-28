@@ -2,4 +2,3 @@
 *.log
 *.rdb
 .DS_Store
-minimages/*
