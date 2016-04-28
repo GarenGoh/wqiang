@@ -44,8 +44,8 @@ class AdminActiveField extends ActiveField
 
         $html = Html::activeHiddenInput($this->model, $this->attribute, $options);
         $html .= '<div id="'.$fileId.'" class="upload">';
+        $html .= '<img style="display:'.($this->model->image?"":"none").';" class="file" src="'.($this->model->image?$this->model->image->url:"").'">';
         $html .= '
-        <img style="display:none;" class="file" src="">
         <i class="select fa fa-'.($isImage?'picture-o':'file').'"></i>
         <i style="display:none;" class="uploading fa fa-spinner fa-spin"></i>
         ';

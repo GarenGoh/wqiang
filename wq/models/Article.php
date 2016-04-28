@@ -64,11 +64,9 @@ class Article extends BaseActiveRecord
         ];
     }
 
-    public function getImageUrl()
+    public function getImage()
     {
-        $file = Yii::$app->fileService->search(['id' => $this->image_id])->one();
-
-        return $file->url;
+        return $this->image_id?Yii::$app->fileService->search(['id' => $this->image_id])->one():"";
     }
 
     public function getUrl()
