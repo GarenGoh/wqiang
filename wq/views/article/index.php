@@ -1,8 +1,9 @@
 <?php
 use yii\data\ActiveDataProvider;
+use app\models\Article;
 
 $where = Yii::$app->request->get();
-$where['is_enable'] = 1;
+$where['category'] = $category;
 $query = Yii::$app->articleService->search($where)
     ->orderBy(['id' => SORT_DESC]);
 
@@ -18,7 +19,7 @@ $this->params['pageId'] = 'article-index';
 ?>
 <div class="col-md-9 primary-block">
     <div class="h1 category">
-        <?=strtoupper($category)?>
+        <?=Article::getCategoryMap($category)?>
     </div>
     <?php
     foreach($articles as $a) {

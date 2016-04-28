@@ -22,5 +22,12 @@ class Url extends baseUrl
         $route = array_merge(['/'.Yii::$app->requestedRoute], $params);
         return Url::to($route);
     }
+
+    public static function isAdmin()
+    {
+        $route = Yii::$app->requestedRoute;
+        $route = substr($route, 0, strlen(ADMIN_NAME));
+        return ($route == ADMIN_NAME);
+    }
 }
 ?>
