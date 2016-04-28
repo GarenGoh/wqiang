@@ -45,10 +45,10 @@ $navArticle = \app\models\Article::getCategoryMap();
             ?>
             <li class="nav pull-right"><a href="<?=Url::to(['site/logout'])?>" class="login">退出</a>]</li>
             <li class="nav pull-right">[<a href="<?=Url::to(['admin/site'])?>" class="login">后台</a>|</li>
-            <img class="user-avatar" src="<?=$currentUser->avatar_id?$currentUser->avatarUrl:Yii::$app->params['defaultAvatarUrl']?>">
+            <img class="user-avatar" src="<?=$currentUser->avatar_id?$currentUser->avatar->url:Yii::$app->params['defaultAvatarUrl']?>">
             <?php }else{?>
                 <li class="pull-right nav"><a href="<?=Url::to(['site/logout'])?>" class="login">退出</a></li>
-                <img class="user-avatar" src="<?=$currentUser->avatar_id?$currentUser->avatarUrl:Yii::$app->params['defaultAvatarUrl']?>">
+                <img class="user-avatar" src="<?=$currentUser->avatar_id?$currentUser->avatar->url:Yii::$app->params['defaultAvatarUrl']?>">
             <?php }}?>
         </ul>
     </div>

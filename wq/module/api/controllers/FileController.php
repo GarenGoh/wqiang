@@ -27,7 +27,7 @@ class FileController extends Controller
                 if($result) {
                     //缩略图
                     //Tools::makeThumbnail('images/'.$newName,'minimages/'.$newName,'80','70');
-                    $save = Yii::$app->fileService->save($uploadedFile, $options);
+                    $save = Yii::$app->fileService->saveToDb($uploadedFile, $options);
                     return $save;
                 }
             }

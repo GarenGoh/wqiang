@@ -15,8 +15,23 @@ class m160425_062334_file extends BaseMigration
             'prefix'     => "varchar(200)              NULL COMMENT '路径前缀'",
             'PRIMARY KEY `id`(`id`)'
         ], "文件表");
+
+        $this->create();
     }
 
+    public function create() {
+        $userAvatarIds = Yii::$app->params['defaultAvatarIds'];
+        foreach($userAvatarIds as $k => $v) {
+            $file = new \app\models\File();
+            $file->id = $k;
+            $file->name = $v;
+            $file->old_name = $v;
+            $file->size = '10';
+            $file->type = 'image/jpeg';
+            $file->prefix = 'user/';
+            $file->save();
+        }
+    }
     public function down()
     {
         $this->dropTable('file');

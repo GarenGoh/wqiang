@@ -29,8 +29,6 @@ class AdminActiveField extends ActiveField
         return Html::getAttributeName($this->attribute);
     }
 
-
-
     public function image($options = [])
     {
         return $this->file($options, true);
@@ -40,7 +38,7 @@ class AdminActiveField extends ActiveField
     {
         $prefix = $options['prefix'];
         $fileId = $prefix.'_image';
-        $inputId = 'article-image_id';
+        $inputId = $this->getAttributeId();
 
         $html = Html::activeHiddenInput($this->model, $this->attribute, $options);
         $html .= '<div id="'.$fileId.'" class="upload">';

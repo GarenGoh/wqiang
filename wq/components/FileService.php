@@ -8,7 +8,7 @@ use yii\web\UploadedFile;
 
 class FileService extends Component
 {
-    public function save(UploadedFile $uploadedFile, $options)
+    public function saveToDb(UploadedFile $uploadedFile, $options)
     {
         $file = new File();
         $attributes = [

@@ -86,7 +86,9 @@ class User extends BaseActiveRecord implements IdentityInterface
             }],
             ['is_enable', 'default', 'value' => self::BOOLEAN_YES],
             [['is_email_enable', 'is_mobile_enable'], 'default', 'value' => '0'],
-            ['created_at', 'default', 'value' => time()]
+            ['created_at', 'default', 'value' => time()],
+            ['avatar_id', 'default', 'value' => array_keys(Yii::$app->params['defaultAvatarIds'])[rand(1,count(Yii::$app->params['defaultAvatarIds']))] ],
+
 
         ];
     }
@@ -177,4 +179,8 @@ class User extends BaseActiveRecord implements IdentityInterface
         return $file->url;
     }
 
+    public function getAvatar()
+    {
+        return $this->avatar_id?Yii::$app->fileService->search(['id' => $this->avatar_id])->one():"";
+    }
 }
