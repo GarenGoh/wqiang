@@ -20,7 +20,7 @@ class FileService extends Component
         ];
         $file->setAttributes($attributes, false);
         $file->save();
-        return  json_encode(['url' => $file->url,'id' => $file->id]);
+        return json_encode(['url' => $file->url,'id' => $file->id]);
     }
 
     /*public function save()
