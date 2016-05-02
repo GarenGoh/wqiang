@@ -2,6 +2,11 @@
 use app\helpers\Url;
 
 $this->params['pageId'] = 'article-view';
+$hotArticles = Yii::$app->articleService->search(['category' => $model->category])
+    ->select(['id', 'title', 'read_count'])
+    ->limit(5)
+    ->orderBy(['read_count' => SORT_DESC])
+    ->all();
 ?>
 <div class="col-md-12 nav">
     <p class="">
@@ -26,7 +31,7 @@ $this->params['pageId'] = 'article-view';
             <h3>热门文章</h3>
         </div>
         <div class="col-md-12 body">
-            <ul class="clone" clone="7">
+            <ul>
                 <li>博客中百度链接自动提交用到了</li>
                 <li>博客中百度链接自动提交用到了</li>
                 <li>博客中百度链接自动提交用到了</li>
