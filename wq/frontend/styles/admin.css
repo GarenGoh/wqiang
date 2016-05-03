@@ -97,3 +97,9 @@ h6 a:hover {
   color: #fff;
   text-decoration: none;
 }
+.admin-content a {
+  color: #759B08;
+}
+.admin-content a:hover {
+  color: #567efc;
+}

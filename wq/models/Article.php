@@ -71,7 +71,7 @@ class Article extends BaseActiveRecord
 
     public function getUrl()
     {
-        return Url::to(['article/view', 'id' => $this->id]);
+        return Url::to(['/article/view', 'id' => $this->id]);
     }
 }
 ?>

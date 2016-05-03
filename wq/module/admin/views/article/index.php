@@ -27,7 +27,7 @@ use app\models\Article;
                     [
                         'attribute' => 'title',
                         'content' => function($model) {
-                            return Html::string($model->title,10);
+                            return Html::a(Html::string($model->title,10), $model->url, ['id' => $model->id]);
                         }
                     ],
                     'creator_id',
@@ -65,7 +65,7 @@ use app\models\Article;
                         }
                     ],
                 ],
-            ]); ?>
+            ]);?>
         </div>
     </div>
     <div class="col-md-2">
