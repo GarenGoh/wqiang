@@ -38,7 +38,7 @@ class File extends BaseActiveRecord
 
     public function getUrl()
     {
-        return Yii::$app->request->hostInfo.'/'.Yii::$app->params['uploadDir'].$this->getKey();
+        return Yii::$app->params['uploadDir'].$this->getKey();
     }
 }
 ?>

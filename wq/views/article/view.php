@@ -1,5 +1,7 @@
 <?php
+/* @var $this \yii\web\View */
 use app\helpers\Url;
+use yii\web\View;
 
 $this->params['pageId'] = 'article-view';
 $hotArticles = Yii::$app->articleService->search(['category' => $model->category])
@@ -15,7 +17,7 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
         <span class="pull-right motto">天不随我意，我欲封天，唯一死尔！</span>
     </p>
 </div>
-<div class="col-md-9 article">
+<div class="col-md-9 article" style='background: repeat-y right url("<?=Yii::$app->params['line']?>");'>
     <h3 class="title"><?=$model->title?></h3>
     <p class="article-info">
         发布时间：<?=date('Y-m-d',$model->created_at)?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -32,12 +34,9 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
         </div>
         <div class="col-md-12 body">
             <ul>
-                <li>博客中百度链接自动提交用到了</li>
-                <li>博客中百度链接自动提交用到了</li>
-                <li>博客中百度链接自动提交用到了</li>
-                <li>博客中百度链接自动提交用到了</li>
-                <li>博客中百度链接自动提交用到了</li>
-                <li>博客中百度链接自动提交用到了</li>
+                <?php foreach($hotArticles as $article) { ?>
+                <li><a href="<?=$article->url?>"><?=$article->title?></a></li>
+                <?php }?>
             </ul>
         </div>
     </div>
@@ -47,18 +46,26 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
         </div>
         <div class="containe" >
             <div class="hex" style="background: #986625;">
-                <p  class="h3" style="color: #fff;margin: 0">php</p>
-                <a href="#"></a>
+                <a href="#" class="h3" style="margin-top: 4px;" ">PHP</a>
                 <div class="corner-1"></div>
                 <div class="corner-2"></div>
             </div>
             <div class="hex" style="background: #138898;">
-                <h6 style="color: #fff;margin: 0;width: 32px;">JavaScripts</h6>
-                <a href="#"></a>
+                <a href="#" style="font-size: 12px;">Java Script</a>
                 <div class="corner-1"></div>
                 <div class="corner-2"></div>
             </div>
             <div class="hex" style="background: #49980c;">
+                <a href="#" class="h4" style="margin-top: 6px;">MySql</a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+            <div class="hex" style="background: #49980c;">
+                <a href="#" style="font-size: 12px;margin-top: 8px;">Bootstrap</a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+            <div class="hex hex-half-neg" style="background: #49980c;">
                 <a href="#"></a>
                 <div class="corner-1"></div>
                 <div class="corner-2"></div>
@@ -67,3 +74,11 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
         </div>
     </div>
 </div>
+<?php
+$js = "
+$('.article-tag').sticky({
+        'top': 0
+      });
+";
+$this->registerJs($js, View::POS_END)
+?>

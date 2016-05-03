@@ -174,9 +174,6 @@
   padding: 26px;
   font-size: 12px;
 }
-#article-view .article {
-  background: repeat-y right url('http://wqiang.ts/images/default/r_line.jpg');
-}
 #article-view .article .title {
   text-align: center;
 }
@@ -184,9 +181,9 @@
   border: dashed 1px #ccc;
   text-align: center;
   color: #aaa;
-  margin-right: 10px;
+  margin-right: 8px;
 }
-#article-view .article .cotent {
+#article-view .article .content {
   margin-top: 30px;
 }
 #article-view .secondary-block .hot-article .head {
@@ -249,7 +246,8 @@
   display: block;
   width: 100%;
   height: 100%;
-  text-indent: -9999em;
+  color: #fff;
+  margin: 0 auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -305,7 +303,7 @@
   margin-left: 32px;
 }
 #article-view .secondary-block .article-tag .hex-half-neg {
-  margin-left: -32px;
+  margin-left: -27px;
 }
 #article-view .secondary-block .article-tag .hex-one {
   margin-left: 64px;
