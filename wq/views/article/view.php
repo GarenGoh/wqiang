@@ -41,10 +41,11 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
         </div>
     </div>
     <div class="article-tag col-md-12">
-        <div>
+        <div class="head col-md-6">
             <h3>热门标签</h3>
         </div>
-        <div class="containe" >
+        <div class="col-md-12 body"></div>
+        <div class="containe" style="margin-top: 30px;">
             <div class="hex" style="background: #986625;">
                 <a href="#" class="h3" style="margin-top: 4px;" ">PHP</a>
                 <div class="corner-1"></div>
