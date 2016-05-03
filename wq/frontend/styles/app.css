@@ -31,7 +31,7 @@
 }
 #app-top .item ul {
   margin: 0;
-  padding: 10px 5px 0 5%;
+  padding: 20px 4px 0 5%;
 }
 #app-top .item .nav {
   margin-bottom: 0;
@@ -40,10 +40,30 @@
 }
 #app-top .item .nav a {
   color: #fff;
-  padding: 0 30px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  padding: 8px 16px 6px;
+  margin-right: 25px;
 }
-#app-top .item .nav .login {
-  padding: 0 5px;
+#app-top .item .nav a:hover {
+  background: #2b585c;
+  text-decoration: none;
+}
+#app-top .item .login {
+  margin-bottom: 0;
+  font-size: 14px;
+  list-style-type: none;
+  padding: 0;
+  color: #fff;
+}
+#app-top .item .login a {
+  color: #fff;
+}
+#app-top .item .login a:hover {
+  color: #15A085;
+}
+#app-top .item img {
+  margin-top: -5px;
 }
 #app-top .user-avatar {
   background: #fff;

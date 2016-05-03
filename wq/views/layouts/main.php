@@ -38,16 +38,16 @@ $navArticle = \app\models\Article::getCategoryMap();
             <?php }?>
             <li class="nav pull-left"><a href="<?=Url::to(['site/about'])?>" >关于我</a></li>
             <?php if(Yii::$app->user->isGuest){ ?>
-            <li class="nav pull-right"><a href="<?=Url::to(['site/register'])?>" class="login">注册</a></li>
-            <li class="nav pull-right"><a href="<?=Url::to(['site/login'])?>" class="login">登录</a></li>
+            <li class="login pull-right"><a href="<?=Url::to(['site/register'])?>">注册</a>]</li>
+            <li class="login pull-right">[<a href="<?=Url::to(['site/login'])?>">登录</a>|</li>
             <?php
             }else{ if($currentUser->role_id == User::ROLE_MANAGER || Yii::$app->userService->isRoot($currentUser->id)){
             ?>
-            <li class="nav pull-right"><a href="<?=Url::to(['site/logout'])?>" class="login">退出</a>]</li>
-            <li class="nav pull-right">[<a href="<?=Url::to(['admin/site'])?>" class="login">后台</a>|</li>
+            <li class="login pull-right"><a href="<?=Url::to(['site/logout'])?>">退出</a>]</li>
+            <li class="login pull-right">[<a href="<?=Url::to(['admin/site'])?>">后台</a>|</li>
             <img class="user-avatar" src="<?=$currentUser->avatar_id?$currentUser->avatar->url:Yii::$app->params['defaultAvatarUrl']?>">
             <?php }else{?>
-                <li class="pull-right nav"><a href="<?=Url::to(['site/logout'])?>" class="login">退出</a></li>
+                <li class="pull-right login"><a href="<?=Url::to(['site/logout'])?>">退出</a></li>
                 <img class="user-avatar" src="<?=$currentUser->avatar_id?$currentUser->avatar->url:Yii::$app->params['defaultAvatarUrl']?>">
             <?php }}?>
         </ul>
