@@ -52,7 +52,7 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
                 <div class="corner-2"></div>
             </div>
             <div class="hex" style="background: #138898;">
-                <a href="#" style="font-size: 12px;">Java Script</a>
+                <a href="#" style="margin-top: 8px;font-size: 12px;">JavaScript</a>
                 <div class="corner-1"></div>
                 <div class="corner-2"></div>
             </div>

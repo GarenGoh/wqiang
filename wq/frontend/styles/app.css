@@ -55,7 +55,7 @@
   border-radius: 15px;
 }
 .content-wrapper {
-  margin: 20px 3%;
+  margin: 20px auto;
 }
 #app-footer {
   background-color: #05435c;
@@ -186,6 +186,9 @@
 #article-view .article .content {
   margin-top: 30px;
 }
+#article-view .secondary-block {
+  font-family: 'Times New Roman', 'Microsoft YaHei', 'New York', serif, Times, TimesNR;
+}
 #article-view .secondary-block .hot-article .head {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -265,6 +268,9 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+#article-view .secondary-block .article-tag .hex a:hover {
+  text-decoration: none;
 }
 #article-view .secondary-block .article-tag .hex .corner-1,
 #article-view .secondary-block .article-tag .hex .corner-2 {
