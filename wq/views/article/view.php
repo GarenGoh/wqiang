@@ -20,17 +20,17 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
 <div class="col-md-9 article" style='background: repeat-y right url("<?=Yii::$app->params['line']?>");'>
     <h3 class="title"><?=$model->title?></h3>
     <p class="article-info">
-        发布时间：<?=date('Y-m-d',$model->created_at)?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        编辑：garen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        发布时间：<?=date('Y-m-d',$model->created_at)?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        编辑：garen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         阅读（<?=$model->read_count?>）</p>
     <div class="content">
         <?=$model->content?>
     </div>
 </div>
 <div class="col-md-3 secondary-block">
-    <div class=" hot-article" style="background: #eee;">
-        <div class="head col-md-6">
-            <h3>热门文章</h3>
+    <div class="hot-article">
+        <div class="head col-md-4">
+            <h4 class="title">热门文章</h4>
         </div>
         <div class="col-md-12 body">
             <ul>
@@ -41,8 +41,8 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
         </div>
     </div>
     <div class="article-tag col-md-12">
-        <div class="head col-md-6">
-            <h3>热门标签</h3>
+        <div class="head col-md-4">
+            <h4 class="title">热门标签</h4>
         </div>
         <div class="col-md-12 body"></div>
         <div class="containe" style="margin-top: 30px;">

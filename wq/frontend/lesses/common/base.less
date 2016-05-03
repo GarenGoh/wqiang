@@ -1,23 +1,19 @@
-@blue: #567efc;
 @font-color: #756F71;
-@h-color: #333;
+@a-color: #333;
 a {
-  color: #759B08;
+  color: @a-color;
   &:hover {
-    color: @blue;
+    color: #567efc;
+    text-decoration:none;
   }
 }
-
 p {
   color: @font-color;
 }
-
 h1,h2,h3,h4,h5,h6 {
   a {
-    color: @h-color;
     &:hover {
-      color: @h-color;
-      text-decoration:none;
+      color: @a-color;
     }
   }
 }

@@ -6,7 +6,6 @@ $where = Yii::$app->request->get();
 $where['category'] = $category;
 $query = Yii::$app->articleService->search($where)
     ->orderBy(['id' => SORT_DESC]);
-
 $provider = new ActiveDataProvider([
     'query' => $query,
     'pagination' => [
@@ -14,8 +13,12 @@ $provider = new ActiveDataProvider([
     ]
 ]);
 $articles = $provider->getModels();
-
 $this->params['pageId'] = 'article-index';
+$hotArticles = Yii::$app->articleService->search()
+    ->select(['id', 'title', 'read_count'])
+    ->limit(5)
+    ->orderBy(['read_count' => SORT_DESC])
+    ->all();
 ?>
 <div class="col-md-9 primary-block">
     <div class="h1 category">
@@ -49,9 +52,9 @@ $this->params['pageId'] = 'article-index';
         </div>
         <div class="col-md-12 body">
             <ul>
-                <li>博客中百度链接自动提交用到了博客中百度链接自动提交用到了博客中百度链接自动提交用到了</li>
-                <li>博客中百度链接自动提交用到了</li>
-                <li>博客中百度链接自动提交用到了</li>
+                <?php foreach($hotArticles as $a) {?>
+                <li><a href="<?=$a->url?>"><?=$a->title?></a></li>
+                <?php }?>
             </ul>
         </div>
     </div>

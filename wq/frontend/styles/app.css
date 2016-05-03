@@ -116,6 +116,12 @@
 #article-index .primary-block .item .right h4 {
   margin-top: 0;
 }
+#article-index .primary-block .item .right p a {
+  color: #759B08;
+}
+#article-index .primary-block .item .right p a:hover {
+  color: #567efc;
+}
 #article-index .primary-block .item .right .summary {
   height: 80px;
   overflow: hidden;
@@ -148,8 +154,14 @@
 #article-index .secondary-block .hot-article .body ul li {
   list-style-type: none;
   border-bottom: solid 1px #ddd;
+}
+#article-index .secondary-block .hot-article .body ul li a {
   padding-bottom: 4px;
   padding-top: 10px;
+  display: block;
+}
+#article-index .secondary-block .hot-article .body ul li:hover {
+  border-bottom: solid 1px #777;
 }
 #article-view .nav p {
   border-bottom: solid 1px #eee;
@@ -190,13 +202,13 @@
   font-family: 'Times New Roman', 'Microsoft YaHei', 'New York', serif, Times, TimesNR;
 }
 #article-view .secondary-block .hot-article .head {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
   padding: 0;
   background: #FB4F4F;
 }
-#article-view .secondary-block .hot-article .head h3 {
-  margin: 0 0 0 6px;
+#article-view .secondary-block .hot-article .head .title {
+  margin: 4px 6px 1px;
 }
 #article-view .secondary-block .hot-article .body {
   border-top: #FB4F4F 1px solid;
@@ -208,20 +220,26 @@
 #article-view .secondary-block .hot-article .body ul li {
   list-style-type: none;
   border-bottom: solid 1px #ddd;
+}
+#article-view .secondary-block .hot-article .body ul li a {
   padding-bottom: 4px;
   padding-top: 10px;
+  display: block;
+}
+#article-view .secondary-block .hot-article .body ul li:hover {
+  border-bottom: solid 1px #777;
 }
 #article-view .secondary-block .article-tag {
   padding: 0;
 }
 #article-view .secondary-block .article-tag .head {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
   padding: 0;
   background: #ddd;
 }
-#article-view .secondary-block .article-tag .head h3 {
-  margin: 0 0 0 6px;
+#article-view .secondary-block .article-tag .head .title {
+  margin: 4px 6px 1px;
 }
 #article-view .secondary-block .article-tag .body {
   border-top: #ddd 1px solid;

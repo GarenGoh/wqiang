@@ -28,21 +28,14 @@
   cursor: pointer;
 }
 a {
-  color: #759B08;
+  color: #333;
 }
 a:hover {
   color: #567efc;
+  text-decoration: none;
 }
 p {
   color: #756F71;
-}
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  color: #333;
 }
 h1 a:hover,
 h2 a:hover,
@@ -51,6 +44,5 @@ h4 a:hover,
 h5 a:hover,
 h6 a:hover {
   color: #333;
-  text-decoration: none;
 }
 /* admin */

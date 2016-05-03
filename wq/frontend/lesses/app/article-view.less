@@ -42,12 +42,12 @@
     font-family: 'Times New Roman','Microsoft YaHei','New York', serif, Times, TimesNR;
     .hot-article {
       .head {
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
         padding: 0;
         background: #FB4F4F;
-        h3 {
-          margin: 0 0 0 6px;
+        .title {
+          margin: 4px 6px 1px;
         }
       }
       .body {
@@ -58,8 +58,14 @@
           li {
             list-style-type:none;
             border-bottom: solid 1px #ddd;
-            padding-bottom: 4px;
-            padding-top: 10px
+            a {
+              padding-bottom: 4px;
+              padding-top: 10px;
+              display:block
+            }
+            &:hover {
+              border-bottom: solid 1px #777;
+            }
           }
         }
       }
@@ -67,12 +73,12 @@
     .article-tag {
       padding: 0;
       .head {
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
         padding: 0;
         background: #ddd;
-        h3 {
-          margin: 0 0 0 6px;
+        .title {
+          margin: 4px 6px 1px;
         }
       }
       .body {
