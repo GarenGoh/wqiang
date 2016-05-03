@@ -172,13 +172,6 @@ class User extends BaseActiveRecord implements IdentityInterface
         return !empty($status) && $map[$status] ? $map[$status] :$map;
     }
 
-    public function getAvatarUrl()
-    {
-        $file = Yii::$app->fileService->search()->one();
-
-        return $file->url;
-    }
-
     public function getAvatar()
     {
         return $this->avatar_id?Yii::$app->fileService->search(['id' => $this->avatar_id])->one():"";
