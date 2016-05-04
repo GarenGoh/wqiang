@@ -5,8 +5,8 @@ return [
     'appName' => 'Garen',
     'appTitle' => 'Garen的个人博客！',
     'adminTitle' => '后台管理',
-    'logoUrl' => $uploadDir.'logo.png',
-    'defaultAvatarUrl' => $uploadDir.'avatar.png',
+    'logoUrl' => $uploadDir.'default/logo.png',
+    'defaultAvatarUrl' => $uploadDir.'default/avatar.png',
     'defaultAvatarIds' => [
         1 => 'default_avatar_1.jpg',
         2 => 'default_avatar_2.jpg',
@@ -18,8 +18,8 @@ return [
         8 => 'default_avatar_8.jpg',
         9 => 'default_avatar_9.jpg',
         ],
-    'defaultImageUrl' => $uploadDir.'1.jpg',
-    '404Image' => $uploadDir.'404Image.png',
+    'defaultImageUrl' => $uploadDir.'default/1.jpg',
+    '404Image' => $uploadDir.'default/404Image.png',
     'uploadDir' => $uploadDir,
     'line' => $uploadDir.'default/r_line.jpg',
 ];

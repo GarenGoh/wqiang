@@ -1,6 +1,4 @@
 #article-index {
-  @img-width: 180px;
-  @img-height: 140px;
   .primary-block {
     .category {
       margin-top: 0;
@@ -15,15 +13,15 @@
         z-index: 2;
         position: relative;
         img {
-          width: @img-width;
-          height: @img-height;
+          width: @article-img-width;
+          height: @article-img-height;
         }
       }
       .right {
         position: relative;
         z-index: 1;
-        margin-left: -(@img-width);
-        padding-left: @img-width+20px;
+        margin-left: -(@article-img-width);
+        padding-left: @article-img-width+20px;
         padding-right: 0;
         h4 {
           margin-top: 0;
