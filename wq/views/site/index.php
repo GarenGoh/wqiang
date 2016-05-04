@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Garen 的主页';
+$this->params['pageId'] = 'app-home';
 ?>
 <div class="col-md-9 primary-block">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
