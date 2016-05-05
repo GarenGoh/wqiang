@@ -30,6 +30,7 @@ $form = ActiveForm::begin([
         ])->image(['prefix' => 'article'])?>
         <?=$form->field($model, 'category')->dropDownList(Article::getCategoryMap(), ['prompt'=>'选择分类','style'=>'width:100%'])?>
         <?=$form->field($model, 'keywords')->textInput(['placeholder' => '多个关键词以“,”隔开'])?>
+        <?=$form->field($model, 'source')->textUrl()?>
         <?=$form->field($model, 'is_hot')->dropDownList(Article::getBooleanMap(), ['prompt'=>'该文章是否排在所有文章之前','style'=>'width:100%'])?>
         <?=$form->field($model, 'is_enable')->dropDownList(Article::getBooleanMap(),['prompt'=>'该文章在前台是否显示','style'=>'width:100%'])?>
         <?=$form->field($model, 'summary')->textarea()?>

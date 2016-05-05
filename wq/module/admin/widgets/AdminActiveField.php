@@ -83,4 +83,32 @@ class AdminActiveField extends ActiveField
         $this->form->view->registerJs($js, View::POS_END);
         return $this;
     }
+
+    /*
+     * 为一个属性添加两个input，以数组提交
+     */
+    public function textUrl($options = [])
+    {
+        $this->adjustLabelFor($options);//为label设置for属性，需要设置$options['id']
+
+        $value = $this->getAttributeValue();
+
+        $html = '<div class="row">';
+        $option1 = [
+            'class' => 'form-control',
+            'value' => isset($value[0]) ? $value[0] : null,
+            'placeholder' => '输入链接的文字'
+        ];
+        $html .= '<div class="col-lg-6">'.Html::activeTextInput($this->model, $this->attribute.'[]', $option1).'</div>';
+        $option2 = [
+            'class' => 'form-control',
+            'value' => isset($value[1]) ? $value[1] : null,
+            'placeholder' => '输入链接的地址，一般以http开始'
+        ];
+        $html .= '<div class="col-lg-6">'.Html::activeTextInput($this->model, $this->attribute.'[]', $option2).'</div>';
+        $html .= '</div>';
+
+        $this->parts['{input}'] = $html;
+        return $this;
+    }
 }

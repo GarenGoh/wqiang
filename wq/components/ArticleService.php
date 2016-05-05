@@ -33,8 +33,9 @@ class ArticleService extends Component
     {
         if($attributes) {
             $article->setAttributes($attributes,false);
-            return $article->save();
         }
+        
+        return $article->save();
     }
 }
 ?>

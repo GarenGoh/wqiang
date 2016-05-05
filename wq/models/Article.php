@@ -33,6 +33,7 @@ class Article extends BaseActiveRecord
             'is_hot' => '是否热点',
             'image_id' => '封面ID',
             'image' => '封面',
+            'source' => '来源',
         ];
     }
 
@@ -60,18 +61,35 @@ class Article extends BaseActiveRecord
             [['title'], 'string', 'max' => 200],
             [['keywords'], 'string', 'max' => 100],
             ['created_at', 'default', 'value' => time()],
-            ['creator_id', 'default', 'value' => Yii::$app->userService->getId()]
+            ['creator_id', 'default', 'value' => Yii::$app->userService->getId()],
+            ['source', 'filter', 'filter' => function() {
+                return is_array($this->source) ? implode('#o#', $this->source) : $this->source;
+            }]
         ];
     }
 
+    /*
+     * 返回文章的封面图，它是一个File类的实例
+     */
     public function getImage()
     {
         return $this->image_id?Yii::$app->fileService->search(['id' => $this->image_id])->one():"";
     }
 
+    /*
+     * 返回当前文章的URL
+     */
     public function getUrl()
     {
-        return Url::to(['/article/view', 'id' => $this->id]);
+        return Url::to(['/article/view', 'id' => $this->id]);// ‘/article’中的‘/’不能少，否则后台跳转失败
+    }
+
+    /*
+     * 将文章来源拆分成一个包含名字和URL的数组
+     */
+    public function afterFind()
+    {
+        $this->source = $this->source ? explode('#o#', $this->source) : [];
     }
 }
 ?>
