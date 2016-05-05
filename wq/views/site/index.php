@@ -1,6 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 use app\helpers\Html;
+use yii\helpers\Url;
 
 $this->title = 'Garen 的主页';
 $this->params['pageId'] = 'app-home';
@@ -22,21 +23,21 @@ $articles = Yii::$app->articleService->search()
         <!-- Wrapper for slides -->
         <div class="carousel-inner sparkly" role="listbox">
             <div class="item active">
-                <a href="#"><img src="/images/06.jpg" alt="" style="height: 400px;width: 100%"></a>
+                <img src="<?=Yii::$app->params['uploadDir'].'default/admin2.jpg'?>" alt="" style="height: 400px;width: 100%">
                 <div class="carousel-caption" style="text-align: left ">
                     <h3><a href="#" style="color: #fff">标题标题标题标题标题</a></h3>
                     <p><a href="#" style="color: #DDD">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</a></p>
                 </div>
             </div>
             <div class="item">
-                <img class="image" src="/images/01.jpg" alt="..." style="height: 400px;width: 100%">
+                <img src="<?=Yii::$app->params['uploadDir'].'default/admin1.jpg'?>" alt="..." style="height: 400px;width: 100%">
                 <div class="carousel-caption">
                     <h3>标题</h3>
                     <p>简介</p>
                 </div>
             </div>
             <div class="item">
-                <img src="/images/02.jpg" alt="..." style="height: 400px;width: 100%">
+                <img src="<?=Yii::$app->params['uploadDir'].'default/admin3.jpg'?>" alt="..." style="height: 400px;width: 100%">
                 <div class="carousel-caption">
                     <h3></h3>
                     <p></p>
@@ -93,11 +94,11 @@ $articles = Yii::$app->articleService->search()
         <div class="body">
             <div class="col-md-3 item">
                 <i class="fa fa-github"></i>
-                <p class="sparkly-p"><a href="#">GitHub</a></p>
+                <p class="sparkly-p"><a href="https://github.com/GarenGoh">GitHub</a></p>
             </div>
             <div class="col-md-3 item">
                 <i class="fa fa-weibo" style="color: #FE2A27;"></i>
-                <p class="sparkly-p"><a href="#">微 博</a></p>
+                <p class="sparkly-p"><a href="http://weibo.com/wuqiangbaba">微 博</a></p>
             </div>
             <div class="col-md-3 item">
                 <i class="fa fa-wechat" style="color: #3DAF36;"></i>
@@ -111,7 +112,7 @@ $articles = Yii::$app->articleService->search()
     </div>
     <div class="col-md-12 about-me">
         <div class="head img">
-            <a href="#"><img src="/images/02.jpg" id="image"></a>
+            <a href="<?=Url::to(['site/about'])?>"><img src="<?=Yii::$app->params['uploadDir'].'default/admin2.jpg'?>"></a>
         </div>
         <div class="body">
             <p>网名：<small>Garen.Goh</small></p>
