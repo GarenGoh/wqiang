@@ -369,6 +369,13 @@
 #article-view .secondary-block .article-tag .hex-one {
   margin-left: 64px;
 }
+#app-home .primary-block .carousel img {
+  height: 400px;
+  width: 100%;
+}
+#app-home .primary-block .carousel i {
+  margin-top: 150px;
+}
 #app-home .primary-block .article {
   margin-top: 30px;
 }

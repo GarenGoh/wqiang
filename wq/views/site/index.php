@@ -9,7 +9,6 @@ $articles = Yii::$app->articleService->search()
     ->orderBy(['is_hot' => SORT_DESC, 'id' => SORT_DESC])
     ->limit(10)
     ->all();
-
 ?>
 <div class="col-md-9 primary-block">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -23,21 +22,21 @@ $articles = Yii::$app->articleService->search()
         <!-- Wrapper for slides -->
         <div class="carousel-inner sparkly" role="listbox">
             <div class="item active">
-                <img src="<?=Yii::$app->params['uploadDir'].'default/admin2.jpg'?>" alt="" style="height: 400px;width: 100%">
+                <img src="<?=Yii::$app->params['uploadDir'].'default/admin2.jpg'?>" style="height: 400px;width: 100%">
                 <div class="carousel-caption" style="text-align: left ">
                     <h3><a href="#" style="color: #fff">标题标题标题标题标题</a></h3>
                     <p><a href="#" style="color: #DDD">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</a></p>
                 </div>
             </div>
             <div class="item">
-                <img src="<?=Yii::$app->params['uploadDir'].'default/admin1.jpg'?>" alt="..." style="height: 400px;width: 100%">
+                <img src="<?=Yii::$app->params['uploadDir'].'default/admin1.jpg'?>">
                 <div class="carousel-caption">
                     <h3>标题</h3>
                     <p>简介</p>
                 </div>
             </div>
             <div class="item">
-                <img src="<?=Yii::$app->params['uploadDir'].'default/admin3.jpg'?>" alt="..." style="height: 400px;width: 100%">
+                <img src="<?=Yii::$app->params['uploadDir'].'default/admin3.jpg'?>">
                 <div class="carousel-caption">
                     <h3></h3>
                     <p></p>
@@ -47,11 +46,11 @@ $articles = Yii::$app->articleService->search()
 
         <!-- Controls -->
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <i class="fa fa-chevron-left" style="margin-top: 150px;"></i>
+            <i class="fa fa-chevron-left"></i>
             <span class="sr-only">Previous</span>
         </a>
         <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <i class="fa fa-chevron-right" style="margin-top: 150px;"></i>
+            <i class="fa fa-chevron-right"></i>
             <span class="sr-only">next</span>
         </a>
     </div>
