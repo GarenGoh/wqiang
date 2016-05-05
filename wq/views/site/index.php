@@ -1,8 +1,10 @@
 <?php
 /* @var $this yii\web\View */
+use Yii;
 
 $this->title = 'Garen 的主页';
 $this->params['pageId'] = 'app-home';
+$articles = Yii::$app->articleService->search()
 ?>
 <div class="col-md-9 primary-block">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

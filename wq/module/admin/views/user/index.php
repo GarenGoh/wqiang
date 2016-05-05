@@ -12,15 +12,15 @@ use app\models\User;
         <div class="table-responsive">
             <?= GridView::widget([
                 'pager' => [
-                    'firstPageLabel' => true,
-                    'lastPageLabel' => true,
-                    'maxButtonCount' => 5
+                    'firstPageLabel' => true,//显示第一页
+                    'lastPageLabel' => true,//显示最后一页
+                    'maxButtonCount' => 5//显示分页个数，默认10
                 ],
-                'layout' => "{items}\n{pager}{summary}",
+                'layout' => "{items}\n{pager}{summary}",//页面布局，分页和页面介绍放在项目下面
                 'tableOptions' => [
-                    'class' => 'table table-striped table-hover'
+                    'class' => 'table table-striped table-hover'//设置表格的class，所有class来源于bootstrap
                 ],
-                'dataProvider' => $dataProvider,
+                'dataProvider' => $dataProvider,//数据供应者，数据来源，是一个yii\data\ActiveDataProvider实例
                 'columns' => [
                     'id',
                     'username',
