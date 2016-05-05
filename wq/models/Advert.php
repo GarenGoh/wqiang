@@ -3,6 +3,21 @@ namespace app\models;
 
 use Yii;
 
+/**
+ * This is the model class for table "{{%advert}}".
+ *
+ * @property integer $id
+ * @property integer $position_id
+ * @property integer $image_id
+ * @property string $title
+ * @property string $link
+ * @property string $target
+ * @property string $summary
+ * @property integer $is_enable
+ * @property integer $weight
+ * @property integer $created_at
+ * @property file $image
+ */
 class Advert extends BaseActiveRecord
 {
     const POSITION_HOME = 0;
@@ -48,7 +63,7 @@ class Advert extends BaseActiveRecord
     {
         return [
             ['position_id', 'default', 'value' => static::POSITION_HOME],
-            [['is_enable'], 'default', 'value' => 1],
+            [['is_enable', 'weight'], 'default', 'value' => 1],
             [['title'], 'required'],
             [['summary'], 'string'],
             [['title'], 'string', 'max' => 200],

@@ -27,13 +27,13 @@ use app\models\Advert;
                     [
                         'attribute' => 'title',
                         'content' => function($model) {
-                            return Html::a(Html::string($model->title,10), $model->url, ['id' => $model->id]);
+                            return Html::a(Html::string($model->title,10), $model->link);
                         }
                     ],
                     [
                         'attribute' => 'position',
                         'content' => function($model) {
-                            return Advert::getCategoryMap($model->position_id);
+                            return Advert::getPositionMap($model->position_id);
                         }
                     ],
                     [
