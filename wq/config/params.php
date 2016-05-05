@@ -1,5 +1,5 @@
 <?php
-$uploadDir = HOSTINFO.'images/';
+$uploadDir = '/images/';
 return [
     'adminEmail' => 'wu.qiang@sdk.cn',
     'appName' => 'Garen',

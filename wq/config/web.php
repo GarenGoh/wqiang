@@ -1,6 +1,4 @@
 <?php
-defined('HOSTINFO') or define('HOSTINFO', 'http://wqiang.ts/');
-
 $config = [
     'id' => 'app',
     'basePath' => dirname(__DIR__),
