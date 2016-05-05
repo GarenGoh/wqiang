@@ -158,6 +158,9 @@
 #article-index .primary-block .item .right .eye {
   color: #aaa;
 }
+#article-index .primary-block .linkPager {
+  text-align: center;
+}
 #article-index .secondary-block .hot-article .head {
   background: #FB4F4F;
 }

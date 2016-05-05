@@ -1,10 +1,14 @@
 <?php
 /* @var $this yii\web\View */
-use Yii;
+use app\helpers\Html;
 
 $this->title = 'Garen 的主页';
 $this->params['pageId'] = 'app-home';
 $articles = Yii::$app->articleService->search()
+    ->orderBy(['is_hot' => SORT_DESC, 'id' => SORT_DESC])
+    ->limit(10)
+    ->all();
+
 ?>
 <div class="col-md-9 primary-block">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -54,22 +58,30 @@ $articles = Yii::$app->articleService->search()
         <div class="new-article">
             <h4>最新文章 <small class="pull-right"><a href="#">最新文章最新文章</a></small></h4>
         </div>
-        <div class=" clone" clone="6">
-            <article class="col-md-12 item">
-                <div class="pull-left left">
-                    <a href="#"><img src="images/06.jpg"></a>
-                </div>
-                <div class="col-md-12 pull-left right">
-                    <h4>安装PHP的curl扩展</h4>
-                    <p class="summary">中百度链接自动百度链接自动提交用到了curl，而自己安装PHP的时候并没有安装curl模块。通过查询PHP官方文档，得知编译PHP的时候需要带上-with-curl参数，才可以把curl模块编译进去。但是…</p>
-                    <p ><i class="fa fa-leaf leaf"></i> php学习&nbsp;&nbsp;&nbsp;
-                        <i class="fa fa-clock-o clock"></i> 2016-04-04&nbsp;&nbsp;&nbsp;
-                        <i class="fa fa-comment-o comment"></i> 评论（32）&nbsp;&nbsp;&nbsp;
-                        <i class="fa fa-eye eye"></i>浏览（323）&nbsp;&nbsp;&nbsp;
-                        <a class="pull-right" href="#">阅读原文>></a>
-                    </p>
-                </div>
-            </article>
+        <div>
+            <?php foreach($articles as $a) {?>
+                <article class="col-md-12 item">
+                    <div class="pull-left left">
+                        <a href="<?=$a->url?>"><img src="<?=$a->image->url?>"></a>
+                    </div>
+                    <div class="col-md-12 pull-left right">
+                        <h4><a href="<?=$a->url?>"><?=$a->title?></a></h4>
+                        <p class="summary"><?=Html::string($a->summary, 30)?></p>
+                        <p ><i class="fa fa-leaf leaf"></i>
+                            <?php
+                            if($a->keywords) {
+                                $n=strpos($a->keywords,',');
+                                echo $n ? substr($a->keywords,0,$n) : $a->keywords;
+                            }
+                            ?>&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-clock-o clock"></i> <?=date('Y-m-d',$a->created_at)?>&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-comment-o comment"></i> 评论（32）&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-eye eye"></i>浏览（<?=$a->read_count?>）&nbsp;&nbsp;&nbsp;
+                            <a class="pull-right" href="<?=$a->url?>">阅读原文>></a>
+                        </p>
+                    </div>
+                </article>
+            <?php }?>
         </div>
     </div>
 </div>

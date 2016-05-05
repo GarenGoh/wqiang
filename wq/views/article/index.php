@@ -1,6 +1,7 @@
 <?php
 use yii\data\ActiveDataProvider;
 use app\models\Article;
+use yii\widgets\LinkPager;
 
 $where = Yii::$app->request->get();
 $where['category'] = $category;
@@ -43,6 +44,17 @@ $hotArticles = Yii::$app->articleService->search()
         </div>
     </article>
 <?php }?>
+    <div class="linkPager">
+    <?php
+    $linkPager = new LinkPager([
+        'firstPageLabel' => true,
+        'lastPageLabel' => true,
+        'maxButtonCount' => 5,
+        'pagination' => $provider->pagination
+    ]);
+    $linkPager->run();
+    ?>
+    </div>
 </div>
 <div class="col-md-3 secondary-block">
     <?php ?>
