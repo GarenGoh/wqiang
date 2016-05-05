@@ -50,6 +50,9 @@ $config = [
         'fileService' => [
             'class' => 'app\components\FileService'
         ],
+        'advertService' => [
+            'class' => 'app\components\AdvertService'
+        ],
     ]
 ];
 

@@ -2,16 +2,16 @@
 namespace app\components;
 
 use app\helpers\Url;
-use app\models\Article;
+use app\models\Advert;
 use Yii;
 use yii\base\Component;
 
-class ArticleService extends Component
+class AdvertService extends Component
 {
     public function search($where = [])
     {
         $fields = ['id','category'];
-        $query = Article::find();
+        $query = Advert::find();
         foreach($fields as $f) {
             if(isset($where[$f])) {
                 $query->andFilterWhere([$f => $where[$f]]);
@@ -24,18 +24,18 @@ class ArticleService extends Component
         return $query;
     }
 
-    public function delete(Article $article)
+    public function delete(Advert $advert)
     {
-        return $article->delete();
+        return $advert->delete();
     }
 
-    public function save(Article $article, $attributes)
+    public function save(Advert $advert, $attributes)
     {
         if($attributes) {
-            $article->setAttributes($attributes, false);
+            $advert->setAttributes($attributes, false);
         }
 
-        return $article->save();
+        return $advert->save();
     }
 }
 ?>

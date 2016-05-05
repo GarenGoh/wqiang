@@ -1,7 +1,7 @@
 <?php
 
 namespace app\module\admin\widgets;
-use app\helpers\Tools;
+
 use Yii;
 use yii\bootstrap\ActiveField;
 use app\helpers\Html;

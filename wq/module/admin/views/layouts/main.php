@@ -35,7 +35,7 @@ $currentUser = Yii::$app->user->getIdentity();
             <li class="logo"><a href="<?=Url::to(['site/index'])?>"><img src="<?=Yii::$app->params['logoUrl']?>"></a></li>
             <li class="nav"><a href="<?=Url::to(['user/index'])?>">用&nbsp;&nbsp;户</a></li>
             <li class="nav"><a href="<?=Url::to(['article/index'])?>">文&nbsp;&nbsp;章</a></li>
-            <li class="nav"><a href="#">广&nbsp;告&nbsp;位</a></li>
+            <li class="nav"><a href="<?=Url::to(['advert/index'])?>">广&nbsp;告&nbsp;位</a></li>
             <li class="nav"><a href="#">页&nbsp;&nbsp;面</a></li>
         </ul>
     </div>
