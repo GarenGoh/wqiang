@@ -1,8 +1,8 @@
 <?php
 /* @var $this yii\web\View */
 use app\helpers\Html;
-use yii\helpers\Url;
 use yii\web\View;
+use app\helpers\Url;
 
 $this->title = 'Garen 的主页';
 $this->params['pageId'] = 'app-home';
@@ -131,34 +131,84 @@ unset($adverts[0]);
         <div class="body">
             <div class="containe" style="margin-top: 30px;">
                 <div class="hex" style="background: #986625;">
-                    <a href="#" class="h3" style="margin-top: 4px;" ">PHP</a>
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'gulp',])?>" class="h3" style="margin-top: 4px;" ">Gulp</a>
                     <div class="corner-1"></div>
                     <div class="corner-2"></div>
                 </div>
                 <div class="hex" style="background: #138898;">
-                    <a href="#" style="margin-top: 8px;font-size: 12px;">JavaScript</a>
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'javascript',])?>" style="margin-top: 8px;font-size: 12px;">JavaScript</a>
                     <div class="corner-1"></div>
                     <div class="corner-2"></div>
                 </div>
-                <div class="hex" style="background: #49980c;">
-                    <a href="#" class="h4" style="margin-top: 6px;">MySql</a>
+                <div class="hex hex-one" style="background: #49980c;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'mysql',])?>" class="h4" style="margin-top: 6px;">MySql</a>
                     <div class="corner-1"></div>
                     <div class="corner-2"></div>
                 </div>
-                <div class="hex" style="background: #49980c;">
-                    <a href="#" style="font-size: 12px;margin-top: 8px;">Bootstrap</a>
+                <div class="hex hex-half" style="background: #585398;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'bootstrap',])?>" style="font-size: 12px;margin-top: 8px;">Bootstrap</a>
                     <div class="corner-1"></div>
                     <div class="corner-2"></div>
                 </div>
-                <div class="hex hex-half-neg" style="background: #49980c;">
-                    <a href="#"></a>
+                <div class="hex" style="background: #984718;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'less',])?>" style="font-size: 12px;margin-top: 8px;">Less</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex" style="background: #339858;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'jquery',])?>" class="h4" style="margin-top: 6px;">jQuery</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex" style="background: #986625;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'yii',])?>" class="h3" style="margin-top: 4px;">Yii2</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex hex-one" style="background: #138898;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'thinkphp',])?>" style="margin-top: 8px;font-size: 12px;">ThinkPHP</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex" style="background: #987318;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'nginx',])?>" class="h4" style="margin-top: 6px;">Nginx</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex hex-half" style="background: #986625;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'git',])?>" class="h3" style="margin-top: 4px;">Git</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex hex-one" style="background: #416b98;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'laravel',])?>" class="h5" style="margin-top: 10px;">Laravel</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex hex-one" style="background: #49980c;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'ajax',])?>" class="h4" style="margin-top: 6px;">ajax</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex" style="background: #735898;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'css',])?>" class="h3" style="margin-top: 4px;">CSS</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex" style="background: #985374;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'seo',])?>" class="h3" style="margin-top: 4px;">SEO</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex hex-half" style="background: #20988e;">
+                    <a href="<?=Url::to(['article/hot_tag', 'tag' => 'apache',])?>" class="h4" style="margin-top: 6px;">apache</a>
                     <div class="corner-1"></div>
                     <div class="corner-2"></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-12 friendly">
+    <div class="col-md-12 friendly" style="z-index: -1;">
         <div class="head">
             <h4>友情链接:</h4>
         </div>
@@ -176,7 +226,7 @@ unset($adverts[0]);
     </div>
 </div>
 <?php
-$js="
+$js_wechat="
 $('#wechat-panel').popover({
         'trigger': 'hover',
         'html': true,
@@ -185,5 +235,5 @@ $('#wechat-panel').popover({
         'content': '<img src=\"".Yii::$app->params['wechatImageUrl']."\" style=\"height: 150px;width: 150px\">'
       });
 ";
-$this->registerJs($js, View::POS_END);
+$this->registerJs($js_wechat, View::POS_END);
 ?>

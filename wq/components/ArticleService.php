@@ -18,6 +18,12 @@ class ArticleService extends Component
             }
         }
 
+        $likeFields = ['title', 'keywords'];
+        foreach($likeFields as $lf) {
+            if(isset($where[$lf]) && $where[$lf]) {
+                $query->andWhere(['like', $lf, "%{$where[$lf]}%", false]);
+            }
+        }
         if(!Url::isAdmin()) {
             $query->andWhere(['is_enable' => 1]);
         }

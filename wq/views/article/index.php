@@ -4,7 +4,12 @@ use app\models\Article;
 use yii\widgets\LinkPager;
 
 $where = Yii::$app->request->get();
-$where['category'] = $category;
+
+if(isset($category)) {
+    $where['category'] = $category;
+}elseif(isset($tag)) {
+    $where['keywords'] = $tag;
+}
 $query = Yii::$app->articleService->search($where)
     ->orderBy(['id' => SORT_DESC]);
 $provider = new ActiveDataProvider([
@@ -23,7 +28,8 @@ $hotArticles = Yii::$app->articleService->search()
 ?>
 <div class="col-md-9 primary-block">
     <div class="h1 category">
-        <?=Article::getCategoryMap($category)?>
+        <?=isset($category) ? Article::getCategoryMap($category):''?>
+        <?=isset($tag) ? strtoupper($tag) : ''?>
     </div>
     <?php
     foreach($articles as $a) {

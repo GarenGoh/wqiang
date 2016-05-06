@@ -44,6 +44,14 @@ class ArticleController extends BaseController
         ]);
     }
 
+    public function actionHot_tag()
+    {
+        $tag = Yii::$app->request->get('tag');
+        return $this->render('index',[
+            'tag' => $tag
+        ]);
+    }
+
     public function actionView()
     {
         $id = Yii::$app->request->get('id');
