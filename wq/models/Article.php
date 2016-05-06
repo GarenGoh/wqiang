@@ -4,6 +4,25 @@ namespace app\models;
 use Yii;
 use yii\helpers\Url;
 
+/**
+ * This is the model class for table "{{%article}}".
+ *
+ * @property integer $id
+ * @property integer $image_id
+ * @property integer $read_count
+ * @property string $title
+ * @property string $category
+ * @property string $keywords
+ * @property string $summary
+ * @property string $source
+ * @property string $content
+ * @property integer $is_enable
+ * @property integer $creator_id
+ * @property integer $created_at
+ * @property integer $is_hot
+ * @property file $image
+ */
+
 class Article extends BaseActiveRecord
 {
     const CATEGORY_PHP = "php";

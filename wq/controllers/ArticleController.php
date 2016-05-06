@@ -48,6 +48,8 @@ class ArticleController extends BaseController
     {
         $id = Yii::$app->request->get('id');
         $article = Yii::$app->articleService->search(['id' => $id])->one();
+        $article->read_count++;
+        $article->save();
         return $this->render('view', [
             'model' => $article
         ]);
