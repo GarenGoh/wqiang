@@ -268,6 +268,7 @@
   border-top: #ddd 1px solid;
 }
 #article-view .secondary-block .article-tag .containe {
+  font-family: 'Times New Roman', 'Microsoft YaHei', 'New York', serif, Times, TimesNR;
   width: 250px;
   height: 500px;
   position: absolute;
@@ -369,9 +370,18 @@
 #article-view .secondary-block .article-tag .hex-one {
   margin-left: 64px;
 }
-#app-home .primary-block .carousel img {
+#app-home .primary-block .carousel .item img {
   height: 400px;
   width: 100%;
+}
+#app-home .primary-block .carousel .item .ad-text {
+  text-align: left;
+}
+#app-home .primary-block .carousel .item .ad-text .ad-title {
+  color: #eee;
+}
+#app-home .primary-block .carousel .item .ad-text .ad-summary {
+  color: #FFF;
 }
 #app-home .primary-block .carousel i {
   margin-top: 150px;
@@ -487,6 +497,7 @@
   height: 400px;
 }
 #app-home .second-block .hot-tag .body .containe {
+  font-family: 'Times New Roman', 'Microsoft YaHei', 'New York', serif, Times, TimesNR;
   width: 250px;
   height: 400px;
   position: absolute;

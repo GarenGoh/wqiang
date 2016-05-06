@@ -119,9 +119,9 @@
               <i class="fa fa-weibo" style="color: #FE2A27;"></i>
               <p class="sparkly-p"><a href="#">微 博</a></p>
             </div>
-            <div class="col-md-3 item">
+            <div class="col-md-3 item" id="wechat-panel">
               <i class="fa fa-wechat" style="color: #3DAF36;"></i>
-              <p class="sparkly-p"><a href="#">微 信</a></p>
+              <p class="sparkly-p "><a href="#">微 信</a></p>
             </div>
             <div class="col-md-3 item">
               <i class="fa fa-envelope-o" style="color: #FFB902;"></i>
@@ -181,7 +181,6 @@
               <li><a href="">友链死的救</a></li>
             </ul>
           </div>
-
         </div>
       </div>
 
@@ -241,10 +240,10 @@
     <script src="vendor/bower/jquery-ui/ui/widget.js"></script>
     <script src="vendor/bower/blueimp-file-upload/js/jquery.fileupload.js"></script>
 
-    <script src="vendor/bower/bootstrap/js/dropdown.js"></script>
-    <script src="vendor/bower/bootstrap/js/alert.js"></script>
-    <script src="vendor/bower/bootstrap/js/button.js"></script>
     <script src="vendor/bower/bootstrap/js/carousel.js"></script>
+    <script src="vendor/bower/bootstrap/js/button.js"></script>
+    <script src="vendor/bower/bootstrap/js/tooltip.js"></script>
+    <script src="vendor/bower/bootstrap/js/popover.js"></script>
 
     <script src="vendor/bower/simple-module/lib/module.js"></script>
     <script src="vendor/bower/simple-hotkeys/lib/hotkeys.js"></script>
@@ -263,8 +262,12 @@
     <!-- endbuild -->
     <script>
       Tool.cloneHtml();
-      var editor = new Simditor({
-        textarea: $('#editor')
+      $('#wechat-panel').popover({
+        'trigger': 'hover',
+        'html': true,
+        'placement': 'top',
+        'title': '添加我为微信好友',
+        'content': '<img src="/images/02.jpg" style="height: 150px;width: 150px">'
       });
     </script>
   </body>

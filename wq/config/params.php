@@ -5,6 +5,7 @@ return [
     'appName' => 'Garen',
     'appTitle' => 'Garen的个人博客！',
     'adminTitle' => '后台管理',
+    'uploadDir' => $uploadDir,
     'logoUrl' => $uploadDir.'default/logo.png',
     'defaultAvatarUrl' => $uploadDir.'default/avatar.png',
     'defaultAvatarIds' => [
@@ -20,7 +21,7 @@ return [
         ],
     'defaultImageUrl' => $uploadDir.'default/1.jpg',
     '404Image' => $uploadDir.'default/404Image.png',
-    'uploadDir' => $uploadDir,
+    'wechatImageUrl' => $uploadDir.'default/wechat.png',
     'line' => $uploadDir.'default/r_line.jpg',
 ];
 ?>

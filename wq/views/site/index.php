@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 use app\helpers\Html;
 use yii\helpers\Url;
+use yii\web\View;
 
 $this->title = 'Garen 的主页';
 $this->params['pageId'] = 'app-home';
@@ -9,39 +10,41 @@ $articles = Yii::$app->articleService->search()
     ->orderBy(['is_hot' => SORT_DESC, 'id' => SORT_DESC])
     ->limit(10)
     ->all();
+$adverts = Yii::$app->advertService->search()
+    ->orderBy(['weight' => SORT_DESC, 'id' => SORT_DESC])
+    ->limit(4)
+    ->all();
+$ad_0 = $adverts[0];
+unset($adverts[0]);
 ?>
 <div class="col-md-9 primary-block">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <?php foreach($adverts as $k => $ad) {?>
+            <li data-target="#carousel-example-generic" data-slide-to="<?=$k?>"></li>
+            <?php }?>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner sparkly" role="listbox">
             <div class="item active">
-                <img src="<?=Yii::$app->params['uploadDir'].'default/admin2.jpg'?>" style="height: 400px;width: 100%">
-                <div class="carousel-caption" style="text-align: left ">
-                    <h3><a href="#" style="color: #fff">标题标题标题标题标题</a></h3>
-                    <p><a href="#" style="color: #DDD">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</a></p>
+                <a href="<?=$ad->link?>"><img src="<?=$ad_0->image->url?>"></a>
+                <div class="carousel-caption ad-text">
+                    <h3><a href="<?=$ad_0->link?>" class="ad-title"><?=$ad_0->title?></a></h3>
+                    <p><a href="<?=$ad_0->link?>" class="ad-summary"><?=$ad_0->summary?></a></p>
                 </div>
             </div>
+            <?php foreach($adverts as $ad) {?>
             <div class="item">
-                <img src="<?=Yii::$app->params['uploadDir'].'default/admin1.jpg'?>">
-                <div class="carousel-caption">
-                    <h3>标题</h3>
-                    <p>简介</p>
+                <a href="<?=$ad->link?>"><img src="<?=$ad->image->url?>"></a>
+                <div class="carousel-caption ad-text">
+                    <h3><a href="<?=$ad->link?>" class="ad-title"><?=$ad->title?></a></h3>
+                    <p><a href="<?=$ad->link?>" class="ad-summary"><?=$ad->summary?></a></p>
                 </div>
             </div>
-            <div class="item">
-                <img src="<?=Yii::$app->params['uploadDir'].'default/admin3.jpg'?>">
-                <div class="carousel-caption">
-                    <h3></h3>
-                    <p></p>
-                </div>
-            </div>
+            <?php }?>
         </div>
 
         <!-- Controls -->
@@ -99,7 +102,7 @@ $articles = Yii::$app->articleService->search()
                 <i class="fa fa-weibo" style="color: #FE2A27;"></i>
                 <p class="sparkly-p"><a href="http://weibo.com/wuqiangbaba">微 博</a></p>
             </div>
-            <div class="col-md-3 item">
+            <div class="col-md-3 item" id="wechat-panel">
                 <i class="fa fa-wechat" style="color: #3DAF36;"></i>
                 <p class="sparkly-p"><a href="#">微 信</a></p>
             </div>
@@ -128,18 +131,26 @@ $articles = Yii::$app->articleService->search()
         <div class="body">
             <div class="containe" style="margin-top: 30px;">
                 <div class="hex" style="background: #986625;">
-                    <p  class="h3" style="color: #fff;margin: 0">php</p>
-                    <a href="#"></a>
+                    <a href="#" class="h3" style="margin-top: 4px;" ">PHP</a>
                     <div class="corner-1"></div>
                     <div class="corner-2"></div>
                 </div>
                 <div class="hex" style="background: #138898;">
-                    <h6 style="color: #fff;margin: 0;width: 32px;">JavaScripts</h6>
-                    <a href="#"></a>
+                    <a href="#" style="margin-top: 8px;font-size: 12px;">JavaScript</a>
                     <div class="corner-1"></div>
                     <div class="corner-2"></div>
                 </div>
                 <div class="hex" style="background: #49980c;">
+                    <a href="#" class="h4" style="margin-top: 6px;">MySql</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex" style="background: #49980c;">
+                    <a href="#" style="font-size: 12px;margin-top: 8px;">Bootstrap</a>
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="hex hex-half-neg" style="background: #49980c;">
                     <a href="#"></a>
                     <div class="corner-1"></div>
                     <div class="corner-2"></div>
@@ -164,3 +175,15 @@ $articles = Yii::$app->articleService->search()
 
     </div>
 </div>
+<?php
+$js="
+$('#wechat-panel').popover({
+        'trigger': 'hover',
+        'html': true,
+        'placement': 'top',
+        'title': '添加我为微信好友',
+        'content': '<img src=\"".Yii::$app->params['wechatImageUrl']."\" style=\"height: 150px;width: 150px\">'
+      });
+";
+$this->registerJs($js, View::POS_END);
+?>
