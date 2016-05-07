@@ -72,46 +72,14 @@ $navArticle = \app\models\Article::getCategoryMap();
             <?=$content ?>
     </div>
 <footer class="col-md-12" id="app-footer">
-    <div class="col-md-4" >
-        <ul>
-            <li style="font-size: 20px;list-style-type: none;margin-bottom: 60px;"><a href="#">关于我</a></li>
-            <li style="font-size: 20px;list-style-type: none;"><a href="#">联系我</a></li>
-        </ul>
+    <div class="col-md-4 ">
+        <a href="http://www.miitbeian.gov.cn/">京ICP备16014638号-1</a>
     </div>
-    <div class="col-md-4 hot">
-        <p > 热门标签：</p>
-        <ul >
-            <li><a href="javascript:void(0)">Yii</a></li>
-            <li><a href="#">JAVA</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">Git</a></li>
-            <li><a href="#">PHP</a></li>
-            <li><a href="#">ThinkPHP</a></li>
-            <li><a href="#">CI</a></li>
-            <li><a href="#">MySQL</a></li>
-            <li><a href="#">Nginx</a></li>
-            <li><a href="#">Linux</a></li>
-            <li><a href="#">服务器</a></li>
-            <li><a href="#">哈哈哈</a></li>
-            <li><a href="http://www.miitbeian.gov.cn/">京ICP备16014638号-1</a></li>
-        </ul>
+    <div class="col-md-4 ">
+        <a href="http://wqiang.net/">Garen.Goh个人博客</a> 内容版权所有，同时保留所有权利。
     </div>
     <div class="col-md-4 friendly-link">
-        <p> 友情链接：</p>
-        <ul>
-            <li><a href="#">Yii</a></li>
-            <li><a href="#">JAVA</a></li>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">Git</a></li>
-            <li><a href="#">PHP</a></li>
-            <li><a href="#">ThinkPHP</a></li>
-            <li><a href="#">CI</a></li>
-            <li><a href="#">MySQL</a></li>
-            <li><a href="#">Nginx</a></li>
-            <li><a href="#">Linux</a></li>
-            <li><a href="#">服务器</a></li>
-            <li><a href="#">哈哈哈</a></li>
-        </ul>
+        <p> 友情链接：<small><a href="https://www.sdk.cn/">SDK.cn</a><a href="http://xiajie.me/https://">Jerry's Blog</a></small></p>
     </div>
 </footer>
 <?php

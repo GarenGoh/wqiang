@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4602dd73-2058-43c1-955f-fb4323cab08d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/controllers/ArticleController.php" afterPath="$PROJECT_DIR$/wq/controllers/ArticleController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/components/ArticleService.php" afterPath="$PROJECT_DIR$/wq/components/ArticleService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/styles/app.css" afterPath="$PROJECT_DIR$/wq/frontend/styles/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/lesses/app/home.less" afterPath="$PROJECT_DIR$/wq/frontend/lesses/app/home.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/views/article/index.php" afterPath="$PROJECT_DIR$/wq/views/article/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/views/site/index.php" afterPath="$PROJECT_DIR$/wq/views/site/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/lesses/common/mixin.less" afterPath="$PROJECT_DIR$/wq/frontend/lesses/common/mixin.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/views/article/view.php" afterPath="$PROJECT_DIR$/wq/views/article/view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/lesses/app/layouts.less" afterPath="$PROJECT_DIR$/wq/frontend/lesses/app/layouts.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/views/layouts/main.php" afterPath="$PROJECT_DIR$/wq/views/layouts/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wqiang.iws" />
@@ -62,21 +59,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wq/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2363636" vertical-offset="2176" max-vertical-offset="4165">
-              <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="206" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.61167514" vertical-offset="1306" max-vertical-offset="4029">
+              <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+              <folding>
+                <marker date="1462554271000" expanded="true" signature="5835:5876" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="5903:6069" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="5946:5963" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="5964:6069" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="6006:6026" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="6027:6069" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="6319:6339" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="6340:6382" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="6655:6675" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="6676:6718" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="6977:6997" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="6998:7040" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="7303:7323" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="7324:7366" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="7619:7639" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="7640:7682" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="7934:7954" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="7955:7997" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="8252:8272" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="8273:8315" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="8576:8596" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="8597:8639" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="8898:8918" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="8919:8961" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="9215:9235" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="9236:9278" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="9541:9561" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="9562:9604" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="9852:9872" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="9873:9915" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="10161:10181" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="10182:10224" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="10479:10499" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="10500:10542" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="10842:10854" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="10855:11096" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="10882:10924" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="10951:11096" placeholder="..." />
+                <marker date="1462554271000" expanded="true" signature="10968:11096" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wq/views/article/view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617" vertical-offset="153" max-vertical-offset="2380">
+              <caret line="19" column="103" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="103" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wq/views/article/view.php">
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wq/views/layouts/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9137056" vertical-offset="1714" max-vertical-offset="2380">
-              <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+            <state vertical-scroll-proportion="-9.807693" vertical-offset="1105" max-vertical-offset="1717">
+              <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -85,8 +132,8 @@
       <file leaf-file-name="home.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/home.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.2352943" vertical-offset="2062" max-vertical-offset="2890">
-              <caret line="134" column="26" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="26" />
+            <state vertical-scroll-proportion="-1.0625" vertical-offset="1411" max-vertical-offset="2941">
+              <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -112,31 +159,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseUrl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/vendor/yiisoft/yii2/helpers/BaseUrl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.346154" vertical-offset="2724" max-vertical-offset="6919">
-              <caret line="173" column="51" selection-start-line="173" selection-start-column="35" selection-end-line="173" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ArticleService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wq/components/ArticleService.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-14.230769" vertical-offset="21" max-vertical-offset="901">
               <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/vendor/yiisoft/yii2/db/Query.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.7818184" vertical-offset="9168" max-vertical-offset="15538">
-              <caret line="558" column="19" selection-start-line="558" selection-start-column="19" selection-end-line="558" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -158,8 +185,6 @@
         <option value="$PROJECT_DIR$/wq/views/site/about.php" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/common/nav.less" />
         <option value="$PROJECT_DIR$/wq/frontend/common-app.html" />
-        <option value="$PROJECT_DIR$/wq/frontend/lesses/app/layouts.less" />
-        <option value="$PROJECT_DIR$/wq/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/wq/module/admin/views/user/update.php" />
         <option value="$PROJECT_DIR$/wq/models/User.php" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/admin.less" />
@@ -203,9 +228,11 @@
         <option value="$PROJECT_DIR$/wq/views/article/index.php" />
         <option value="$PROJECT_DIR$/wq/components/ArticleService.php" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/common/mixin.less" />
+        <option value="$PROJECT_DIR$/wq/views/article/view.php" />
+        <option value="$PROJECT_DIR$/wq/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/wq/frontend/lesses/app/layouts.less" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/app/home.less" />
         <option value="$PROJECT_DIR$/wq/views/site/index.php" />
-        <option value="$PROJECT_DIR$/wq/views/article/view.php" />
       </list>
     </option>
   </component>
@@ -292,10 +319,6 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -312,6 +335,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -486,22 +513,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/bootstrap.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57941175" vertical-offset="585" max-vertical-offset="986">
-          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wq/frontend/styles/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="92089">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.0997624" vertical-offset="0" max-vertical-offset="2210">
@@ -823,14 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/views/article/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="1445">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/controllers/ArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.346154" vertical-offset="633" max-vertical-offset="1377">
@@ -847,14 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/home.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2352943" vertical-offset="2062" max-vertical-offset="2890">
-          <caret line="134" column="26" selection-start-line="134" selection-start-column="26" selection-end-line="134" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/frontend/article-view-app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.615385" vertical-offset="2717" max-vertical-offset="3111">
@@ -863,19 +858,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/views/site/index.php">
+    <entry file="file://$PROJECT_DIR$/wq/views/article/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2363636" vertical-offset="2176" max-vertical-offset="4165">
-          <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="206" selection-end-column="22" />
+        <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="1445">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wq/views/article/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9137056" vertical-offset="1714" max-vertical-offset="2380">
-          <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="153" max-vertical-offset="2380">
+          <caret line="19" column="103" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="103" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/layouts.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.1463413" vertical-offset="0" max-vertical-offset="1700">
+          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="1105" max-vertical-offset="1717">
+          <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/home.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0625" vertical-offset="1411" max-vertical-offset="2941">
+          <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61167514" vertical-offset="1306" max-vertical-offset="4029">
+          <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+          <folding>
+            <marker date="1462554271000" expanded="true" signature="5835:5876" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="5903:6069" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="5946:5963" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="5964:6069" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="6006:6026" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="6027:6069" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="6319:6339" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="6340:6382" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="6655:6675" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="6676:6718" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="6977:6997" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="6998:7040" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="7303:7323" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="7324:7366" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="7619:7639" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="7640:7682" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="7934:7954" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="7955:7997" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="8252:8272" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="8273:8315" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="8576:8596" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="8597:8639" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="8898:8918" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="8919:8961" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="9215:9235" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="9236:9278" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="9541:9561" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="9562:9604" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="9852:9872" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="9873:9915" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="10161:10181" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="10182:10224" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="10479:10499" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="10500:10542" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="10842:10854" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="10855:11096" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="10882:10924" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="10951:11096" placeholder="..." />
+            <marker date="1462554271000" expanded="true" signature="10968:11096" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

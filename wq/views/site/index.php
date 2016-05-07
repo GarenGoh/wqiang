@@ -17,7 +17,7 @@ $adverts = Yii::$app->advertService->search()
 $ad_0 = $adverts[0];
 unset($adverts[0]);
 ?>
-<div class="col-md-9 primary-block">
+<div class="col-md-9 primary-block" style='background: repeat-y right url("<?=Yii::$app->params['line']?>");'>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -57,11 +57,10 @@ unset($adverts[0]);
             <span class="sr-only">next</span>
         </a>
     </div>
-    <div class="article">
-        <div class="new-article">
+    <div class="article" style='background: repeat-x top url("<?=Yii::$app->params['line']?>");'>
+        <div class="new-article col-md-12">
             <h4>最新文章 <small class="pull-right"><a href="#">最新文章最新文章</a></small></h4>
         </div>
-        <div>
             <?php foreach($articles as $a) {?>
                 <article class="col-md-12 item">
                     <div class="pull-left left">
@@ -85,13 +84,12 @@ unset($adverts[0]);
                     </div>
                 </article>
             <?php }?>
-        </div>
     </div>
 </div>
 <div class="col-md-3 second-block">
-    <div class="follow col-md-12">
-        <div class="head">
-            <h4>关注我</h4>
+    <div class="follow col-md-12" style="background: #EEEEEE;border: #bbb 1px solid;border-radius: 3px;">
+        <div class="head" style="border-bottom: #bbb 1px solid;background: #bbb;">
+            <h4 style="margin-top: 0;padding-top: 15px">关注我</h4>
         </div>
         <div class="body">
             <div class="col-md-3 item">
@@ -110,21 +108,19 @@ unset($adverts[0]);
                 <i class="fa fa-envelope-o" style="color: #FFB902;"></i>
                 <p class="sparkly-p"><a href="#">邮 箱</a></p>
             </div>
+            <div class="my-avatar">
+                <a href="<?=Url::to(['site/about'])?>"><img src="<?=Yii::$app->params['uploadDir'].'default/admin2.jpg'?>"></a>
+            </div>
+            <div class="my-summary">
+                <p>网名：<small>Garen.Goh</small></p>
+                <p>职业：<small>PHP工程师</small></p>
+                <p>主页：<small>wqiang.net</small></p>
+                <p>现居：<small>北京.海淀</small></p>
+                <p>格言：<small>努力让自己吊到爆</small></p>
+            </div>
         </div>
     </div>
-    <div class="col-md-12 about-me">
-        <div class="head img">
-            <a href="<?=Url::to(['site/about'])?>"><img src="<?=Yii::$app->params['uploadDir'].'default/admin2.jpg'?>"></a>
-        </div>
-        <div class="body">
-            <p>网名：<small>Garen.Goh</small></p>
-            <p>职业：<small>PHP工程师</small></p>
-            <p>主页：<small>wqiang.net</small></p>
-            <p>现居：<small>北京.海淀</small></p>
-            <p>格言：<small>努力让自己吊到爆</small></p>
-        </div>
-    </div>
-    <div class="col-md-12 hot-tag">
+    <div class="col-md-12 hot-tag" style='background: repeat-x top url("<?=Yii::$app->params["line"]?>");'>
         <div class="head">
             <h4>热门标签</h4>
         </div>
@@ -214,12 +210,8 @@ unset($adverts[0]);
         </div>
         <div class="body">
             <ul>
-                <li><a href="">友链是打</a></li>
-                <li><a href="">死车</a></li>
-                <li><a href="">车</a></li>
-                <li><a href="">友链死</a></li>
-                <li><a href="">友链死</a></li>
-                <li><a href="">友链死的救</a></li>
+                <li><a href="https://www.sdk.cn/">SDK.cn</a></li>
+                <li><a href="http://xiajie.me/https://">Jerry's Blog</a></li>
             </ul>
         </div>
 
