@@ -26,7 +26,6 @@ unset($adverts[0]);
             <li data-target="#carousel-example-generic" data-slide-to="<?=$k?>"></li>
             <?php }?>
         </ol>
-
         <!-- Wrapper for slides -->
         <div class="carousel-inner sparkly" role="listbox">
             <div class="item active">
