@@ -7,7 +7,7 @@ use app\helpers\Url;
 $this->title = 'Garen 的主页';
 $this->params['pageId'] = 'app-home';
 $articles = Yii::$app->articleService->search()
-    ->orderBy(['is_hot' => SORT_DESC, 'id' => SORT_DESC])
+    ->orderBy(['id' => SORT_DESC])
     ->limit(10)
     ->all();
 $adverts = Yii::$app->advertService->search()
@@ -116,6 +116,39 @@ unset($adverts[0]);
                 <p>主页：<small>wqiang.net</small></p>
                 <p>现居：<small>北京.海淀</small></p>
                 <p>格言：<small>努力让自己吊到爆</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 hot-article">
+        <ul class="nav nav-tabs head" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">热门文章</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">站长推荐</a></li>
+        </ul>
+        <?php
+        $hotArticle = Yii::$app->articleService->search()
+            ->select(['id', 'title',])
+            ->orderBy(['read_count' => SORT_DESC])
+            ->limit(8)
+            ->all();
+        $recommendArticles = Yii::$app->articleService->search()
+            ->orderBy(['is_hot' => SORT_DESC, 'id' => SORT_DESC])
+            ->limit(10)
+            ->all();
+        ?>
+        <div class="tab-content body">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <ul>
+                    <?php foreach($hotArticle as $a) {?>
+                    <li class="title"><a href="<?=$a->url?>" title="<?=$a->title?>"><i class="fa fa-hand-o-right"></i> <?=$a->title?></a></li>
+                    <?php }?>
+                </ul>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+                <ul>
+                    <?php foreach($recommendArticles as $a) {?>
+                        <li class="title"><a href="<?=$a->url?>" title="<?=$a->title?>"><i class="fa fa-hand-o-right"></i> <?=$a->title?></a></li>
+                    <?php }?>
+                </ul>
             </div>
         </div>
     </div>

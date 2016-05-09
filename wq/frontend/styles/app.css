@@ -474,6 +474,49 @@
 #app-home .second-block .follow .body .my-summary p small {
   color: #bc874d;
 }
+#app-home .second-block .hot-article {
+  margin-top: 10px;
+  padding: 0;
+}
+#app-home .second-block .hot-article .head {
+  background: #eee;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+#app-home .second-block .hot-article .head li {
+  width: 50%;
+}
+#app-home .second-block .hot-article .head a {
+  margin-right: 0;
+  text-align: center;
+}
+#app-home .second-block .hot-article .body {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+#app-home .second-block .hot-article .body ul {
+  padding: 5px;
+}
+#app-home .second-block .hot-article .body .title {
+  list-style-type: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding-top: 10px;
+}
+#app-home .second-block .hot-article .body .title:hover {
+  border-bottom: 1px solid #999;
+}
+#app-home .second-block .hot-article .body .title a {
+  color: #777;
+}
+#app-home .second-block .hot-article .body .title a:hover {
+  color: #444;
+}
 #app-home .second-block .hot-tag {
   padding: 0;
   margin-top: 18px;

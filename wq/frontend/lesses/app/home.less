@@ -126,6 +126,49 @@
         }
       }
     }
+    .hot-article {
+      margin-top: 10px;
+      padding: 0;
+      .head {
+        background: #eee;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        li {
+          width: 50%;
+        }
+        a {
+          margin-right: 0;
+          text-align: center;
+        }
+      }
+      .body {
+        border: 1px solid #ddd;
+        border-top: none;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        ul {
+          padding: 5px;
+        }
+        .title {
+          list-style-type:none;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%;
+          border-bottom: 1px solid #eee;
+          padding-top: 10px;
+          &:hover {
+            border-bottom: 1px solid #999;
+          }
+          a {
+            color: #777;
+            &:hover {
+              color: #444;
+            }
+          }
+        }
+      }
+    }
     .hot-tag {
       padding: 0;
       margin-top: 18px;
