@@ -152,6 +152,7 @@ unset($adverts[0]);
             </div>
         </div>
     </div>
+    <div id="fixed-top" class="col-md-12 row" >
     <div class="col-md-12 hot-tag" style='background: repeat-x top url("<?=Yii::$app->params["line"]?>");'>
         <div class="head">
             <h4>热门标签</h4>
@@ -246,18 +247,24 @@ unset($adverts[0]);
                 <li><a href="http://xiajie.me/https://">Jerry's Blog</a></li>
             </ul>
         </div>
-
+    </div>
     </div>
 </div>
 <?php
 $js_wechat="
 $('#wechat-panel').popover({
-        'trigger': 'hover',
-        'html': true,
-        'placement': 'top',
-        'title': '添加我为微信好友',
-        'content': '<img src=\"".Yii::$app->params['wechatImageUrl']."\" style=\"height: 150px;width: 150px\">'
-      });
+    'trigger': 'hover',
+    'html': true,
+    'placement': 'top',
+    'title': '添加我为微信好友',
+    'content': '<img src=\"".Yii::$app->params['wechatImageUrl']."\" style=\"height: 150px;width: 150px\">'
+    });
 ";
 $this->registerJs($js_wechat, View::POS_END);
+$js_top = "
+$('#fixed-top').sticky({
+    'top': 0
+    });
+";
+$this->registerJs($js_top, View::POS_END);
 ?>
