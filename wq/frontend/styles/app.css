@@ -656,3 +656,31 @@
   background: #536d9d;
   border-radius: 2px;
 }
+#about-page .item {
+  background: #EEE;
+  border-radius: 3px;
+}
+#about-page .item .basic {
+  padding: 0;
+}
+#about-page .item .my-img {
+  float: left;
+}
+#about-page .item img {
+  width: 100%;
+  height: 220px;
+  border: 3px solid #DDD;
+}
+#about-page .item .info {
+  line-height: 28px;
+  float: left;
+  margin-top: 5px;
+  padding-left: 0;
+}
+#about-page .item .info i {
+  width: 20px;
+  color: #15A085;
+}
+#about-page .item .content {
+  padding-left: 15px;
+}
