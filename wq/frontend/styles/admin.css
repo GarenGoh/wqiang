@@ -42,6 +42,56 @@ h5 a:hover,
 h6 a:hover {
   color: #333;
 }
+article {
+  padding: 10px 0 20px;
+  border-bottom: solid 1px #ddd;
+}
+article:hover {
+  border-bottom: solid 1px #83AF9B;
+}
+article .left {
+  z-index: 2;
+  position: relative;
+}
+article .left img {
+  width: 180px;
+  height: 140px;
+}
+article .right {
+  position: relative;
+  z-index: 1;
+  margin-left: -180px;
+  padding-left: 200px;
+  padding-right: 0;
+}
+article .right h4 {
+  margin-top: 0;
+}
+article .right p {
+  color: #756F71;
+}
+article .right p a {
+  color: #759B08;
+}
+article .right p a:hover {
+  color: #567efc;
+}
+article .right .summary {
+  height: 80px;
+  overflow: hidden;
+}
+article .right .leaf {
+  color: #01b838;
+}
+article .right .clock {
+  color: #567efc;
+}
+article .right .comment {
+  color: #f8b838;
+}
+article .right .eye {
+  color: #aaa;
+}
 /* admin */
 #admin-top {
   height: 60px;

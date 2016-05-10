@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4602dd73-2058-43c1-955f-fb4323cab08d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wq/frontend/lesses/app/about.less" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wq/views/site/contact.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/controllers/SiteController.php" afterPath="$PROJECT_DIR$/wq/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/views/site/about.php" afterPath="$PROJECT_DIR$/wq/views/site/about.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wq/frontend/lesses/common/article-list.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/styles/admin.css" afterPath="$PROJECT_DIR$/wq/frontend/styles/admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/lesses/admin.less" afterPath="$PROJECT_DIR$/wq/frontend/lesses/admin.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/styles/app.css" afterPath="$PROJECT_DIR$/wq/frontend/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/lesses/app.less" afterPath="$PROJECT_DIR$/wq/frontend/lesses/app.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/views/layouts/main.php" afterPath="$PROJECT_DIR$/wq/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/article-index-app.html" afterPath="$PROJECT_DIR$/wq/frontend/article-index-app.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/lesses/app/article-index.less" afterPath="$PROJECT_DIR$/wq/frontend/lesses/app/article-index.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/home-app.html" afterPath="$PROJECT_DIR$/wq/frontend/home-app.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wq/frontend/lesses/app/home.less" afterPath="$PROJECT_DIR$/wq/frontend/lesses/app/home.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wqiang.iws" />
@@ -41,93 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="about.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/views/site/about.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wq/views/article/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="765">
-              <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/controllers/SiteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3461537" vertical-offset="439" max-vertical-offset="1989">
-              <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="289">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/about.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.33333334" vertical-offset="0" max-vertical-offset="629">
-              <caret line="1" column="35" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home-app.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/frontend/home-app.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="75.73077" vertical-offset="4825" max-vertical-offset="5219">
-              <caret line="168" column="14" selection-start-line="141" selection-start-column="8" selection-end-line="168" selection-end-column="14" />
-              <folding>
-                <marker date="1462787187000" expanded="true" signature="12974:13000" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common-app.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/frontend/common-app.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.615385" vertical-offset="1357" max-vertical-offset="1751">
-              <caret line="93" column="9" selection-start-line="91" selection-start-column="6" selection-end-line="93" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/views/article/view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846" vertical-offset="17" max-vertical-offset="2380">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wq/views/layouts/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30203044" vertical-offset="527" max-vertical-offset="1717">
-              <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/home.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5686274" vertical-offset="1620" max-vertical-offset="3672">
-              <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.28266034" vertical-offset="595" max-vertical-offset="1445">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -146,9 +65,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/wq/module/admin/views/user/update.php" />
-        <option value="$PROJECT_DIR$/wq/models/User.php" />
-        <option value="$PROJECT_DIR$/wq/frontend/lesses/admin.less" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/admin/layouts.less" />
         <option value="$PROJECT_DIR$/wq/module/admin/views/article/index.php" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/bootstrap.less" />
@@ -162,7 +78,6 @@
         <option value="$PROJECT_DIR$/wq/frontend/index.html" />
         <option value="$PROJECT_DIR$/wq/frontend/scripts/index.js" />
         <option value="$PROJECT_DIR$/wq/module/admin/views/user/index.php" />
-        <option value="$PROJECT_DIR$/wq/frontend/lesses/app/article-index.less" />
         <option value="$PROJECT_DIR$/wq/module/admin/views/article/update.php" />
         <option value="$PROJECT_DIR$/wq/module/admin/controllers/ArticleController.php" />
         <option value="$PROJECT_DIR$/wq/config/web.php" />
@@ -183,20 +98,24 @@
         <option value="$PROJECT_DIR$/wq/models/Article.php" />
         <option value="$PROJECT_DIR$/wq/config/params.php" />
         <option value="$PROJECT_DIR$/wq/controllers/ArticleController.php" />
-        <option value="$PROJECT_DIR$/wq/views/article/index.php" />
         <option value="$PROJECT_DIR$/wq/components/ArticleService.php" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/common/mixin.less" />
         <option value="$PROJECT_DIR$/wq/views/article/view.php" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/app/layouts.less" />
         <option value="$PROJECT_DIR$/wq/frontend/test.html" />
-        <option value="$PROJECT_DIR$/wq/frontend/home-app.html" />
-        <option value="$PROJECT_DIR$/wq/frontend/lesses/app/home.less" />
         <option value="$PROJECT_DIR$/wq/views/site/index.php" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/app.less" />
         <option value="$PROJECT_DIR$/wq/frontend/lesses/app/about.less" />
         <option value="$PROJECT_DIR$/wq/views/site/about.php" />
         <option value="$PROJECT_DIR$/wq/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/wq/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/wq/frontend/lesses/app/home.less" />
+        <option value="$PROJECT_DIR$/wq/frontend/lesses/admin.less" />
+        <option value="$PROJECT_DIR$/wq/frontend/lesses/common/article-list.less" />
+        <option value="$PROJECT_DIR$/wq/frontend/lesses/app/article-index.less" />
+        <option value="$PROJECT_DIR$/wq/frontend/article-index-app.html" />
+        <option value="$PROJECT_DIR$/wq/frontend/home-app.html" />
+        <option value="$PROJECT_DIR$/wq/views/article/index.php" />
       </list>
     </option>
   </component>
@@ -305,10 +224,6 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -327,6 +242,10 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="article" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -342,7 +261,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="frontend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -481,28 +400,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wq/vendor/yiisoft/yii2/web/Application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27315915" vertical-offset="242" max-vertical-offset="2839">
-          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="238">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wq/module/admin/controllers/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79809976" vertical-offset="1228" max-vertical-offset="1717">
-          <caret line="92" column="5" selection-start-line="23" selection-start-column="4" selection-end-line="92" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/helpers/Tools.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2108">
@@ -718,14 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/views/article/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1445">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/layouts.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="4.1463413" vertical-offset="0" max-vertical-offset="1700">
@@ -741,14 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/home.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5686274" vertical-offset="1620" max-vertical-offset="3672">
-          <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/frontend/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5456853" vertical-offset="609" max-vertical-offset="1003">
@@ -757,36 +638,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/frontend/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61167514" vertical-offset="915" max-vertical-offset="1309">
-          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wq/frontend/home-app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="75.73077" vertical-offset="4825" max-vertical-offset="5219">
-          <caret line="168" column="14" selection-start-line="141" selection-start-column="8" selection-end-line="168" selection-end-column="14" />
-          <folding>
-            <marker date="1462787187000" expanded="true" signature="12974:13000" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/frontend/common-app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.615385" vertical-offset="1357" max-vertical-offset="1751">
           <caret line="93" column="9" selection-start-line="91" selection-start-column="6" selection-end-line="93" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/article-index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -823,14 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/about.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.33333334" vertical-offset="0" max-vertical-offset="629">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wq/views/site/about.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="765">
@@ -857,8 +704,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wq/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30203044" vertical-offset="527" max-vertical-offset="1717">
-          <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="510" max-vertical-offset="1717">
+          <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/about.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.33333334" vertical-offset="0" max-vertical-offset="629">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/home-app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8076923" vertical-offset="1287" max-vertical-offset="5219">
+          <caret line="80" column="57" selection-start-line="80" selection-start-column="57" selection-end-line="80" selection-end-column="57" />
+          <folding>
+            <marker date="1462849369000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/article-index-app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32304037" vertical-offset="510" max-vertical-offset="2006">
+          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/admin.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32304037" vertical-offset="0" max-vertical-offset="421">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.7458432" vertical-offset="0" max-vertical-offset="1309">
+          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/article-index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30050504" vertical-offset="0" max-vertical-offset="833">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/common/article-list.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="952">
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/frontend/lesses/app/home.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85858583" vertical-offset="204" max-vertical-offset="2822">
+          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wq/views/article/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28266034" vertical-offset="595" max-vertical-offset="1445">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding />
         </state>
       </provider>

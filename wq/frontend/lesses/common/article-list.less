@@ -1,0 +1,50 @@
+article {
+  padding:10px 0 20px;
+  border-bottom: solid 1px #ddd;
+  &:hover {
+    border-bottom: solid 1px #83AF9B;
+  }
+  .left {
+    z-index: 2;
+    position: relative;
+    img {
+      width: @article-img-width;
+      height: @article-img-height;
+    }
+  }
+  .right {
+    position: relative;
+    z-index: 1;
+    margin-left: -(@article-img-width);
+    padding-left: @article-img-width+20px;
+    padding-right: 0;
+    h4 {
+      margin-top: 0;
+    }
+    p {
+      color: @p-color;
+      a {
+        color: @a-color-blue;
+        &:hover {
+          color: @a-color-h;
+        }
+      }
+    }
+    .summary {
+      height: 80px;
+      overflow: hidden;
+    }
+    .leaf {
+      color: #01b838
+    }
+    .clock {
+      color: #567efc
+    }
+    .comment {
+      color: #f8b838
+    }
+    .eye {
+      color: #aaa
+    }
+  }
+}

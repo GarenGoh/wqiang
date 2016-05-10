@@ -100,50 +100,6 @@
   background: #F1B73A;
   border-left: #E8A211 10px solid;
 }
-#article-index .primary-block .item {
-  padding: 30px 0 40px;
-  border-bottom: solid 1px #ddd;
-}
-#article-index .primary-block .item .left {
-  z-index: 2;
-  position: relative;
-}
-#article-index .primary-block .item .left img {
-  width: 180px;
-  height: 140px;
-}
-#article-index .primary-block .item .right {
-  position: relative;
-  z-index: 1;
-  margin-left: -180px;
-  padding-left: 200px;
-  padding-right: 0;
-}
-#article-index .primary-block .item .right h4 {
-  margin-top: 0;
-}
-#article-index .primary-block .item .right p a {
-  color: #759B08;
-}
-#article-index .primary-block .item .right p a:hover {
-  color: #567efc;
-}
-#article-index .primary-block .item .right .summary {
-  height: 80px;
-  overflow: hidden;
-}
-#article-index .primary-block .item .right .leaf {
-  color: #01b838;
-}
-#article-index .primary-block .item .right .clock {
-  color: #567efc;
-}
-#article-index .primary-block .item .right .comment {
-  color: #f8b838;
-}
-#article-index .primary-block .item .right .eye {
-  color: #aaa;
-}
 #article-index .primary-block .linkPager {
   text-align: center;
 }
@@ -386,56 +342,6 @@
 #app-home .primary-block .article .new-article .pull-right {
   margin-top: 8px;
 }
-#app-home .primary-block .article .item {
-  padding: 10px 0 20px;
-  border-bottom: solid 1px #ddd;
-}
-#app-home .primary-block .article .item:hover {
-  border-bottom: solid 1px #83AF9B;
-}
-#app-home .primary-block .article .item .left {
-  z-index: 2;
-  position: relative;
-}
-#app-home .primary-block .article .item .left img {
-  width: 180px;
-  height: 140px;
-}
-#app-home .primary-block .article .item .right {
-  position: relative;
-  z-index: 1;
-  margin-left: -180px;
-  padding-left: 200px;
-  padding-right: 0;
-}
-#app-home .primary-block .article .item .right h4 {
-  margin-top: 0;
-}
-#app-home .primary-block .article .item .right p {
-  color: #756F71;
-}
-#app-home .primary-block .article .item .right p a {
-  color: #759B08;
-}
-#app-home .primary-block .article .item .right p a:hover {
-  color: #567efc;
-}
-#app-home .primary-block .article .item .right .summary {
-  height: 80px;
-  overflow: hidden;
-}
-#app-home .primary-block .article .item .right .leaf {
-  color: #01b838;
-}
-#app-home .primary-block .article .item .right .clock {
-  color: #567efc;
-}
-#app-home .primary-block .article .item .right .comment {
-  color: #f8b838;
-}
-#app-home .primary-block .article .item .right .eye {
-  color: #aaa;
-}
 #app-home .second-block .follow {
   margin-bottom: 10px;
   padding: 0;
@@ -655,6 +561,9 @@
   font-size: 16px;
   background: #536d9d;
   border-radius: 2px;
+}
+#about-page {
+  font-family: 'Microsoft YaHei';
 }
 #about-page .item {
   background: #EEE;
