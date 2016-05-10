@@ -1,7 +1,9 @@
 <?php
 /* @var $this \yii\web\View */
+/* @var $model \app\models\Article */
 use app\helpers\Url;
 use yii\web\View;
+use app\helpers\Html;
 
 $this->params['pageId'] = 'article-view';
 $hotArticles = Yii::$app->articleService->search(['category' => $model->category])
@@ -9,6 +11,7 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
     ->limit(5)
     ->orderBy(['read_count' => SORT_DESC])
     ->all();
+$model->source = explode('#o#', $model->source);
 ?>
 <div class="col-md-12 nav">
     <p class="">
@@ -21,8 +24,16 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
     <h3 class="title"><?=$model->title?></h3>
     <p class="article-info">
         发布时间：<?=date('Y-m-d',$model->created_at)?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        编辑：garen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        阅读（<?=$model->read_count?>）</p>
+        来源：
+        <?php
+        if ($model->source && isset($model->source[0]) && isset($model->source[1])) {
+            echo Html::a($model->source[0], $model->source[1],['style' => "color:#AAA"]);
+        }else{
+            echo Html::a('Garen', Yii::$app->request->hostInfo);
+        }
+        ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        阅读（<?=$model->read_count?>）
+    </p>
     <div class="content">
         <?=$model->content?>
     </div>

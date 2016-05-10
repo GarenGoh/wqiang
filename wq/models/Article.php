@@ -72,7 +72,7 @@ class Article extends BaseActiveRecord
     public function rules()
     {
         return [
-            [['is_hot', 'read_count'], 'default', 'value' => 0],
+            [['is_hot', 'read_count', 'image_id'], 'default', 'value' => 0],
             ['category', 'default', 'value' => static::CATEGORY_LEARN],
             [['is_enable'], 'default', 'value' => 1],
             [['title'], 'required'],

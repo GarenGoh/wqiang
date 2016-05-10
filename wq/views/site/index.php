@@ -14,10 +14,11 @@ $adverts = Yii::$app->advertService->search()
     ->orderBy(['weight' => SORT_DESC, 'id' => SORT_DESC])
     ->limit(4)
     ->all();
-$ad_0 = $adverts[0];
+$ad_0 = isset($adverts[0])?$adverts[0]:[];
 unset($adverts[0]);
 ?>
 <div class="col-md-9 primary-block" style='background: repeat-y right url("<?=Yii::$app->params['line']?>");'>
+    <?php if($ad_0) {?>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -56,6 +57,7 @@ unset($adverts[0]);
             <span class="sr-only">next</span>
         </a>
     </div>
+    <?php }?>
     <div class="article" style='background: repeat-x top url("<?=Yii::$app->params['line']?>");'>
         <div class="new-article col-md-12">
             <h4>最新文章 <small class="pull-right"><a href="#">最新文章最新文章</a></small></h4>
@@ -63,7 +65,7 @@ unset($adverts[0]);
             <?php foreach($articles as $a) {?>
                 <article class="col-md-12 item">
                     <div class="pull-left left">
-                        <a href="<?=$a->url?>"><img src="<?=$a->image->url?>"></a>
+                        <a href="<?=$a->url?>"><img src="<?=$a->image?$a->image->url:''?>"></a>
                     </div>
                     <div class="col-md-12 pull-left right">
                         <h4><a href="<?=$a->url?>"><?=$a->title?></a></h4>
@@ -108,7 +110,7 @@ unset($adverts[0]);
                 <p class="sparkly-p"><a href="#">邮 箱</a></p>
             </div>
             <div class="my-avatar">
-                <a href="<?=Url::to(['site/about'])?>"><img src="<?=Yii::$app->params['uploadDir'].'default/admin2.jpg'?>"></a>
+                <a href="<?=Url::to(['site/about'])?>"><img src="<?=Yii::$app->params['me_2']?>"></a>
             </div>
             <div class="my-summary">
                 <p>网名：<small>Garen.Goh</small></p>
@@ -152,8 +154,8 @@ unset($adverts[0]);
             </div>
         </div>
     </div>
-    <div id="fixed-top" class="col-md-12 row" >
-    <div class="col-md-12 hot-tag" style='background: repeat-x top url("<?=Yii::$app->params["line"]?>");'>
+    <div id="fixed-top" class="col-md-12">
+    <div class="col-md-12 hot-tag" style='padding: 0; background: repeat-x top url("<?=Yii::$app->params["line"]?>");'>
         <div class="head">
             <h4>热门标签</h4>
         </div>
@@ -237,7 +239,7 @@ unset($adverts[0]);
             </div>
         </div>
     </div>
-    <div class="col-md-12 friendly" style="z-index: -1;">
+    <div class="col-md-12 friendly" style="padding: 0;">
         <div class="head">
             <h4>友情链接:</h4>
         </div>

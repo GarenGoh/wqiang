@@ -11,10 +11,10 @@ $this->params['pageId'] = 'about-page';
     <div class="col-md-12 item" style="font-family: STXinwei, FangSong, STXingkai,'Microsoft YaHei', ;">
         <div class="col-md-12 basic">
             <h4>基本资料：</h4>
-            <div class="col-md-5 my-img">
-                <img src="/images/default/1.jpg">
+            <div class="col-md-6 my-img">
+                <img src="<?=Yii::$app->params['me_1']?>">
             </div>
-            <p class="col-md-7 info" >
+            <p class="col-md-6 info" >
                 <i class="fa fa-user"></i> 姓名：吴强<br>
                 <i class="fa fa-street-view"></i> 昵称： Garen<br>
                 <i class="fa fa-qq"></i> Q Q：188226814<br>

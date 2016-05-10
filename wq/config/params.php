@@ -20,6 +20,8 @@ return [
         9 => 'default_avatar_9.jpg',
         ],
     'defaultImageUrl' => $uploadDir.'default/1.jpg',
+    'me_1' => $uploadDir.'default/me_1.jpg',
+    'me_2' => $uploadDir.'default/me_2.jpg',
     '404Image' => $uploadDir.'default/404Image.png',
     'wechatImageUrl' => $uploadDir.'default/wechat.png',
     'line' => $uploadDir.'default/r_line.jpg',

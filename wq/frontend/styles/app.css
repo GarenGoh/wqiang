@@ -380,6 +380,9 @@
 #app-home .second-block .follow .body .my-summary p small {
   color: #bc874d;
 }
+#app-home .second-block #fixed-top {
+  padding: 0;
+}
 #app-home .second-block .hot-article {
   margin-top: 10px;
   padding: 0;
