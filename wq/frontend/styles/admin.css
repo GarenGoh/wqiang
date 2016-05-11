@@ -56,6 +56,9 @@ article .left {
 article .left img {
   width: 180px;
   height: 140px;
+  box-shadow: 0 0 6px;
+  border: 1px solid #4985b7;
+  border-radius: 3px;
 }
 article .right {
   position: relative;

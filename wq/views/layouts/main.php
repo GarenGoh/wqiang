@@ -7,10 +7,11 @@ use yii\helpers\Html;
 use app\assets\AppAsset;
 use app\models\User;
 use app\helpers\Url;
+use app\models\Article;
 
 AppAsset::register($this);
 $currentUser = Yii::$app->user->getIdentity();
-$navArticle = \app\models\Article::getCategoryMap();
+$navArticle = Article::getCategoryMap();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -79,7 +80,7 @@ $navArticle = \app\models\Article::getCategoryMap();
         <a href="http://wqiang.net/">Garen.Goh个人博客</a> 内容版权所有，同时保留所有权利。
     </div>
     <div class="col-md-4 friendly-link">
-        <p> 友情链接：<small><a href="https://www.sdk.cn/">SDK.cn</a><a href="http://xiajie.me/https://">Jerry's Blog</a></small></p>
+        <p> 友情链接：<small><a href="https://www.sdk.cn/" target="_blank">SDK.cn</a><a href="http://xiajie.me/" target="_blank">Jerry's Blog</a></small></p>
     </div>
 </footer>
 <?php

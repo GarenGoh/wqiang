@@ -30,7 +30,7 @@ unset($adverts[0]);
         <!-- Wrapper for slides -->
         <div class="carousel-inner sparkly" role="listbox">
             <div class="item active">
-                <a href="<?=$ad->link?>"><img src="<?=$ad_0->image->url?>"></a>
+                <a href="<?=$ad_0->link?>"><img src="<?=$ad_0->image->url?>"></a>
                 <div class="carousel-caption ad-text">
                     <h3><a href="<?=$ad_0->link?>" class="ad-title"><?=$ad_0->title?></a></h3>
                     <p><a href="<?=$ad_0->link?>" class="ad-summary"><?=$ad_0->summary?></a></p>
