@@ -27,7 +27,7 @@ use app\models\Article;
                     [
                         'attribute' => 'title',
                         'content' => function($model) {
-                            return Html::a(Html::string($model->title,10), $model->url, ['id' => $model->id]);
+                            return Html::a(Html::string($model->title,10), $model->url, ['id' => $model->id,'target' => "_blank"]);
                         }
                     ],
                     'creator_id',

@@ -5,9 +5,9 @@ define('ADMIN_NAME', 'admin');
 $config = [
     'language' => 'zh-CN',
     'modules' => [
-        'test' => [
+        /*'test' => [
             'class' => 'app\test\Module'
-        ],
+        ],*/
         ADMIN_NAME => [
             'class' => 'app\module\admin\Admin',
         ],

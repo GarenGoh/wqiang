@@ -36,7 +36,7 @@ $hotArticles = Yii::$app->articleService->search()
     ?>
     <article class="col-md-12 item">
         <div class="pull-left left">
-            <a href="<?=$a->url?>"><img src="<?=$a->image->url?>"></a>
+            <a href="<?=$a->url?>"><img src="<?=$a->image?$a->image->url:''?>"></a>
         </div>
         <div class="col-md-12 pull-left right">
             <h4><a href="<?=$a->url?>"><?=$a->title?></a></h4>
