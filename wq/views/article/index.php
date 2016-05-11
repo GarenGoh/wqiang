@@ -42,7 +42,7 @@ $hotArticles = Yii::$app->articleService->search()
             <h4><a href="<?=$a->url?>"><?=$a->title?></a></h4>
             <p class="summary"><?=$a->summary?></p>
             <p ><i class="fa fa-leaf leaf"></i> php学习&nbsp;&nbsp;&nbsp;
-                <i class="fa fa-clock-o clock"></i> <?=date('Y-m-d',$a->created_at) ?>&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-clock-o clock"></i> <?=date('Y-m-d', $a->created_at) ?>&nbsp;&nbsp;&nbsp;
                 <i class="fa fa-comment-o comment"></i> 评论（32）&nbsp;&nbsp;&nbsp;
                 <i class="fa fa-eye eye"></i>浏览（<?=$a->read_count?>）&nbsp;&nbsp;&nbsp;
                 <a class="pull-right" href="#">阅读原文>></a>
