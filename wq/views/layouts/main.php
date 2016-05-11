@@ -37,6 +37,7 @@ $navArticle = Article::getCategoryMap();
             <?php foreach($navArticle as $k => $v) {?>
             <li class="nav pull-left"><a href="<?=Url::to(['article/'.$k])?>" ><?=$v?></a></li>
             <?php }?>
+            <li class="nav pull-left"><a href="<?=Url::to(['note/index'])?>" >便签</a></li>
             <li class="nav pull-left"><a href="<?=Url::to(['site/about'])?>" >关于</a></li>
             <?php if(Yii::$app->user->isGuest){ ?>
             <li class="login pull-right"><a href="<?=Url::to(['site/register'])?>">注册</a>]</li>

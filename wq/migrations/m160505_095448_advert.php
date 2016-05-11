@@ -27,5 +27,4 @@ class m160505_095448_advert extends BaseMigration
 
         return true;
     }
-
 }

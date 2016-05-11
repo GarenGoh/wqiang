@@ -53,6 +53,9 @@ $config = [
         'advertService' => [
             'class' => 'app\components\AdvertService'
         ],
+        'noteService' => [
+            'class' => 'app\components\NoteService'
+        ],
     ]
 ];
 

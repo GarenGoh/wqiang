@@ -1,25 +1,29 @@
 <?php
 
-$this->params['pageId'] = 'note-page'
+use yii\data\ActiveDataProvider;
+
+$this->params['pageId'] = 'note-page';
+$query = Yii::$app->noteService->search()
+    ->orderBy(['weight' => SORT_DESC, 'id' => SORT_DESC]);
+$provider = new ActiveDataProvider([
+    'query' => $query,
+    'pagination' => [
+        'pageSize' => 24
+    ]
+]);
+$notes = $provider->getModels();
 ?>
 <ul class="note-blocks">
+    <?php
+        foreach($notes as $n) {
+    ?>
     <li>
-        RI&E
+        <?=$n->title?>
         <div class="popup">
             <p>
-                设置文字不换行，超过的部分用“...”代替<br>
-                overflow: hidden;<br>
-                text-overflow: ellipsis;<br>
-                white-space: nowrap;<br>
-                width: 210px;<br>
-                除width属性外，顺序不要颠倒哦<br>
-                设置文字不换行，超过的部分用“...”代替<br>
-                overflow: hidden;<br>
-                text-overflow: ellipsis;<br>
-                white-space: nowrap;<br>
-                width: 210px;<br>
-                除width属性外，顺序不要颠倒哦<br>
+                <?=nl2br($n->content)?>
             </p>
         </div>
     </li>
+    <?php }?>
 </ul>
