@@ -12,31 +12,33 @@
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="vendor/bower/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="vendor/bower/simditor/styles/simditor.css">
+    <link rel="stylesheet" href="vendor/bower/simditor-html/styles/simditor-html.css">
     <link rel="stylesheet" href="vendor/bower/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="vendor/bower/selectize/dist/css/selectize.bootstrap3.css">
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/app.css">
     <!-- endbuild -->
   </head>
-<body>
+<body class="container">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
 
 
+    <h1 id="wq">编辑器</h1>
+    <textarea id="editor" placeholder="这里输入内容" autofocus>初始化内容</textarea>
+    <h1>图标</h1>
+    <i class="fa fa-github"></i>
+    <h1>图片上传</h1>
+    <div class="upload">
+      <i class="fa fa-picture-o"></i>
+      <i class="fa fa-circle-o-notch fa-spin"></i>
+      <input type="file" class="input" name="file" id="file-upload">
+    </div>
 
-  <h1 id="wq">编辑器</h1>
-  <textarea id="editor" placeholder="这里输入内容" autofocus>初始化内容</textarea>
-  <h1>图标</h1>
-  <i class="fa fa-github"></i>
-  <h1>图片上传</h1>
-  <div class="upload">
-    <i class="fa fa-picture-o"></i>
-    <i class="fa fa-circle-o-notch fa-spin"></i>
-    <input type="file" class="input" name="file" id="file-upload">
+
   </div>
-
-
-
   <script src="vendor/bower/jquery/dist/jquery.js"></script>
-  <script src="../vendor/yiisoft/yii2/assets/yii.js"></script>
+  <!--<script src="../vendor/yiisoft/yii2/assets/yii.js"></script>-->
   <!-- build:js /scripts/app.js -->
   <script src="vendor/bower/jquery-ui/ui/widget.js"></script>
   <script src="vendor/bower/blueimp-file-upload/js/jquery.fileupload.js"></script>
@@ -51,6 +53,10 @@
   <script src="vendor/bower/simple-hotkeys/lib/hotkeys.js"></script>
   <script src="vendor/bower/simple-uploader/lib/uploader.js"></script>
   <script src="vendor/bower/simditor/lib/simditor.js"></script>
+  <script src="vendor/bower/js-beautify/js/lib/beautify-html.js"></script>
+  <script src="vendor/bower/simditor-html/lib/simditor-html.js"></script>
+  <script src="vendor/bower/simditor-mark/lib/simditor-mark.js"></script>
+
 
   <script src="vendor/bower/bootstrap-extension/dist/js/bootstrap-extension.js"></script>
 
@@ -64,7 +70,30 @@
   <!-- endbuild -->
   <script>
     var editor = new Simditor({
-      textarea: $('#editor')
+      textarea: $('#editor'),
+      toolbar: [
+        'title', 'bold', 'italic', 'underline', 'color', 'strikethrough',
+        'alignment', 'code', 'blockquote', 'ol', 'ul', 'image', 'link', 'hr',
+        'indent', 'outdent', '|', 'html', 'mark'
+      ],
+      allowedTags: [
+        'div'
+      ],
+      allowedAttributes: {
+        div: ['id'],
+        p: ['id']
+      },
+      allowedStyles: {
+        p: ['color']
+      },
+
+        upload: {
+        url: 'upload.php',
+        params: null,
+        fileKey: 'url',
+        connectionCount: 3,
+        leaveConfirm: '正在上传文件，如果离开上传会自动取消'
+      }
     });
   </script>
 </body>

@@ -23,6 +23,8 @@
     "simditor": "^2.3.6",
     "jquery-ui": "^1.11.4",
     "blueimp-file-upload": "^9.12.3",
-    "selectize": "^0.12.1"
+    "selectize": "^0.12.1",
+    "simditor-html": "^1.1.1",
+    "simditor-mark": "^1.2.0"
   }
 }
