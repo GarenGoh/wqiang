@@ -110,7 +110,7 @@ unset($adverts[0]);
                 <p class="sparkly-p"><a href="mailto:garen.goh&#64;&#113;&#113;&#46;com?subject=来自Garen的个人博客">邮 箱</a></p>
             </div>
             <div class="my-avatar">
-                <a href="<?=Url::to(['site/about'])?>"><img src="<?=Yii::$app->params['me_2']?>"></a>
+                <a href="<?=Url::to(['site/about'])?>"><img src="<?=Yii::$app->params['me_3']?>"></a>
             </div>
             <div class="my-summary">
                 <p>网名：<small>Garen.Goh</small></p>

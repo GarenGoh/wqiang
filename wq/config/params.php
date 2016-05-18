@@ -22,6 +22,7 @@ return [
     'defaultImageUrl' => $uploadDir.'default/1.jpg',
     'me_1' => $uploadDir.'default/me_1.jpg',
     'me_2' => $uploadDir.'default/me_2.jpg',
+    'me_3' => $uploadDir.'default/me_3.jpg',
     '404Image' => $uploadDir.'default/404Image.png',
     'wechatImageUrl' => $uploadDir.'default/wechat.png',
     'line' => $uploadDir.'default/r_line.jpg',
