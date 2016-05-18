@@ -69,7 +69,7 @@ unset($adverts[0]);
                     </div>
                     <div class="col-md-12 pull-left right">
                         <h4><a href="<?=$a->url?>"><?=$a->title?></a></h4>
-                        <p class="summary"><?=Html::string($a->summary, 30)?></p>
+                        <p class="summary"><?=Html::string($a->summary, 160)?></p>
                         <p ><i class="fa fa-leaf leaf"></i>
                             <?php
                             if($a->keywords) {
