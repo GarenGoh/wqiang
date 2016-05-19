@@ -319,13 +319,13 @@
   height: 400px;
   width: 100%;
 }
-#app-home .primary-block .carousel .item .ad-text {
+#app-home .primary-block .carousel .item .ls-text {
   text-align: left;
 }
-#app-home .primary-block .carousel .item .ad-text .ad-title {
+#app-home .primary-block .carousel .item .ls-text .ls-title {
   color: #eee;
 }
-#app-home .primary-block .carousel .item .ad-text .ad-summary {
+#app-home .primary-block .carousel .item .ls-text .ls-summary {
   color: #FFF;
 }
 #app-home .primary-block .carousel i {

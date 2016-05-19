@@ -26,7 +26,7 @@ $form = ActiveForm::begin([
             'labelOptions' => [
                 'label' => $model->getAttributeLabel('image')
             ]
-        ])->image(['prefix' => 'advert'])?>
+        ])->image(['prefix' => 'slide'])?>
         <?=$form->field($model, 'position_id')->dropDownList(Advert::getPositionMap(), ['style'=>'width:100%'])?>
         <?=$form->field($model, 'target')->dropDownList(Advert::getTargetMap(), ['style'=>'width:100%'])?>
         <?=$form->field($model, 'link')->textInput()?>
