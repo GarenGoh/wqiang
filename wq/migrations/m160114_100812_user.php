@@ -2,7 +2,6 @@
 
 use app\migrations\BaseMigration;
 use app\models\User;
-use app\models\UserManager;
 
 class m160114_100812_user extends BaseMigration
 {
