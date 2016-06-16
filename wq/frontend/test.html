@@ -27,14 +27,17 @@
 
     <h1 id="wq">编辑器</h1>
     <textarea id="editor" placeholder="这里输入内容" autofocus>初始化内容</textarea>
+
     <h1>图标</h1>
     <i class="fa fa-github"></i>
+
     <h1>图片上传</h1>
     <div class="upload">
       <i class="fa fa-picture-o"></i>
       <i class="fa fa-circle-o-notch fa-spin"></i>
       <input type="file" class="input" name="file" id="file-upload">
     </div>
+
     <h1>高亮代码</h1>
     <pre><code>
       http://localhost:5000/test.html
@@ -44,34 +47,29 @@
     </code></pre>
     <pre><code>
       upload: {
-      url: 'upload.php',
-      params: null,
-      fileKey: 'url',
-      connectionCount: 3,
-      leaveConfirm: '正在上传文件，如果离开上传会自动取消'
+        params: null,
+        fileKey: 'url',
+        connectionCount: 3,
+        leaveConfirm: '正在上传文件，如果离开上传会自动取消'
       }
-      });
      </code></pre>
     <pre><code>
       &lt;?php
-      namespace app\assets;
-      use yii\web\AssetBundle;
-
-      /**
-      * @author Qiang Xue &lt;qiang.xue@gmail.com&gt;
-      * @since 2.0
-      */
-      class AppAsset extends AssetBundle
-      {
-        public $depends = [
-          'yii\web\YiiAsset',//载入yii.js jquery.js
-        ];
-      }
+        namespace app\assets;
+        use yii\web\AssetBundle;
+        /**
+        * @author Qiang Xue &lt;qiang.xue@gmail.com&gt;
+        */
+        class AppAsset extends AssetBundle
+        {
+          public $depends = [
+            'yii\web\YiiAsset',//载入yii.js jquery.js
+          ];
+        }
       ?&gt;
     </code></pre>
     <pre><code>
       events {
-      use   epoll;             #epoll是多路复用IO(I/O Multiplexing)中的一种方式,但是仅用于linux2.6以上内核,可以大大提高nginx的性能
       worker_connections  1024;#单个后台worker process进程的最大并发链接数
       # multi_accept on;
       }
