@@ -12,6 +12,7 @@ $hotArticles = Yii::$app->articleService->search(['category' => $model->category
     ->orderBy(['read_count' => SORT_DESC])
     ->all();
 $model->source = explode('#o#', $model->source);
+$this->registerJs('hljs.initHighlightingOnLoad();',View::POS_END);//代码高亮
 ?>
 <div class="col-md-12 nav">
     <p class="">
