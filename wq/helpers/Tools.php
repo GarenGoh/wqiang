@@ -113,6 +113,15 @@ class Tools
             ImageDestroy($srcImg);
         }
     }
+
+    public static function dev($content, $end = 0)
+    {
+        print_r($content);
+        echo '<br>';
+        if($end) {
+            exit;
+        }
+    }
 }
 
 ?>

@@ -3,6 +3,8 @@ use yii\data\ActiveDataProvider;
 use app\models\Article;
 use yii\widgets\LinkPager;
 
+
+$this->title = '文章列表页';
 $where = Yii::$app->request->get();
 
 if(isset($category)) {

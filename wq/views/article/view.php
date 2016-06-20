@@ -5,6 +5,7 @@ use app\helpers\Url;
 use yii\web\View;
 use app\helpers\Html;
 
+$this->title = $model->title;
 $this->params['pageId'] = 'article-view';
 $hotArticles = Yii::$app->articleService->search(['category' => $model->category])
     ->select(['id', 'title', 'read_count'])
