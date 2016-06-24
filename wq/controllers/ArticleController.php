@@ -1,11 +1,8 @@
 <?php
 namespace app\controllers;
 
-use app\forms\UploadForm;
-use app\helpers\Tools;
 use app\models\Article;
 use Yii;
-use yii\web\UploadedFile;
 
 class ArticleController extends BaseController
 {
@@ -65,11 +62,7 @@ class ArticleController extends BaseController
 
     public function actionTest()
     {
-        $model = new UploadForm();
-
-        return $this->renderPartial('test',[
-            'model' => $model
-        ]);
+        return $this->renderPartial('test');
     }
 }
 ?>
