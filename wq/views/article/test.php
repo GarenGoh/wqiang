@@ -38,4 +38,3 @@ use app\helpers\Tools;
         </div>
     </body>
 </html>
-

@@ -166,6 +166,10 @@
 #article-view .article .content {
   margin-top: 30px;
 }
+#article-view .article .content pre {
+  background-color: #B5B5B5;
+  border-radius: 3px;
+}
 #article-view .secondary-block {
   font-family: 'Times New Roman', 'Microsoft YaHei', 'New York', serif, Times, TimesNR;
 }
