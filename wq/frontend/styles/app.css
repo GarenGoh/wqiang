@@ -151,6 +151,9 @@
   padding: 26px;
   font-size: 12px;
 }
+#article-view .article {
+  padding-right: 40px;
+}
 #article-view .article .title {
   text-align: center;
 }
