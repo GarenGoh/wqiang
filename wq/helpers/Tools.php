@@ -1,6 +1,8 @@
 <?php
 namespace app\helpers;
 
+use yii\base\Object;
+
 class Tools
 {
     /*
@@ -150,6 +152,8 @@ class Tools
 
     /*
      * 冒泡排序
+     * 循环 (n-1)+(n-2)...1 次,及:
+     * (n-1)*n/2
      */
     public static function bubbleSort($arr)
     {
@@ -172,6 +176,8 @@ class Tools
 
     /*
      * 选择排序
+     * 循环 (n-1)+(n-2)...1 次,及:
+     * (n-1)*n/2
      */
     public static function selectSort($arr) {
         //双重循环完成，外层控制轮数，内层控制比较次数
@@ -200,6 +206,10 @@ class Tools
 
     /*
      * 插入排序
+     * 原数组正好倒序时,循环次数最多:
+     * (n-1)*n/2
+     * 原数组正好顺序时,循环次数最少:
+     * (n-1)
      */
     public static function insertSort($arr) {
         $len=count($arr);
@@ -222,6 +232,9 @@ class Tools
 
     /*
      * 快速排序
+     * 原数组本身顺序越整齐,循环次数越多. 最多 (n-1)*n/2
+     *
+     * php sort()函数采用此排序方法.
      */
     public static function quickSort($arr) {
         //先判断是否需要继续进行
