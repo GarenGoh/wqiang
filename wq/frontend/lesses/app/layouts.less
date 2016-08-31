@@ -20,54 +20,12 @@
       }
     }
   }
-  .item {
-    height: 50px;
-    background-color: #05435c;
-    ul {
-      margin: 0;
-      padding: 20px 4px 0 5%;
-    }
-    .nav {
-      margin-bottom: 0;
-      font-size: 19px;
-      list-style-type: none;
-      a {
-        color: #fff;
-        border-top-right-radius: 2px;
-        border-top-left-radius: 2px;
-        padding: 8px 16px 6px;
-        margin-right: 25px;
-        &:hover {
-          background: #2b585c;
-          text-decoration: none;
-        }
+  nav {
+    .pc-right {
+      @media screen and (min-width: @screen-md) {
+        float: right !important;
       }
     }
-    .login {
-      margin-bottom: 0;
-      font-size: 14px;
-      list-style-type: none;
-      padding: 0;
-      color: #fff;
-      a {
-        color: #fff;
-        &:hover {
-          color: #15A085;
-        }
-      }
-    }
-    img {
-      margin-top: -5px;
-    }
-  }
-  .user-avatar {
-    background: #fff;
-    float: right;
-    border: solid 1px #ddd;
-    overflow: hidden;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
   }
 }
 .content-wrapper{

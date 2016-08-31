@@ -25,54 +25,10 @@
   height: 160px;
   width: 160px;
 }
-#app-top .item {
-  height: 50px;
-  background-color: #05435c;
-}
-#app-top .item ul {
-  margin: 0;
-  padding: 20px 4px 0 5%;
-}
-#app-top .item .nav {
-  margin-bottom: 0;
-  font-size: 19px;
-  list-style-type: none;
-}
-#app-top .item .nav a {
-  color: #fff;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
-  padding: 8px 16px 6px;
-  margin-right: 25px;
-}
-#app-top .item .nav a:hover {
-  background: #2b585c;
-  text-decoration: none;
-}
-#app-top .item .login {
-  margin-bottom: 0;
-  font-size: 14px;
-  list-style-type: none;
-  padding: 0;
-  color: #fff;
-}
-#app-top .item .login a {
-  color: #fff;
-}
-#app-top .item .login a:hover {
-  color: #15A085;
-}
-#app-top .item img {
-  margin-top: -5px;
-}
-#app-top .user-avatar {
-  background: #fff;
-  float: right;
-  border: solid 1px #ddd;
-  overflow: hidden;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
+@media screen and (min-width: 992px) {
+  #app-top nav .pc-right {
+    float: right !important;
+  }
 }
 .content-wrapper {
   margin: 20px auto;
@@ -322,44 +278,62 @@
 #app-home .primary-block {
   padding-right: 25px;
 }
-#app-home .primary-block .carousel .item img {
+#app-home .primary-block .slide .item img {
   height: 400px;
   width: 100%;
 }
-#app-home .primary-block .carousel .item .ls-text {
+@media screen and (max-width: 992px) {
+  #app-home .primary-block .slide .item img {
+    height: 200px;
+  }
+}
+#app-home .primary-block .slide .item .slide-text {
   text-align: left;
 }
-#app-home .primary-block .carousel .item .ls-text .ls-title {
+#app-home .primary-block .slide .item .slide-text .slide-title {
   color: #eee;
 }
-#app-home .primary-block .carousel .item .ls-text .ls-summary {
+#app-home .primary-block .slide .item .slide-text .slide-summary {
   color: #FFF;
 }
-#app-home .primary-block .carousel i {
-  margin-top: 150px;
+#app-home .primary-block .slide i {
+  margin-top: 180px;
+}
+@media screen and (max-width: 992px) {
+  #app-home .primary-block .slide i {
+    margin-top: 100px;
+  }
 }
 #app-home .primary-block .article {
   padding-top: 10px;
   margin-top: 20px;
 }
-#app-home .primary-block .article .new-article {
+#app-home .primary-block .article .article-top {
   padding-left: 0;
   border-bottom: solid 3px #F77825;
 }
-#app-home .primary-block .article .new-article .pull-right {
+#app-home .primary-block .article .article-top .pull-right {
   margin-top: 8px;
 }
 #app-home .second-block .follow {
   margin-bottom: 10px;
-  padding: 0;
+  border-radius: 3px;
+  border: #aaa solid 1px;
 }
 #app-home .second-block .follow .head {
   border-bottom: 1px solid #eee;
-  margin-bottom: 20px;
+  background-color: #BBBBBB;
+}
+#app-home .second-block .follow .head h4 {
+  margin: 0;
+  padding: 10px 0;
 }
 #app-home .second-block .follow .body .item {
-  padding: 0;
+  background-color: #EEEEEE;
+  width: 25%;
+  padding-top: 20px;
   text-align: center;
+  float: left;
 }
 #app-home .second-block .follow .body .item i {
   font-size: 40px;
@@ -372,13 +346,11 @@
 }
 #app-home .second-block .follow .body .my-avatar img {
   width: 100%;
-  height: 140px;
+  height: 160px;
 }
 #app-home .second-block .follow .body .my-summary {
-  background: #eee;
   padding-top: 12px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  padding-left: 6px;
 }
 #app-home .second-block .follow .body .my-summary p {
   margin-bottom: 0;

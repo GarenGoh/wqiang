@@ -1,5 +1,4 @@
 a {
-  color: @a-color;
   &:hover {
     color: #567efc;
     text-decoration:none;
@@ -10,5 +9,10 @@ h1,h2,h3,h4,h5,h6 {
     &:hover {
       color: @a-color;
     }
+  }
+}
+.phone-hide {
+  @media screen and (max-width: @screen-md) {
+    display: none;
   }
 }

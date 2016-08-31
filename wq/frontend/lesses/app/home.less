@@ -1,30 +1,36 @@
 #app-home {
   .primary-block {
     padding-right: 25px;
-    .carousel {
+    .slide {
       .item {
         img {
           height: 400px;
-          width: 100%
+          width: 100%;
+          @media screen and (max-width: @screen-md) {
+            height: 200px;
+          }
         }
-        .ls-text{
+        .slide-text{
           text-align: left;
-          .ls-title {
+          .slide-title {
             color: #eee;
           }
-          .ls-summary {
+          .slide-summary {
             color: #FFF;
           }
         }
       }
       i {
-        margin-top: 150px;
+        margin-top: 180px;
+        @media screen and (max-width: @screen-md) {
+          margin-top: 100px;
+        }
       }
     }
     .article{
       padding-top: 10px;
       margin-top: 20px;
-      .new-article {
+      .article-top {
         padding-left: 0;
         border-bottom: solid 3px #F77825;
         .pull-right {
@@ -36,15 +42,23 @@
   .second-block {
     .follow {
       margin-bottom: 10px;
-      padding: 0;
+      border-radius: 3px;
+      border: #aaa solid 1px;
       .head {
         border-bottom: 1px solid #eee;
-        margin-bottom: 20px;
+        background-color: #BBBBBB;
+        h4 {
+          margin: 0;
+          padding: 10px 0;
+        }
       }
       .body {
         .item {
-          padding: 0;
+          background-color: #EEEEEE;
+          width: 25%;
+          padding-top: 20px;
           text-align: center;
+          float: left;
           i {
             font-size: 40px;
             margin-bottom: 10px;
@@ -58,14 +72,12 @@
         .my-avatar {
           img {
             width: 100%;
-            height: 140px;
+            height: 160px;
           }
         }
         .my-summary {
-          background: @c-grey;
           padding-top: 12px;
-          border-bottom-left-radius: 3px;
-          border-bottom-right-radius: 3px;
+          padding-left: 6px;
           p {
             margin-bottom: 0;
             color: #990000;

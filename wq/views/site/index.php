@@ -31,17 +31,17 @@ unset($adverts[0]);
         <div class="carousel-inner sparkly" role="listbox">
             <div class="item active">
                 <a href="<?=$ad_0->link?>" target="_blank"><img src="<?=$ad_0->image->url?>"></a>
-                <div class="carousel-caption ls-text">
-                    <h3><a href="<?=$ad_0->link?>" class="ls-title"><?=$ad_0->title?></a></h3>
-                    <p><a href="<?=$ad_0->link?>" class="ls-summary"><?=$ad_0->summary?></a></p>
+                <div class="carousel-caption slide-text">
+                    <h3><a href="<?=$ad_0->link?>" class="slide-title"><?=$ad_0->title?></a></h3>
+                    <p><a href="<?=$ad_0->link?>" class="slide-summary"><?=$ad_0->summary?></a></p>
                 </div>
             </div>
             <?php foreach($adverts as $ad) {?>
             <div class="item">
                 <a href="<?=$ad->link?>" target="_blank"><img src="<?=$ad->image->url?>"></a>
-                <div class="carousel-caption ls-text">
-                    <h3><a href="<?=$ad->link?>" class="ls-title"><?=$ad->title?></a></h3>
-                    <p><a href="<?=$ad->link?>" class="ls-summary"><?=$ad->summary?></a></p>
+                <div class="carousel-caption slide-text">
+                    <h3><a href="<?=$ad->link?>" class="slide-title"><?=$ad->title?></a></h3>
+                    <p><a href="<?=$ad->link?>" class="slide-summary"><?=$ad->summary?></a></p>
                 </div>
             </div>
             <?php }?>
