@@ -59,18 +59,19 @@ unset($adverts[0]);
     </div>
     <?php }?>
     <div class="article" style='background: repeat-x top url("<?=Yii::$app->params['line']?>");'>
-        <div class="new-article col-md-12">
+        <div class="article-top">
             <h4>最新文章 <small class="pull-right"><a href="#">最新文章最新文章</a></small></h4>
         </div>
             <?php foreach($articles as $a) {?>
-                <article class="col-md-12 item">
-                    <div class="pull-left left">
+                <article>
+                    <div class="left">
                         <a href="<?=$a->url?>"><img src="<?=$a->image?$a->image->url:''?>"></a>
                     </div>
-                    <div class="col-md-12 pull-left right">
+                    <div class="right">
                         <h4><a href="<?=$a->url?>"><?=$a->title?></a></h4>
                         <p class="summary"><?=Html::string($a->summary, 160)?></p>
-                        <p ><i class="fa fa-leaf leaf"></i>
+                        <p class="phone-hide">
+                            <i class="fa fa-leaf leaf"></i>
                             <?php
                             if($a->keywords) {
                                 $n=strpos($a->keywords,',');
@@ -88,24 +89,24 @@ unset($adverts[0]);
     </div>
 </div>
 <div class="col-md-3 second-block">
-    <div class="follow col-md-12" style="background: #EEEEEE;border: #bbb 1px solid;border-radius: 3px;">
-        <div class="head" style="border-bottom: #bbb 1px solid;background: #bbb;">
-            <h4 style="margin-top: 0;padding-top: 15px">关注我</h4>
+    <div class="follow">
+        <div class="head">
+            <h4>关注我</h4>
         </div>
         <div class="body">
-            <div class="col-md-3 item">
+            <div class="item">
                 <i class="fa fa-github"></i>
                 <p class="sparkly-p"><a href="https://github.com/GarenGoh">GitHub</a></p>
             </div>
-            <div class="col-md-3 item">
+            <div class="item">
                 <i class="fa fa-weibo" style="color: #FE2A27;"></i>
                 <p class="sparkly-p"><a href="http://weibo.com/wuqiangbaba">微 博</a></p>
             </div>
-            <div class="col-md-3 item" id="wechat-panel">
+            <div class="item" id="wechat-panel">
                 <i class="fa fa-wechat" style="color: #3DAF36;"></i>
                 <p class="sparkly-p"><a href="#">微 信</a></p>
             </div>
-            <div class="col-md-3 item">
+            <div class="item">
                 <i class="fa fa-envelope-o" style="color: #FFB902;"></i>
                 <p class="sparkly-p"><a href="mailto:garen.goh&#64;&#113;&#113;&#46;com?subject=来自Garen的个人博客">邮 箱</a></p>
             </div>
@@ -121,7 +122,7 @@ unset($adverts[0]);
             </div>
         </div>
     </div>
-    <div class="col-md-12 hot-article">
+    <div class="hot-article">
         <ul class="nav nav-tabs head" role="tablist">
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">热门文章</a></li>
             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">站长推荐</a></li>
@@ -154,8 +155,8 @@ unset($adverts[0]);
             </div>
         </div>
     </div>
-    <div id="fixed-top" class="col-md-12">
-    <div class="col-md-12 hot-tag" style='padding: 0; background: repeat-x top url("<?=Yii::$app->params["line"]?>");'>
+    <div id="fixed-top" class="phone-hide">
+    <div class="hot-tag" style='padding-top: 10px; background: repeat-x top url("<?=Yii::$app->params['line']?>");'>
         <div class="head">
             <h4>热门标签</h4>
         </div>
@@ -239,7 +240,7 @@ unset($adverts[0]);
             </div>
         </div>
     </div>
-    <div class="col-md-12 friendly" style="padding: 0;">
+    <div class="friendly" style="padding: 0;">
         <div class="head">
             <h4>友情链接:</h4>
         </div>

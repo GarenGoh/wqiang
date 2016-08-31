@@ -25,36 +25,53 @@ $navArticle = Article::getCategoryMap();
 </head>
 <body>
 <?php $this->beginBody() ?>
-    <nav id="app-top">
-    <div class="top">
-        <div class="logo">
-            <img src="<?=Yii::$app->params['logoUrl']?>">
+    <div id="app-top">
+        <div class="top">
+            <div class="logo">
+                <img src="<?=Yii::$app->params['logoUrl']?>">
+            </div>
         </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- 手机端会把导航装进集装箱 -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Garen's blog</a>
+                </div>
+                <!-- 导航条内容 -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="<?=Url::to(['article/php'])?>">PHP <span class="sr-only">(current)</span></a></li>
+                        <li><a href="<?=Url::to(['article/db'])?>">数据库</a></li>
+                        <li><a href="<?=Url::to(['article/linux'])?>">Linux</a></li>
+                        <li><a href="<?=Url::to(['note/index'])?>">便签</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他博文 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?=Url::to(['article/frontend'])?>">前端</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="<?=Url::to(['article/learn'])?>">学无止境</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="<?=Url::to(['site/about'])?>">关于</a></li>
+                        <li><a href="<?=Url::to(['site/login'])?>">登录</a></li>
+                        <li><a href="<?=Url::to(['site/logout'])?>">退出</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left pc-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
     </div>
-    <div class="item" id="navbar">
-        <ul>
-            <li class="nav pull-left"><a href="<?=Yii::$app->homeUrl?>">首页</a></li>
-            <?php foreach($navArticle as $k => $v) {?>
-            <li class="nav pull-left"><a href="<?=Url::to(['article/'.$k])?>" ><?=$v?></a></li>
-            <?php }?>
-            <li class="nav pull-left"><a href="<?=Url::to(['note/index'])?>" >便签</a></li>
-            <li class="nav pull-left"><a href="<?=Url::to(['site/about'])?>" >关于</a></li>
-            <?php if(Yii::$app->user->isGuest){ ?>
-            <li class="login pull-right"><a href="<?=Url::to(['site/register'])?>">注册</a>]</li>
-            <li class="login pull-right">[<a href="<?=Url::to(['site/login'])?>">登录</a>|</li>
-            <?php
-            }else{ if($currentUser->role_id == User::ROLE_MANAGER || Yii::$app->userService->isRoot($currentUser->id)){
-            ?>
-            <li class="login pull-right"><a href="<?=Url::to(['site/logout'])?>">退出</a>]</li>
-            <li class="login pull-right">[<a href="<?=Url::to(['admin/site'])?>">后台</a>|</li>
-            <img class="user-avatar" src="<?=$currentUser->avatar_id?$currentUser->avatar->url:Yii::$app->params['defaultAvatarUrl']?>">
-            <?php }else{?>
-                <li class="pull-right login"><a href="<?=Url::to(['site/logout'])?>">退出</a></li>
-                <img class="user-avatar" src="<?=$currentUser->avatar_id?$currentUser->avatar->url:Yii::$app->params['defaultAvatarUrl']?>">
-            <?php }}?>
-        </ul>
-    </div>
-    </nav>
     <div class="content-wrapper container" id="<?=isset($this->params['pageId']) ? $this->params['pageId']:''?>">
         <div style="text-align: center;">
             <?php
