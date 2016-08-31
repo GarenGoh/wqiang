@@ -263,6 +263,11 @@ class Tools
         //合并
         return array_merge($left_array, array($base_num), $right_array);
     }
+    public static function mb_substr_replace($str, $replace, $start, $length, $encoding='utf-8') {
+        $lstr = mb_substr($str, 0, $start, $encoding);
+        $rstr = mb_substr($str, ($start+$length), null, $encoding);
+        return $lstr.$replace.$rstr;
+    }
 }
 
 ?>
