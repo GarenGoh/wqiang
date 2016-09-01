@@ -51,7 +51,6 @@ $navArticle = Article::getCategoryMap();
                         <li class="<?=$nav=='article/php'?'active':''?>"><a href="<?=Url::to(['article/php'])?>">PHP</a></li>
                         <li class="<?=$nav=='article/db'?'active':''?>"><a href="<?=Url::to(['article/db'])?>">数据库</a></li>
                         <li class="<?=$nav=='article/linux'?'active':''?>"><a href="<?=Url::to(['article/linux'])?>">Linux</a></li>
-                        <li class="<?=$nav=='note/index'?'active':''?>"><a href="<?=Url::to(['note/index'])?>">便签</a></li>
                         <li class="<?=($nav=='article/frontend'||$nav=='article/learn')?'active':''?>">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他博文 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -60,9 +59,8 @@ $navArticle = Article::getCategoryMap();
                                 <li><a href="<?=Url::to(['article/learn'])?>">学无止境</a></li>
                             </ul>
                         </li>
+                        <li class="<?=$nav=='note/index'?'active':''?>"><a href="<?=Url::to(['note/index'])?>">便签</a></li>
                         <li class="<?=$nav=='site/about'?'active':''?>"><a href="<?=Url::to(['site/about'])?>">关于</a></li>
-                        <li><a href="<?=Url::to(['site/login'])?>">登录</a></li>
-                        <li><a href="<?=Url::to(['site/logout'])?>">退出</a></li>
                     </ul>
                     <form class="navbar-form navbar-left pc-right" role="search">
                         <div class="form-group">
@@ -70,6 +68,23 @@ $navArticle = Article::getCategoryMap();
                         </div>
                         <button type="submit" class="btn btn-default">搜索</button>
                     </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <?php if(Yii::$app->user->isGuest) {?>
+                                <li><a href="<?=Url::to(['site/login'])?>">登录</a></li>
+                                <?php }else {?>
+                                    <?php if(Yii::$app->userService->isRoot(Yii::$app->user->getId())) {?>
+                                        <li><a href="<?=Url::to(['admin/site/index'])?>">后台</a></li>
+                                <li role="separator" class="divider"></li>
+                                        <?php }?>
+                                <li><a href="<?=Url::to(['site/logout'])?>">退出</a></li>
+                                <?php }?>
+                            </ul>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
         </nav>

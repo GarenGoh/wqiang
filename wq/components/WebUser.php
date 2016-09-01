@@ -18,7 +18,7 @@ class WebUser extends BaseWebUser
             return false;
         }
 
-        if (Yii::$app->userService->isRoot($user)) {
+        if (Yii::$app->userService->isRoot($user->id)) {
             return true;
         }
 
