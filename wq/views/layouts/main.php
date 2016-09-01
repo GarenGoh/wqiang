@@ -36,21 +36,23 @@ $navArticle = Article::getCategoryMap();
                 <!-- 手机端会把导航装进集装箱 -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Garen's blog</a>
+                    <a class="navbar-brand" href="<?=Url::to(['site/index'])?>">Garen's blog</a>
                 </div>
                 <!-- 导航条内容 -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?=Url::to(['article/php'])?>">PHP <span class="sr-only">(current)</span></a></li>
-                        <li><a href="<?=Url::to(['article/db'])?>">数据库</a></li>
-                        <li><a href="<?=Url::to(['article/linux'])?>">Linux</a></li>
-                        <li><a href="<?=Url::to(['note/index'])?>">便签</a></li>
-                        <li class="dropdown">
+                        <?php
+                        $nav = Yii::$app->request->pathInfo;
+                        ?>
+                        <li class="<?=$nav=='article/php'?'active':''?>"><a href="<?=Url::to(['article/php'])?>">PHP</a></li>
+                        <li class="<?=$nav=='article/db'?'active':''?>"><a href="<?=Url::to(['article/db'])?>">数据库</a></li>
+                        <li class="<?=$nav=='article/linux'?'active':''?>"><a href="<?=Url::to(['article/linux'])?>">Linux</a></li>
+                        <li class="<?=$nav=='note/index'?'active':''?>"><a href="<?=Url::to(['note/index'])?>">便签</a></li>
+                        <li class="<?=($nav=='article/frontend'||$nav=='article/learn')?'active':''?>">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他博文 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="<?=Url::to(['article/frontend'])?>">前端</a></li>
@@ -58,7 +60,7 @@ $navArticle = Article::getCategoryMap();
                                 <li><a href="<?=Url::to(['article/learn'])?>">学无止境</a></li>
                             </ul>
                         </li>
-                        <li><a href="<?=Url::to(['site/about'])?>">关于</a></li>
+                        <li class="<?=$nav=='site/about'?'active':''?>"><a href="<?=Url::to(['site/about'])?>">关于</a></li>
                         <li><a href="<?=Url::to(['site/login'])?>">登录</a></li>
                         <li><a href="<?=Url::to(['site/logout'])?>">退出</a></li>
                     </ul>

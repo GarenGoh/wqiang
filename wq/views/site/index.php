@@ -60,7 +60,7 @@ unset($adverts[0]);
     <?php }?>
     <div class="article" style='background: repeat-x top url("<?=Yii::$app->params['line']?>");'>
         <div class="article-top">
-            <h4>最新文章 <small class="pull-right"><a href="#">最新文章最新文章</a></small></h4>
+            <h4>最新文章 <small class="pull-right"><a href="#">最新文章</a></small></h4>
         </div>
             <?php foreach($articles as $a) {?>
                 <article>
