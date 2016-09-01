@@ -13,7 +13,7 @@ $provider = new ActiveDataProvider([
 ]);
 $notes = $provider->getModels();
 ?>
-<ul class="note-blocks">
+<ul class="note-blocks phone-hide">
     <?php
         foreach($notes as $n) {
     ?>
@@ -27,3 +27,13 @@ $notes = $provider->getModels();
     </li>
     <?php }?>
 </ul>
+<?php foreach($notes as $n) { ?>
+<div class="phone-note pc-hide">
+    <h4 class="top">
+        <?=$n->title?>
+    </h4>
+    <p class="body">
+        <?=nl2br($n->content)?>
+    </p>
+</div>
+<?php }?>

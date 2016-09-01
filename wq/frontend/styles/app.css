@@ -646,3 +646,17 @@
   height: auto;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
 }
+#note-page .phone-note {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+#note-page .phone-note .top {
+  background-color: #c3bfe7;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+}
+#note-page .phone-note .body {
+  padding: 5px;
+}

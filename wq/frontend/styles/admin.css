@@ -44,6 +44,11 @@ h6 a:hover {
     display: none;
   }
 }
+@media screen and (min-width: 992px) {
+  .pc-hide {
+    display: none;
+  }
+}
 article {
   position: relative;
   height: 154px;
