@@ -107,7 +107,7 @@ $navArticle = Article::getCategoryMap();
         </div>
             <?=$content ?>
     </div>
-<footer class="col-md-12" id="app-footer">
+<footer class="content-wrapper container" id="app-footer">
     <div class="col-md-4 ">
         <a href="http://www.miitbeian.gov.cn/">京ICP备16014638号-1</a>
     </div>

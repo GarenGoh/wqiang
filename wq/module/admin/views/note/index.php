@@ -1,5 +1,5 @@
 <?php
-use app\helpers\Html;
+use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\Note;
 
@@ -27,7 +27,7 @@ use app\models\Note;
                     [
                         'attribute' => 'title',
                         'content' => function($model) {
-                            return Html::a(Html::string($model->title,10), '#');
+                            return Html::a(\app\helpers\Tools::string($model->title,10), '#');
                         }
                     ],
 

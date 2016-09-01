@@ -1,5 +1,5 @@
 <?php
-use app\helpers\Html;
+use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\Article;
 
@@ -27,7 +27,7 @@ use app\models\Article;
                     [
                         'attribute' => 'title',
                         'content' => function($model) {
-                            return Html::a(Html::string($model->title,10), $model->url, ['id' => $model->id,'target' => "_blank"]);
+                            return Html::a(\app\helpers\Tools::string($model->title,10), $model->url, ['id' => $model->id,'target' => "_blank"]);
                         }
                     ],
                     'creator_id',

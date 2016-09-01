@@ -268,6 +268,20 @@ class Tools
         $rstr = mb_substr($str, ($start+$length), null, $encoding);
         return $lstr.$replace.$rstr;
     }
+
+    /*
+     * 截取字符串,适用于中英文.
+     */
+    public static function string($string, $length, $suffix = '...')
+    {
+        $string = strip_tags($string);
+        $total = mb_strlen($string, 'utf-8');
+        if ($length >= $total) {
+            return $string;
+        } else {
+            return mb_substr($string, 0, $length, 'utf-8').$suffix;
+        }
+    }
 }
 
 ?>

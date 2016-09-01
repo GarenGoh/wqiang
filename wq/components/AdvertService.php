@@ -1,10 +1,12 @@
 <?php
 namespace app\components;
 
+use app\helpers\Tools;
 use app\helpers\Url;
 use app\models\Advert;
 use Yii;
 use yii\base\Component;
+use yii\console\controllers\HelpController;
 
 class AdvertService extends Component
 {
@@ -32,6 +34,9 @@ class AdvertService extends Component
     public function save(Advert $advert, $attributes)
     {
         if($attributes) {
+            if(isset($attributes['summary']) && $attributes['summary']) {
+                $attributes['summary'] = Tools::string($attributes['summary'], 60);
+            }
             $advert->setAttributes($attributes, false);
         }
 

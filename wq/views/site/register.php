@@ -14,7 +14,7 @@ $this->params['pageId'] = 'user_register';
         <input class="ch-input" name="is_agree" type="checkbox" value="1" checked> 同意<a href="<?=Url::to(['#']) ?>" target="_blank">《用户注册协议》</a>
         <button class="login-button" type="submit">提交</button>
     </form>
-    <div class="back" class="col-md-12">
+    <div class="back">
         <a href="<?=Url::to(['site/login'])?>"><<返回登录</a>
     </div>
 </div>

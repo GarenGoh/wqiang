@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\helpers\Html;
+use yii\helpers\Html;
 use yii\validators\EmailValidator;
 use \yii\web\IdentityInterface;
 use Yii;

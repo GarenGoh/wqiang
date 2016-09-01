@@ -3,7 +3,7 @@
 /* @var $model \app\models\Article */
 use app\helpers\Url;
 use yii\web\View;
-use app\helpers\Html;
+use yii\helpers\Html;
 
 $this->title = $model->title;
 $this->params['pageId'] = 'article-view';

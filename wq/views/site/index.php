@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-use app\helpers\Html;
+use yii\helpers\Html;
 use yii\web\View;
 use app\helpers\Url;
 
@@ -69,7 +69,7 @@ unset($adverts[0]);
                     </div>
                     <div class="right">
                         <h4><a href="<?=$a->url?>"><?=$a->title?></a></h4>
-                        <p class="summary"><?=Html::string($a->summary, 160)?></p>
+                        <p class="summary"><?=\app\helpers\Tools::string($a->summary, 160)?></p>
                         <p class="phone-hide">
                             <i class="fa fa-leaf leaf"></i>
                             <?php

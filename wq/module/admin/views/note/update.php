@@ -4,7 +4,7 @@
 
 use yii\bootstrap\ActiveForm;
 use app\helpers\Url;
-use app\helpers\Html;
+use yii\helpers\Html;
 use app\models\Note;
 
 $form = ActiveForm::begin([
