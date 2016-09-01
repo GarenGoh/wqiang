@@ -1,9 +1,4 @@
 .idea
 *.log
 *.rdb
-images/*.jpg
-images/article/*
-images/slide/*
-images/user/*
-images/default/*
 .DS_Store
