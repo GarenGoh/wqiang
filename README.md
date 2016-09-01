@@ -13,8 +13,8 @@ wqiang--一个简单的个人博客.
 
 然后进入yii框架根目录并使用composer安装yii2框架及依赖:
 
-    `cd wqiang/wq`
-    `composer install`  //我的 composer 是全局安装的
+    cd wqiang/wq
+    composer install  //我的 composer 是全局安装的
 
 配置数据库:
 
@@ -51,15 +51,15 @@ wqiang--一个简单的个人博客.
 ```
 前端配置,以此执行:
 
-     `cd frontend`
-     `npm install --save-dev`
-     `bower install --save-dev`
-     `gulp build`
+     cd frontend
+     npm install --save-dev
+     bower install --save-dev
+     gulp build
 
 创建MySQL数据表(在wq目录中操作):
 
-    `cd ..`
-    `yii migrate`
+    cd ..
+    yii migrate
 
 OK!
 
