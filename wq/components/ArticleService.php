@@ -10,7 +10,7 @@ class ArticleService extends Component
 {
     public function search($where = [])
     {
-        $fields = ['id','category'];
+        $fields = ['id','category','read_count'];
         $query = Article::find();
         foreach($fields as $f) {
             if(isset($where[$f])) {

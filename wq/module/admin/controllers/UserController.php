@@ -38,7 +38,10 @@ class UserController extends BaseController
 
     public function actionIndex()
     {
-        $query = Yii::$app->userService->search();
+        $sort = Yii::$app->request->get('sort');
+        $orderBy = $this->sort($sort);
+        $query = Yii::$app->userService->search()
+            ->orderBy($orderBy);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [

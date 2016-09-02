@@ -41,4 +41,22 @@ abstract class BaseController extends Controller
             return Yii::$app->getResponse()->redirect(Yii::$app->request->getReferrer());
         }
     }
+
+    public function sort($sort, $desc='id') {
+        $fieldSort = [];
+        if($sort) {
+            $start = substr($sort, 0, 1);
+            if($start == '-') {
+                $sortsc = SORT_DESC;
+                $field = substr($sort, 1);
+            }else {
+                $sortsc = SORT_ASC;
+                $field = $sort;
+            }
+            $fieldSort = [$field => $sortsc];
+        }
+        $idSort = [$desc => SORT_DESC];
+
+        return array_merge($fieldSort, $idSort);
+    }
 }

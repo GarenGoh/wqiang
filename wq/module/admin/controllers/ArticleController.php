@@ -9,11 +9,14 @@ class ArticleController extends BaseController
 {
     public function actionIndex()
     {
-        $query = Yii::$app->articleService->search();
+        $sort = Yii::$app->request->get('sort');
+        $orderBy = $this->sort($sort);
+        $query = Yii::$app->articleService->search()
+            ->orderBy($orderBy);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 50
+                'pageSize' => 6
             ]
         ]);
         return $this->render('index', [

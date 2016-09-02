@@ -9,7 +9,10 @@ class AdvertController extends BaseController
 {
     public function actionIndex()
     {
-        $query = Yii::$app->advertService->search();
+        $sort = Yii::$app->request->get('sort');
+        $orderBy = $this->sort($sort);
+        $query = Yii::$app->advertService->search()
+            ->orderBy($orderBy);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
