@@ -2,6 +2,7 @@
 use yii\data\ActiveDataProvider;
 use app\models\Article;
 use yii\widgets\LinkPager;
+use app\helpers\Tools;
 
 
 $this->title = '文章列表页';
@@ -36,13 +37,24 @@ $hotArticles = Yii::$app->articleService->search()
     <?php
     foreach($articles as $a) {
     ?>
-    <article class="col-md-12 item">
+    <article>
         <div class="left">
             <a href="<?=$a->url?>"><img src="<?=$a->image?$a->image->url:''?>"></a>
         </div>
         <div class="right">
-            <h4><a href="<?=$a->url?>"><?=$a->title?></a></h4>
-            <p class="summary"><?=$a->summary?></p>
+            <a href="<?=$a->url?>">
+                <h4><?=Tools::string($a->title, 33)?></h4>
+                            <span class="small pull-left eye pc-hide"><i class="fa fa-leaf leaf "></i>
+                                <?php
+                                if($a->keywords) {
+                                    $n=strpos($a->keywords,',');
+                                    echo $n ? substr($a->keywords,0,$n) : $a->keywords;
+                                }
+                                ?>
+                            </span>
+                <span class="small pull-right clock pc-hide"><i class="fa fa-eye eye"></i>&nbsp;&nbsp;<?=$a->read_count?></span>
+            </a>
+            <p class="summary"><?=Tools::string($a->summary, 160)?></p>
             <p class="phone-hide ">
                 <i class="fa fa-leaf leaf"></i> php学习&nbsp;&nbsp;&nbsp;
                 <i class="fa fa-clock-o clock"></i> <?=date('Y-m-d', $a->created_at) ?>&nbsp;&nbsp;&nbsp;

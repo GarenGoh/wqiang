@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-use yii\helpers\Html;
+use app\helpers\Tools;
 use yii\web\View;
 use app\helpers\Url;
 
@@ -68,8 +68,19 @@ unset($adverts[0]);
                         <a href="<?=$a->url?>"><img src="<?=$a->image?$a->image->url:''?>"></a>
                     </div>
                     <div class="right">
-                        <h4><a href="<?=$a->url?>"><?=$a->title?></a></h4>
-                        <p class="summary"><?=\app\helpers\Tools::string($a->summary, 160)?></p>
+                        <a href="<?=$a->url?>">
+                            <h4><?=Tools::string($a->title, 33)?></h4>
+                            <span class="small pull-left eye pc-hide"><i class="fa fa-leaf leaf "></i>
+                                <?php
+                                if($a->keywords) {
+                                    $n=strpos($a->keywords,',');
+                                    echo $n ? substr($a->keywords,0,$n) : $a->keywords;
+                                }
+                                ?>
+                            </span>
+                            <span class="small pull-right clock pc-hide"><i class="fa fa-eye eye"></i>&nbsp;&nbsp;<?=$a->read_count?></span>
+                        </a>
+                        <p class="summary"><?=Tools::string($a->summary, 160)?></p>
                         <p class="phone-hide">
                             <i class="fa fa-leaf leaf"></i>
                             <?php

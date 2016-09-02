@@ -84,6 +84,12 @@ article {
   margin: 10px 0 20px;
   border-bottom: solid 1px #ddd;
 }
+@media screen and (max-width: 992px) {
+  article {
+    height: 71.63636364px;
+    margin: 6px 0 10px;
+  }
+}
 article:hover {
   border-bottom: solid 1px #83AF9B;
 }
@@ -94,6 +100,11 @@ article .left {
   left: 0;
   width: 180px;
 }
+@media screen and (max-width: 992px) {
+  article .left {
+    width: 81.81818182px;
+  }
+}
 article .left img {
   width: 100%;
   height: 140px;
@@ -101,17 +112,46 @@ article .left img {
   border: 1px solid #4985b7;
   border-radius: 3px;
 }
+@media screen and (max-width: 992px) {
+  article .left img {
+    height: 63.63636364px;
+  }
+}
 article .right {
+  width: 100%;
   position: absolute;
   z-index: 1;
   top: 0;
   padding-left: 200px;
 }
+@media screen and (max-width: 992px) {
+  article .right {
+    padding-left: 91.81818182px;
+  }
+}
 article .right h4 {
   margin-top: 0;
+  padding-top: 0;
+  color: #5b5b5b;
+}
+@media screen and (max-width: 992px) {
+  article .right h4 {
+    line-height: 140%;
+    font-size: 16px;
+    font-weight: 500;
+    height: 42px;
+    overflow: hidden;
+    font-family: 'Microsoft YaHei';
+    margin-bottom: 6px;
+  }
 }
 article .right p {
   color: #756F71;
+}
+@media screen and (max-width: 992px) {
+  article .right p {
+    display: none;
+  }
 }
 article .right p a {
   color: #759B08;
@@ -122,6 +162,11 @@ article .right p a:hover {
 article .right .summary {
   height: 80px;
   overflow: hidden;
+}
+@media screen and (max-width: 992px) {
+  article .right .summary {
+    height: 20px;
+  }
 }
 article .right .leaf {
   color: #01b838;

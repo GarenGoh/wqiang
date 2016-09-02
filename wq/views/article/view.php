@@ -36,8 +36,45 @@ $this->registerJs('hljs.initHighlightingOnLoad();',View::POS_END);//代码高亮
         ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         阅读（<?=$model->read_count?>）
     </p>
-    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a></div>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["copy","isohu","linkedin","mshare","bdysc","renren","tqq","kaixin001","meilishuo","mogujie","youdao","wealink","ty"],"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["tsina","qzone","weixin","sqq","mail","fbook","twi","evernotecn"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","sqq","mail","fbook","twi","evernotecn"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    <!--百度分享按钮-->
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+        <a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+    </div>
+    <?php
+    $js = '
+    window._bd_share_config={
+            "common":{
+                "bdSnsKey":{},
+                "bdText":"",
+                "bdMini":"2",
+                "bdMiniList":["copy","isohu","linkedin","mshare","bdysc","renren","tqq","kaixin001","meilishuo","mogujie","youdao","wealink","ty"],
+                "bdPic":"",
+                "bdStyle":"1",
+                "bdSize":"24"
+            },
+            "share":{},
+            "image":{
+                "viewList":["tsina","qzone","weixin","sqq","mail","fbook","twi","evernotecn"],
+                "viewText":"分享到：",
+                "viewSize":"16"
+            },
+            "selectShare":{
+                "bdContainerClass":null,
+                "bdSelectMiniList":["tsina","qzone","weixin","sqq","mail","fbook","twi","evernotecn"]
+            }
+        };
+        with(document)0[(getElementsByTagName(\'head\')[0]||body).appendChild(createElement(\'script\')).src=\'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=\'+~(-new Date()/36e5)];
+    ';
+    $this->registerJs($js, View::POS_END);
+    ?>
     <div class="content">
         <?=$model->content?>
     </div>
@@ -55,7 +92,7 @@ $this->registerJs('hljs.initHighlightingOnLoad();',View::POS_END);//代码高亮
             </ul>
         </div>
     </div>
-    <div class="article-tag col-md-12">
+    <div class="article-tag col-md-12 phone-hide">
         <div class="head col-md-4">
             <h4 class="title">热门标签</h4>
         </div>
