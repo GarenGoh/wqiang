@@ -2,14 +2,20 @@
 
 namespace app\module\api\controllers;
 
-use app\forms\UploadForm;
 use app\helpers\Tools;
 use yii\web\Controller;
+use yii\web\Response;
 use yii\web\UploadedFile;
 use Yii;
+use Qiniu\Storage\UploadManager;
+use Qiniu\Auth;
 
 class FileController extends Controller
 {
+    public $accessKey = 'svUrrWvsAiMgwOGcYE5VwHE9KfFKuy_aZ_NGuFuE';
+    public $secretKey = 'QzoW6iNNbz2uUY0X9r4MiNqVBCk2FeUiNbEqIwUh';
+    public $bucket = 'wqiang';
+
     public function actionFile()
     {
         if($_FILES) {
@@ -32,5 +38,28 @@ class FileController extends Controller
                 }
             }
         }
+    }
+
+    public function actionEditorFile()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        if($_FILES) {
+            $uploadedFile = UploadedFile::getInstanceByName('file');//要被上传的文件
+            $newName = 'editor/'.Tools::getRandChar(8). '.' . $uploadedFile->extension;
+            $auth = new Auth($this->accessKey, $this->secretKey);
+            $token = $auth->uploadToken($this->bucket);
+
+            $upManager = new UploadManager();
+            list($ret, $err) = $upManager->putFile($token, $newName, $uploadedFile->tempName, null, $uploadedFile->type);
+            if($err !== null) {
+                return ['success' => false, 'msg' => 'fuck!'];
+            }else {
+                $file_path = Yii::$app->params['qiniu_dm'].$newName;
+                return ['success' => true, 'file_path' => $file_path];
+            }
+        }
+        return ['success' => false, 'msg' => 'fuck!'];
+
+
     }
 }

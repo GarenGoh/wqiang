@@ -44,7 +44,37 @@ $form = ActiveForm::begin([
 <?php
 ActiveForm::end();
 $js = "var editor = new Simditor({
-        textarea: $('#editor')
+        textarea: $('#editor'),
+        toolbar: [
+            'title', 'bold', 'italic', 'underline', 'strikethrough', 'color','ol', 'ul','blockquote',
+             'code', 'table', 'link', 'image', 'hr', 'alignment', 'html'
+        ],
+        defaultImage: 'http://wqiang.ts/images/article/KEk8etT0.png',
+        upload: {
+            url: '".Url::to(['/api/file/editor-file'])."',
+            params: {
+
+            },
+            fileKey: 'file',
+            connectionCount: 3,
+            leaveConfirm: '正在上传文件，如果离开上传会自动取消'
+        },
+        allowedTags: [
+            'br','iframe','li','font','embed'
+        ],
+        allowedAttributes: {
+            font:['color','size'],
+            img: ['src', 'alt', 'width', 'height', 'data-non-image'],
+            a: ['href', 'target'],
+            font: ['color'],
+            code: ['class'],
+            iframe: ['id', 'src', 'name', 'style','scrolling','frameborder','allowtransparency','height'],
+            p: ['id', 'data-align'],
+            h4: ['id', 'data-align'],
+            h3: ['id', 'data-align'],
+            h2: ['id', 'data-align'],
+            embed: ['src', 'autostart','data-align']
+        }
     });";
 $this->registerJs($js,View::POS_END)
 ?>

@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use Qiniu\Auth;
+use Qiniu\Storage\UploadManager;
 use Yii;
 use app\forms\LoginForm;
 use yii\web\Response;

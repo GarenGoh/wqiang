@@ -26,5 +26,6 @@ return [
     '404Image' => $uploadDir.'default/404Image.png',
     'wechatImageUrl' => $uploadDir.'default/wechat.png',
     'line' => $uploadDir.'default/r_line.jpg',
+    'qiniu_dm' => 'http://qiniu.wqiang.net/'
 ];
 ?>

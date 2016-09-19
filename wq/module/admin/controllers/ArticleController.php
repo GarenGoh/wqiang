@@ -16,7 +16,7 @@ class ArticleController extends BaseController
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 6
+                'pageSize' => 50
             ]
         ]);
         return $this->render('index', [
