@@ -1,13 +1,23 @@
 <?php
 namespace app\components;
 
+use app\helpers\Tools;
 use app\models\File;
 use Yii;
 use yii\base\Component;
 use yii\web\UploadedFile;
+use Qiniu\Storage\UploadManager;
+use Qiniu\Auth;
 
 class FileService extends Component
 {
+    public $accessKey = 'svUrrWvsAiMgwOGcYE5VwHE9KfFKuy_aZ_NGuFuE';
+    public $secretKey = 'QzoW6iNNbz2uUY0X9r4MiNqVBCk2FeUiNbEqIwUh';
+    public $bucket = 'wqiang';
+    public $allowExtension = ['jpg', 'png', 'jpeg', 'gif'];
+    public $allowSize = 2;  //单位: M
+
+
     public function saveToDb(UploadedFile $uploadedFile, $options)
     {
         $file = new File();
@@ -23,21 +33,27 @@ class FileService extends Component
         return json_encode(['url' => $file->url,'id' => $file->id]);
     }
 
-    /*public function save()
-    {
-        $file = new File();
-        $attributes = [
-            'name' => 'test.jpg',
-            'old_name' => 'oldtest',
-            'size' => '3333',
-            'type' => 'jpg',
-            'prefix' => 'ar/',
-        ];
-        $file->setAttributes($attributes, false);
-        $file->save();
-        print_r($file->url);
-        exit;
-    }*/
+    public function saveToQiNiu(UploadedFile $uploadedFile) {
+        if($uploadedFile) {
+            if($uploadedFile->size > $this->allowSize*1024*1024) {
+                return ['success' => false, 'msg' => '图片不能大于2M'];
+            }
+            if(!in_array($uploadedFile->extension, $this->allowExtension) ) {
+                return ['success' => false, 'msg' => '文件格式不正确!'];
+            }
+            $newName = 'editor/'.Tools::getRandChar(8). '.' . $uploadedFile->extension;
+            $auth = new Auth($this->accessKey, $this->secretKey);
+            $token = $auth->uploadToken($this->bucket);
+            $upManager = new UploadManager();
+            list($ret, $err) = $upManager->putFile($token, $newName, $uploadedFile->tempName, null, $uploadedFile->type);
+            if($err !== null) {
+                return ['success' => false, 'msg' => '上传到七牛失败!'];
+            }else {
+                $file_path = Yii::$app->params['qiniu_dm'].$newName;
+                return ['success' => true, 'file_path' => $file_path];
+            }
+        }
+    }
 
     public function search($where = [])
     {
@@ -46,43 +62,6 @@ class FileService extends Component
             $query->andFilterWhere(['id' => $where['id']]);
         }
         return $query;
-    }
-
-
-    public function saveToStorage(UploadedFile $uploadedFile, $options = [], $saveToDb = true)
-    {
-        $options = $this->parseOptions($uploadedFile, $options);
-
-        if (empty($options['storage_ids'])) {
-            $options['storage_ids'] = array_keys($this->storages);
-        }
-
-        $count = 0;
-        foreach ($options['storage_ids'] as $key => $id) {
-            $storage = $this->getStorage($id);
-            if ($storage->getIsEnable() && $this->getStorage($id)->save($uploadedFile, $options)) {
-                $count++;
-            } else {
-                unset($options['storage_ids'][$key]);
-            }
-        }
-
-        if ($count == 0) {
-            return false;
-        }
-
-        $file = $this->createFileModel($uploadedFile, $options);
-
-        if ($saveToDb) {
-            $file->save();
-        }
-
-        if ($file->hasErrors()) {
-            $file->delete();
-            return false;
-        } else {
-            return $file;
-        }
     }
 
 
