@@ -2,8 +2,6 @@
 
 namespace app\controllers;
 
-use Qiniu\Auth;
-use Qiniu\Storage\UploadManager;
 use Yii;
 use app\forms\LoginForm;
 use yii\web\Response;
@@ -51,12 +49,6 @@ class SiteController extends BaseController
 
     public function actionIndex()
     {
-        $ign = hash_hmac('sha1', 'http://qiniu.wqiang.net/editor/9eM1QAl9.jpg?e=1474284999', 'svUrrWvsAiMgwOGcYE5VwHE9KfFKuy_aZ_NGuFuE', true);
-        $rr = \Qiniu\base64_urlSafeEncode($ign);
-        echo '<pre>';
-        print_r($rr);
-        echo '</pre>';
-        exit;
         return $this->render('index');
     }
 

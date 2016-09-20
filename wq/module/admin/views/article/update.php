@@ -43,7 +43,9 @@ $form = ActiveForm::begin([
 </div>
 <?php
 ActiveForm::end();
-$js = "var editor = new Simditor({
+$uploadUrl = Url::to(['/api/file/editor-file']);
+$js = <<<JS
+var editor = new Simditor({
         textarea: $('#editor'),
         toolbar: [
             'title', 'bold', 'italic', 'underline', 'strikethrough', 'color','ol', 'ul','blockquote',
@@ -51,11 +53,11 @@ $js = "var editor = new Simditor({
         ],
         defaultImage: 'http://wqiang.ts/images/article/KEk8etT0.png',
         upload: {
-            url: '".Url::to(['/api/file/editor-file'])."',
+            url: '{$uploadUrl}',
             params: {
 
             },
-            fileKey: 'file',
+            fileKey: 'image',
             connectionCount: 3,
             leaveConfirm: '正在上传文件，如果离开上传会自动取消'
         },
@@ -75,6 +77,7 @@ $js = "var editor = new Simditor({
             h2: ['id', 'data-align'],
             embed: ['src', 'autostart','data-align']
         }
-    });";
+    });
+JS;
 $this->registerJs($js,View::POS_END)
 ?>

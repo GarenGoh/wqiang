@@ -44,7 +44,7 @@ class FileController extends Controller
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
         if($_FILES) {
-            $uploadedFile = UploadedFile::getInstanceByName('file');//要被上传的文件
+            $uploadedFile = UploadedFile::getInstanceByName('image');//要被上传的文件
             $newName = 'editor/'.Tools::getRandChar(8). '.' . $uploadedFile->extension;
             $auth = new Auth($this->accessKey, $this->secretKey);
             $token = $auth->uploadToken($this->bucket);
@@ -54,12 +54,6 @@ class FileController extends Controller
             if($err !== null) {
                 return ['success' => false, 'msg' => 'fuck!'];
             }else {
-                $ign = hash_hmac('sha1', 'http://qiniu.wqiang.net/editor/9eM1QAl9.jpg?e=1474284091', 'QzoW6iNNbz2uUY0X9r4MiNqVBCk2FeUiNbEqIwUh', true);
-                $rr = \Qiniu\base64_urlSafeEncode($ign);
-                echo '<pre>';
-                print_r($rr);
-                echo '</pre>';
-                exit;
                 $file_path = Yii::$app->params['qiniu_dm'].$newName;
                 return ['success' => true, 'file_path' => $file_path];
             }
