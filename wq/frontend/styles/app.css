@@ -128,7 +128,7 @@
   border-radius: 3px;
 }
 #article-view .article .content img {
-  width: 100%;
+  max-width: 100%;
 }
 #article-view .secondary-block {
   font-family: 'Times New Roman', 'Microsoft YaHei', 'New York', serif, Times, TimesNR;

@@ -232,6 +232,9 @@ article .right .eye {
   color: #fff;
   text-decoration: none;
 }
+.admin-content {
+  padding-bottom: 10px;
+}
 .admin-content a {
   color: #759B08;
 }
