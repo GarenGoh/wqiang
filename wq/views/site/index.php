@@ -17,6 +17,7 @@ $adverts = Yii::$app->advertService->search()
 $ad_0 = isset($adverts[0])?$adverts[0]:[];
 unset($adverts[0]);
 ?>
+<embed src='/music/tkzc.mp3' width="0" height="0" loop="-1" autostart="true">
 <div class="col-md-9 primary-block" style='background: repeat-y right url("<?=Yii::$app->params['line']?>");'>
     <?php if($ad_0) {?>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

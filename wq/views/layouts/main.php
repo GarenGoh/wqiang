@@ -118,13 +118,6 @@ $navArticle = Article::getCategoryMap();
         <p> 友情链接：<small><a href="https://www.sdk.cn/" target="_blank">SDK.cn</a><a href="http://xiajie.me/" target="_blank">Jerry's Blog</a></small></p>
     </div>
 </footer>
-<?php
-/*$js = "
-$('#navbar').sticky({
-    'top': 0
-});";
-$this->registerJs($js, View::POS_END);
-*/?>
 <?php $this->endBody() ?>
 </body>
 </html>
