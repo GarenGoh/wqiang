@@ -22,7 +22,7 @@ $this->registerJs('hljs.initHighlightingOnLoad();',View::POS_END);//代码高亮
         <span class="pull-right motto">天不随我意，我欲封天，唯一死尔！</span>
     </p>
 </div>
-<div class="col-md-9 article" style='background: repeat-y right url("<?=Yii::$app->params['line']?>");'>
+<div class="col-md-9 article"'>
     <h3 class="title"><?=$model->title?></h3>
     <p class="article-info">
         发布时间：<?=date('Y-m-d',$model->created_at)?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

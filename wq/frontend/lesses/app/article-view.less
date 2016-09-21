@@ -25,7 +25,11 @@
     }
   }
   .article {
-    padding-right: 40px;
+    padding: 0;
+    @media screen and (min-width: @screen-md) {
+      padding-right: 40px;
+      background: repeat-y right url("/images/default/r_line.jpg");
+    }
     .title {
       text-align: center
     }
@@ -40,6 +44,9 @@
       pre {
         background-color: #B5B5B5;
         border-radius: 3px;
+      }
+      code {
+        word-break: break-all;
       }
       img {
         max-width: 100%;
