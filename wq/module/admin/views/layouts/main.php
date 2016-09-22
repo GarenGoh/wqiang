@@ -37,6 +37,7 @@ $currentUser = Yii::$app->user->getIdentity();
             <li class="nav"><a href="<?=Url::to(['article/index'])?>">文&nbsp;&nbsp;章</a></li>
             <li class="nav"><a href="<?=Url::to(['advert/index'])?>">广&nbsp;告&nbsp;位</a></li>
             <li class="nav"><a href="<?=Url::to(['note/index'])?>">便&nbsp;&nbsp;签</a></li>
+            <li class="nav"><a href="<?=Url::to(['site/flush'])?>">清理缓存</a></li>
         </ul>
     </div>
 </div>

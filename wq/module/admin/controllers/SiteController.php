@@ -74,4 +74,9 @@ class SiteController extends BaseController
 
         return $this->goHome();
     }
+
+    public function actionFlush() {
+        Yii::$app->cache->flush();
+        $this->goBack();
+    }
 }

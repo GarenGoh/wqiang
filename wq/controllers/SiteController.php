@@ -14,6 +14,16 @@ class SiteController extends BaseController
     public function behaviors()
     {
         return [
+            [
+                'class' => 'yii\filters\PageCache',
+                'only' => ['index'],
+                'duration' => 0,
+                //'enabled' => YII_ENV_PROD,
+                'dependency' => [
+                    'class' => 'yii\caching\DbDependency',
+                    'sql' => 'SELECT COUNT(*) FROM article'
+                ],
+            ],
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
