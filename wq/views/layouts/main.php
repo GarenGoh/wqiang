@@ -25,6 +25,7 @@ $navArticle = Article::getCategoryMap();
 </head>
 <body>
 <?php $this->beginBody() ?>
+<div class="actGotop"><a href="javascript:;" title="返回顶部"></a></div>
     <div id="app-top">
         <div class="top">
             <div class="logo">

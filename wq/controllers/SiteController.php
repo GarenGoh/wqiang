@@ -18,7 +18,7 @@ class SiteController extends BaseController
                 'class' => 'yii\filters\PageCache',
                 'only' => ['index'],
                 'duration' => 0,
-                //'enabled' => YII_ENV_PROD,
+                'enabled' => YII_ENV_PROD,
                 'dependency' => [
                     'class' => 'yii\caching\DbDependency',
                     'sql' => 'SELECT COUNT(*) FROM article'
