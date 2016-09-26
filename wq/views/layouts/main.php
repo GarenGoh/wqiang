@@ -5,7 +5,6 @@
 
 use yii\helpers\Html;
 use app\assets\AppAsset;
-use app\models\User;
 use app\helpers\Url;
 use app\models\Article;
 
@@ -25,7 +24,19 @@ $navArticle = Article::getCategoryMap();
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="actGotop"><a href="javascript:;" title="返回顶部"></a></div>
+    <!--Google Analytics-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-82902920-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <div class="actGotop"><a href="javascript:;" title="返回顶部"></a></div>
     <div id="app-top">
         <div class="top">
             <div class="logo">
