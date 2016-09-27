@@ -33,7 +33,7 @@ class FileService extends Component
         return json_encode(['url' => $file->url,'id' => $file->id]);
     }
 
-    public function saveToQiNiu(UploadedFile $uploadedFile) {
+    public function saveToQiNiu(UploadedFile $uploadedFile, $id = 0) {
         if($uploadedFile) {
             if($uploadedFile->size > $this->allowSize*1024*1024) {
                 return ['success' => false, 'msg' => '图片不能大于2M'];
@@ -41,7 +41,7 @@ class FileService extends Component
             if(!in_array($uploadedFile->extension, $this->allowExtension) ) {
                 return ['success' => false, 'msg' => '文件格式不正确!'];
             }
-            $newName = 'editor/'.Tools::getRandChar(8). '.' . $uploadedFile->extension;
+            $newName = 'editor/'.$id.'_'.Tools::getRandChar(4). '.' . $uploadedFile->extension;
             $auth = new Auth($this->accessKey, $this->secretKey);
             $token = $auth->uploadToken($this->bucket);
             $upManager = new UploadManager();

@@ -38,10 +38,11 @@ class FileController extends Controller
     public function actionEditorFile()
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
+        $id = Yii::$app->request->getBodyParam('id');
         if($_FILES) {
             $uploadedFile = UploadedFile::getInstanceByName('image');//获取要被上传的文件; image 是在 Simditor 上传组件的 fileKey 参数
             if($uploadedFile instanceof UploadedFile){
-                return Yii::$app->fileService->saveToQiNiu($uploadedFile);
+                return Yii::$app->fileService->saveToQiNiu($uploadedFile, $id);
             }
             return ['success' => false, 'msg' => '没有得到指定的文件!'];
         }

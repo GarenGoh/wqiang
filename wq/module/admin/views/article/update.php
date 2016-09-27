@@ -44,6 +44,7 @@ $form = ActiveForm::begin([
 <?php
 ActiveForm::end();
 $uploadUrl = Url::to(['/api/file/editor-file']);
+$id = $model->id;
 $js = <<<JS
 var editor = new Simditor({
         textarea: $('#editor'),
@@ -51,11 +52,11 @@ var editor = new Simditor({
             'title', 'bold', 'italic', 'underline', 'strikethrough', 'color','ol', 'ul','blockquote',
              'code', 'table', 'link', 'image', 'hr', 'alignment', 'html'
         ],
-        defaultImage: 'http://wqiang.ts/images/article/KEk8etT0.png',
+        defaultImage: 'http://wqiang.ts/images/default/imgUpFail.jpg',
         upload: {
             url: '{$uploadUrl}',
             params: {
-
+                id: '{$id}'
             },
             fileKey: 'image',
             connectionCount: 3,
