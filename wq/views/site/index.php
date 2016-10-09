@@ -110,11 +110,11 @@ unset($adverts[0]);
         <div class="body">
             <div class="item">
                 <i class="fa fa-github"></i>
-                <p class="sparkly-p"><a href="https://github.com/GarenGoh">GitHub</a></p>
+                <p class="sparkly-p"><a href="https://github.com/GarenGoh" target="_blank">GitHub</a></p>
             </div>
             <div class="item">
                 <i class="fa fa-weibo" style="color: #FE2A27;"></i>
-                <p class="sparkly-p"><a href="http://weibo.com/garengoh">微 博</a></p>
+                <p class="sparkly-p"><a href="http://weibo.com/garengoh" target="_blank">微 博</a></p>
             </div>
             <div class="item" id="wechat-panel">
                 <i class="fa fa-wechat" style="color: #3DAF36;"></i>
