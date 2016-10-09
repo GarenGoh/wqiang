@@ -114,7 +114,7 @@ unset($adverts[0]);
             </div>
             <div class="item">
                 <i class="fa fa-weibo" style="color: #FE2A27;"></i>
-                <p class="sparkly-p"><a href="http://weibo.com/wuqiangbaba">微 博</a></p>
+                <p class="sparkly-p"><a href="http://weibo.com/garengoh">微 博</a></p>
             </div>
             <div class="item" id="wechat-panel">
                 <i class="fa fa-wechat" style="color: #3DAF36;"></i>
