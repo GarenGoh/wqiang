@@ -74,9 +74,9 @@ $navArticle = Article::getCategoryMap();
                         <li class="<?=$nav=='note/index'?'active':''?>"><a href="<?=Url::to(['note/index'])?>">便签</a></li>
                         <li class="<?=$nav=='site/about'?'active':''?>"><a href="<?=Url::to(['site/about'])?>">关于</a></li>
                     </ul>
-                    <form class="navbar-form navbar-left pc-right" role="search">
+                    <form class="navbar-form navbar-left pc-right" role="search" action="<?=Url::to(['search/index'])?>" method="get">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" name="keyword" class="form-control" placeholder="Search">
                         </div>
                         <button type="submit" class="btn btn-default">搜索</button>
                     </form>
