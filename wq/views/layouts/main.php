@@ -43,6 +43,7 @@ $navArticle = Article::getCategoryMap();
 
     <!--提示消息:通过 Js 添加到此 DIV-->
     <div style="position: absolute;top: 0;float: left;width: 100%" id="alert"></div>
+
     <div id="app-top">
         <div class="top">
             <div class="logo">
@@ -74,7 +75,7 @@ $navArticle = Article::getCategoryMap();
                             <ul class="dropdown-menu">
                                 <li><a href="<?=Url::to(['article/frontend'])?>">前端</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="<?=Url::to(['article/learn'])?>">学无止境</a></li>
+                                <li><a href="<?=Url::to(['article/learn'])?>"><strong>学无</strong>止境</a></li>
                             </ul>
                         </li>
                         <li class="<?=$nav=='note/index'?'active':''?>"><a href="<?=Url::to(['note/index'])?>">便签</a></li>

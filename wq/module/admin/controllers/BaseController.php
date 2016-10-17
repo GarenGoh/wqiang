@@ -9,12 +9,12 @@ abstract class BaseController extends Controller
 {
     protected function success($message)
     {
-        Yii::$app->session->setFlash('success_flash_message', $message);
+        Yii::$app->session->setFlash('admin_success_flash_message', $message);
     }
 
     protected function error($message)
     {
-        Yii::$app->session->setFlash('error_flash_message', $message);
+        Yii::$app->session->setFlash('admin_error_flash_message', $message);
     }
 
     public function behaviors()
@@ -36,10 +36,13 @@ abstract class BaseController extends Controller
     {
         $returnUrl = Yii::$app->request->get('return_url', null);
         if ($returnUrl) {
-            return Yii::$app->getResponse()->redirect($returnUrl);
-        } else {
-            return Yii::$app->getResponse()->redirect(Yii::$app->request->getReferrer());
+            $this->redirect($returnUrl);
+        } elseif(Yii::$app->request->getReferrer()) {
+            $this->redirect(Yii::$app->request->getReferrer());
+        }else {
+            $this->redirect("/".ADMIN_NAME);
         }
+        Yii::$app->end();
     }
 
     public function sort($sort, $desc='id') {

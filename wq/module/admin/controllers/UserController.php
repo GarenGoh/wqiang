@@ -32,7 +32,7 @@ class UserController extends BaseController
             }
         }else{
             $this->error('缺少参数id');
-            return $this->goBack();
+            $this->goBack();
         }
     }
 
@@ -93,12 +93,16 @@ class UserController extends BaseController
             $result = Yii::$app->userService->save($user,$attributes);
             if($result) {
                 $this->success('用户信息更改成功！');
-                $this->goBack();
+                return $this->goBack();
             }else{
                 $this->error('用户信息更改失败！');
-                $this->goBack();
+                return $this->goBack();
             }
         }
+
+        /*if(!$user) {
+            return Yii::$app->getResponse()->redirect("/admin");
+        }*/
 
         return $this->render('update',[
             'model' => $user
