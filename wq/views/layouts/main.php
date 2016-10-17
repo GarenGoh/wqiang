@@ -42,7 +42,7 @@ $navArticle = Article::getCategoryMap();
     <div class="actGotop"><a href="javascript:;" title="返回顶部"></a></div>
 
     <!--提示消息:通过 Js 添加到此 DIV-->
-    <div style="position: absolute;top: 0;float: left;width: 100%" id="alert"></div>
+    <div id="alert-message"></div>
 
     <div id="app-top">
         <div class="top">
@@ -138,8 +138,8 @@ if($message && $type) {
     $alertId = 'alertMessage'; //此 ID 用于控制删除消息框后执行的动作;参考 http://v3.bootcss.com/javascript/#alerts
 $js = <<<JS
 $(document).ready(function(){
-    $("#alert").prepend('<div role="alert" class="alert $type alert-dismissible fade in" style="text-align: center; width: 40%;margin: 5px auto;" id="$alertId"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>$message</div>');
-    setTimeout('$("#alert").hide()',5000);
+    $("#alert-message").prepend('<div role="alert" class="alert $type alert-dismissible fade in message" id="$alertId"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>$message</div>');
+    setTimeout('$("#alert-message").hide()',5000);
 });
 JS;
 

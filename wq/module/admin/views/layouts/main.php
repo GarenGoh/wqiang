@@ -6,6 +6,7 @@
 use yii\helpers\Html;
 use app\helpers\Url;
 use app\module\admin\asset\AdminAsset;
+use yii\web\View;
 
 AdminAsset::register($this);
 $currentUser = Yii::$app->user->getIdentity();
@@ -24,7 +25,8 @@ $currentUser = Yii::$app->user->getIdentity();
 <body style="margin: 0;">
 <?php $this->beginBody() ?>
 <!--提示消息:通过 Js 添加到此 DIV-->
-<div style="position: absolute;top: 0;float: left;width: 100%" id="admin-alert"></div>
+<div id="alert-message"></div>
+
 <div id="admin-top">
     <div class="logout">
         [<a href="<?=Yii::$app->request->hostInfo?>">前台</a>|<a href="<?=Url::to(['site/logout'])?>">退出</a>]
@@ -59,12 +61,11 @@ if($message && $type) {
     $alertId = 'alertMessage'; //此 ID 用于控制删除消息框后执行的动作;参考 http://v3.bootcss.com/javascript/#alerts
     $js = <<<JS
 $(document).ready(function(){
-    $("#admin-alert").prepend('<div role="alert" class="alert $type alert-dismissible fade in" style="text-align: center; width: 40%;margin: 5px auto;" id="$alertId"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>$message</div>');
-    setTimeout('$("#admin-alert").hide()',5000);
+    $("#alert-message").prepend('<div role="alert" class="alert $type alert-dismissible fade in message" id="$alertId"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>$message</div>');
+    setTimeout('$("#alert-message").hide()',5000);
 });
 JS;
-
-    $this->registerJs($js, \yii\web\View::POS_END);
+    $this->registerJs($js, View::POS_END);
 }
 ?>
 <?php $this->endBody() ?>
