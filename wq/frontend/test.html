@@ -23,8 +23,14 @@
 <body class="container">
   <div class="col-md-2"></div>
   <div class="col-md-8">
-
-
+    <div role="alert" class="alert alert-warning alert-dismissible fade in" id="myAlert">
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">Close</span>
+      </button>
+      这是一些提示消息!他并不重要.
+    </div>
+    <hr>
     <h1 id="wq">编辑器</h1>
     <textarea id="editor" placeholder="这里输入内容" autofocus>初始化内容</textarea>
 
@@ -96,6 +102,7 @@
   <script src="vendor/bower/bootstrap/js/scrollspy.js"></script>
   <script src="vendor/bower/bootstrap/js/collapse.js"></script>
   <script src="vendor/bower/bootstrap/js/dropdown.js"></script>
+  <script src="vendor/bower/bootstrap/js/alert.js"></script>
 
   <script src="vendor/bower/simple-module/lib/module.js"></script>
   <script src="vendor/bower/simple-hotkeys/lib/hotkeys.js"></script>
@@ -143,6 +150,9 @@
         leaveConfirm: '正在上传文件，如果离开上传会自动取消'
       }
     });
+    $('#myAlert').on('closed.bs.alert', function () {
+      alert("The paragraph was clicked.");
+    })
   </script>
 </body>
 </html>

@@ -24,6 +24,7 @@ $navArticle = Article::getCategoryMap();
 </head>
 <body>
 <?php $this->beginBody() ?>
+<?php if(YII_ENV_PROD){?>
     <!--Google Analytics-->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -35,8 +36,13 @@ $navArticle = Article::getCategoryMap();
         ga('send', 'pageview');
 
     </script>
+<?php }?>
 
+    <!--返回顶部-->
     <div class="actGotop"><a href="javascript:;" title="返回顶部"></a></div>
+
+    <!--提示消息:通过 Js 添加到此 DIV-->
+    <div style="position: absolute;top: 0;float: left;width: 100%" id="alert"></div>
     <div id="app-top">
         <div class="top">
             <div class="logo">
@@ -103,19 +109,7 @@ $navArticle = Article::getCategoryMap();
     </div>
     <div class="content-wrapper container" id="<?=isset($this->params['pageId']) ? $this->params['pageId']:''?>">
         <div style="text-align: center;">
-            <?php
-            $type = '';
-            $message = '';
-            if ($message = Yii::$app->session->getFlash('app_success_flash_message')) {
-                $type = 'success';
-            } else {
-                $message = Yii::$app->session->getFlash('app_error_flash_message');
-                $type = 'error';
-            }
-            if ($message && $type) {?>
-                <p style="width: 40%;margin-left: auto;margin-right: auto;background-color: <?=$type=='error'?'#ff7974' : '#49b9f9'?>"><?=$message?></p>
-           <?php }
-            ?>
+
         </div>
             <?=$content ?>
     </div>
@@ -130,6 +124,27 @@ $navArticle = Article::getCategoryMap();
         <p> 友情链接：<small><a href="https://www.sdk.cn/" target="_blank">SDK.cn</a><a href="http://xiajie.me/" target="_blank">Jerry's Blog</a></small></p>
     </div>
 </footer>
+<?php
+$type = '';
+$message = '';
+if ($message = Yii::$app->session->getFlash('app_success_flash_message')) {
+    $type = 'alert-success';
+} else {
+    $message = Yii::$app->session->getFlash('app_error_flash_message');
+    $type = 'alert-danger';
+}
+if($message && $type) {
+    $alertId = 'alertMessage'; //此 ID 用于控制删除消息框后执行的动作;参考 http://v3.bootcss.com/javascript/#alerts
+$js = <<<JS
+$(document).ready(function(){
+    $("#alert").prepend('<div role="alert" class="alert $type alert-dismissible fade in" style="text-align: center; width: 40%;margin: 5px auto;" id="$alertId"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>$message</div>');
+    setTimeout('$("#alert").hide()',5000);
+});
+JS;
+
+$this->registerJs($js, \yii\web\View::POS_END);
+}
+?>
 <?php $this->endBody() ?>
 </body>
 </html>
