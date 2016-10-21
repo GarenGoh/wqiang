@@ -17,7 +17,7 @@ class SiteController extends BaseController
             [
                 'class' => 'yii\filters\PageCache',
                 'only' => ['index'],
-                'duration' => 0,
+                'duration' => 24*3600,//0为永久
                 'enabled' => YII_ENV_PROD,
                 'dependency' => [
                     'class' => 'yii\caching\DbDependency',
