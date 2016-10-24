@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'About me!';
+$this->title = '关于我!';
 $this->params['pageId'] = 'about-page';
 ?>
 <div class="col-md-2">

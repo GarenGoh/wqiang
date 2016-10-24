@@ -5,13 +5,14 @@ use yii\widgets\LinkPager;
 use app\helpers\Tools;
 
 
-$this->title = '文章列表页';
 $where = Yii::$app->request->get();
 
 if(isset($category)) {
     $where['category'] = $category;
+    $this->title = $category;
 }elseif(isset($tag)) {
     $where['keywords'] = $tag;
+    $this->title = $tag;
 }
 $query = Yii::$app->articleService->search($where)
     ->orderBy(['id' => SORT_DESC]);

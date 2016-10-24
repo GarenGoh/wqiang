@@ -3,6 +3,7 @@
 use yii\data\ActiveDataProvider;
 
 $this->params['pageId'] = 'note-page';
+$this->title = '便签--一个字条,一个知识';
 $query = Yii::$app->noteService->search()
     ->orderBy(['weight' => SORT_DESC, 'id' => SORT_DESC]);
 $provider = new ActiveDataProvider([
