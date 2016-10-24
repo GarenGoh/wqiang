@@ -8,7 +8,7 @@ $this->params['pageId'] = 'about-page';
 <div class="col-md-2">
 </div>
 <div class="col-md-8">
-    <div class="col-md-12 item" style="font-family: STXinwei, FangSong, STXingkai,'Microsoft YaHei', ;">
+    <div class="col-md-12 item" style="font-family:STXingkai, STXinwei, FangSong, 'Microsoft YaHei'">
         <div class="col-md-12 basic">
             <h4>基本资料：</h4>
             <div class="col-md-6 my-img">

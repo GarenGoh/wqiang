@@ -44,7 +44,10 @@ $form = ActiveForm::begin([
 <?php
 ActiveForm::end();
 $uploadUrl = Url::to(['/api/file/editor-file']);
-$id = $model->id;
+$a = Yii::$app->articleService->search()
+    ->orderBy(['id' => SORT_DESC])
+    ->one();
+$id = $model->isNewRecord?($a->id+1):$model->id;
 $js = <<<JS
 var editor = new Simditor({
         textarea: $('#editor'),
