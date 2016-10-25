@@ -69,10 +69,9 @@ var editor = new Simditor({
             'br','iframe','li','font','embed'
         ],
         allowedAttributes: {
-            font:['color','size'],
+            font: ['color','size'],
             img: ['src', 'alt', 'width', 'height', 'data-non-image'],
             a: ['href', 'target'],
-            font: ['color'],
             code: ['class'],
             iframe: ['id', 'src', 'name', 'style','scrolling','frameborder','allowtransparency','height'],
             p: ['id', 'data-align'],
@@ -80,6 +79,9 @@ var editor = new Simditor({
             h3: ['id', 'data-align'],
             h2: ['id', 'data-align'],
             embed: ['src', 'autostart','data-align']
+        },
+        allowedStyles: {
+            span: ['color', 'font-size', 'font-family']
         }
     });
 JS;
