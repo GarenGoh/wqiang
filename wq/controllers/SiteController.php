@@ -125,10 +125,12 @@ class SiteController extends BaseController
         return $this->render('about');
     }
 
-    /*public function actionTest()
+    public function actionTest()
     {
-        Yii::$app->fileService->save();
-
-        return $this->goHome();
-    }*/
+        $a = range('ee1','ee6');
+        echo '<pre>';
+        print_r($a);
+        echo '</pre>';
+        exit;
+    }
 }

@@ -88,6 +88,7 @@ $navArticle = Article::getCategoryMap();
                         </div>
                         <button type="submit" class="btn btn-default">搜索</button>
                     </form>
+                    <?php if(isset($this->params['pageId'])&&$this->params['pageId']!='app-home') {?>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
@@ -103,8 +104,8 @@ $navArticle = Article::getCategoryMap();
                                 <?php }?>
                             </ul>
                         </li>
-
                     </ul>
+                    <?php }?>
                 </div>
             </div>
         </nav>
