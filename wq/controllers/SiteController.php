@@ -127,10 +127,10 @@ class SiteController extends BaseController
 
     public function actionTest()
     {
-        /*$a = range('ee1','ee6');
+        $a = range('ee1','ee6');
         echo '<pre>';
         print_r($a);
         echo '</pre>';
-        exit;*/
+        exit;
     }
 }
