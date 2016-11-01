@@ -47,7 +47,6 @@ $navArticle = Article::getCategoryMap();
 
     <div id="app-top">
         <div class="top">
-            <p style="float: left">当前页面地址:<?=Yii::$app->request->absoluteUrl?></p>
             <div class="logo">
                 <img src="<?=Yii::$app->params['logoUrl']?>">
             </div>
