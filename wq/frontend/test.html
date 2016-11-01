@@ -45,20 +45,6 @@
 
     <h1>高亮代码</h1>
     <pre><code>
-      http://localhost:5000/test.html
-    </code></pre>
-    <pre><code>
-      SELECT 'id' FROM `advert` WHERE `id` > 50 limit 20
-    </code></pre>
-    <pre><code>
-      upload: {
-        params: null,
-        fileKey: 'url',
-        connectionCount: 3,
-        leaveConfirm: '正在上传文件，如果离开上传会自动取消'
-      }
-     </code></pre>
-    <pre><code>
       &lt;?php
         namespace app\assets;
         use yii\web\AssetBundle;
@@ -73,20 +59,12 @@
         }
       ?&gt;
     </code></pre>
-    <pre><code>
-      events {
-      worker_connections  1024;#单个后台worker process进程的最大并发链接数
-      # multi_accept on;
-      }
-    </code></pre>
-    <code>
-      namespace app\assets;
-    </code>
 
 
 
 
   </div>
+  <div>
   <script src="vendor/bower/jquery/dist/jquery.js"></script>
   <!--<script src="../vendor/yiisoft/yii2/assets/yii.js"></script>-->
   <!-- build:js /scripts/app.js -->
@@ -124,6 +102,7 @@
   <script src="scripts/highlight.pack.js"></script>
   <script src="scripts/go-top.js"></script>
   <!-- endbuild -->
+    </div>
   <script>
     hljs.initHighlightingOnLoad();
     var editor = new Simditor({
@@ -151,7 +130,8 @@
     });
     $('#myAlert').on('closed.bs.alert', function () {
       alert("The paragraph was clicked.");
-    })
+    });
+
   </script>
 </body>
 </html>
