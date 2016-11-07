@@ -60,9 +60,16 @@
       ?&gt;
     </code></pre>
 
-
-
-
+    <h1>音乐导航</h1>
+    <ul>
+      <li class="gNote" msrc="note/c/1.mp3"><a href="http://wqiang.net/" >首页</a></li>
+      <li class="gNote" msrc="note/c/2.mp3"><a href="http://wqiang.net/" >PHP</a></li>
+      <li class="gNote" msrc="note/c/3.mp3"><a href="http://wqiang.net/" >MySql</a></li>
+      <li class="gNote" msrc="note/c/4.mp3"><a href="http://wqiang.net/" >前端</a></li>
+      <li class="gNote" msrc="note/c/5.mp3"><a href="http://wqiang.net/" >标签</a></li>
+      <li class="gNote" msrc="note/c/6.mp3"><a href="http://wqiang.net/" >学无止境</a></li>
+      <li class="gNote" msrc="note/c/7.mp3"><a href="http://wqiang.net/" >关于我</a></li>
+    </ul>
   </div>
   <div>
   <script src="vendor/bower/jquery/dist/jquery.js"></script>
@@ -104,7 +111,9 @@
   <!-- endbuild -->
     </div>
   <script>
+    /*高亮*/
     hljs.initHighlightingOnLoad();
+    /*编辑器*/
     var editor = new Simditor({
       textarea: $('#editor'),
       toolbar: [
@@ -128,10 +137,24 @@
         leaveConfirm: '正在上传文件，如果离开上传会自动取消'
       }
     });
+
+    /*提示删除回调*/
     $('#myAlert').on('closed.bs.alert', function () {
       alert("The paragraph was clicked.");
     });
 
+    /*音乐导航*/
+    $('.gNote').mouseenter(function () {
+      var src= $(this).attr('msrc');
+      var audio = new Audio();
+      audio.controls = false;
+      audio.src = src;
+      document.body.appendChild(audio);
+      audio.play();
+      setTimeout(function() {
+        audio.remove();
+      }, 2500);
+    })
   </script>
 </body>
 </html>
