@@ -60,7 +60,7 @@ $navArticle = Article::getCategoryMap();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?=Url::to(['site/index'])?>">Garen's blog</a>
+                    <a class="navbar-brand gNote" href="<?=Url::to(['site/index'])?>" msrc="/music/note-c/1.mp3">Garen's blog</a>
                 </div>
                 <!-- 导航条内容 -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -68,19 +68,19 @@ $navArticle = Article::getCategoryMap();
                         <?php
                         $nav = Yii::$app->request->pathInfo;
                         ?>
-                        <li class="<?=$nav=='article/php'?'active':''?>"><a href="<?=Url::to(['article/php'])?>">PHP</a></li>
-                        <li class="<?=$nav=='article/db'?'active':''?>"><a href="<?=Url::to(['article/db'])?>">数据库</a></li>
-                        <li class="<?=$nav=='article/linux'?'active':''?>"><a href="<?=Url::to(['article/linux'])?>">Linux</a></li>
+                        <li class="<?=$nav=='article/php'?'active':''?>"><a href="<?=Url::to(['article/php'])?>" class="gNote" msrc="/music/note-c/2.mp3">PHP</a></li>
+                        <li class="<?=$nav=='article/db'?'active':''?>"><a href="<?=Url::to(['article/db'])?>" class="gNote" msrc="/music/note-c/3.mp3">数据库</a></li>
+                        <li class="<?=$nav=='article/linux'?'active':''?>"><a href="<?=Url::to(['article/linux'])?>" class="gNote" msrc="/music/note-c/4.mp3">Linux</a></li>
                         <li class="<?=($nav=='article/frontend'||$nav=='article/learn')?'active':''?>">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他博文 <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle gNote" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"msrc="/music/note-c/5.mp3">其他博文 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?=Url::to(['article/frontend'])?>">前端</a></li>
+                                <li><a href="<?=Url::to(['article/frontend'])?>" class="gNote" msrc="/music/note-c/1.mp3">前端</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="<?=Url::to(['article/learn'])?>"><strong>学无</strong>止境</a></li>
+                                <li><a href="<?=Url::to(['article/learn'])?>" class="gNote" msrc="/music/note-c/1.mp3">学无止境</a></li>
                             </ul>
                         </li>
-                        <li class="<?=$nav=='note/index'?'active':''?>"><a href="<?=Url::to(['note/index'])?>">便签</a></li>
-                        <li class="<?=$nav=='site/about'?'active':''?>"><a href="<?=Url::to(['site/about'])?>">关于</a></li>
+                        <li class="<?=$nav=='note/index'?'active':''?>"><a href="<?=Url::to(['note/index'])?>" class="gNote" msrc="/music/note-c/6.mp3">便签</a></li>
+                        <li class="<?=$nav=='site/about'?'active':''?>"><a href="<?=Url::to(['site/about'])?>" class="gNote" msrc="/music/note-c/7.mp3">关于</a></li>
                     </ul>
                     <form class="navbar-form navbar-left pc-right" role="search" action="<?=Url::to(['search/index'])?>" method="get">
                         <div class="form-group">
@@ -128,6 +128,19 @@ $navArticle = Article::getCategoryMap();
     </div>
 </footer>
 <?php
+$note = "$('.gNote').mouseenter(function () {
+      var src= $(this).attr('msrc');
+      var audio = new Audio();
+      audio.controls = false;
+      audio.src = src;
+      document.body.appendChild(audio);
+      audio.play();
+      setTimeout(function() {
+        audio.remove();
+      }, 2500);
+    });";
+$this->registerJs($note, \yii\web\View::POS_END);
+
 $type = '';
 $message = '';
 if ($message = Yii::$app->session->getFlash('app_success_flash_message')) {
