@@ -2,16 +2,18 @@
 namespace app\module\admin\controllers;
 
 use app\models\User;
-use yii;
+use Yii;
 use yii\data\ActiveDataProvider;
+use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 class UserController extends BaseController
 {
     public function behaviors()
     {
-        return yii\helpers\ArrayHelper::merge(parent::behaviors(), [
+        return ArrayHelper::merge(parent::behaviors(), [
             'verbs' => [
-                'class' => yii\filters\VerbFilter::className(),
+                'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post']
                 ]
@@ -21,16 +23,16 @@ class UserController extends BaseController
 
     public function loadUser()
     {
-        $userId = yii::$app->request->getQueryParam('id');
-        if($userId) {
-        $user = yii::$app->userService->search(['id' => $userId])->one();
-            if($user) {
+        $userId = Yii::$app->request->getQueryParam('id');
+        if ($userId) {
+            $user = Yii::$app->userService->search(['id' => $userId])->one();
+            if ($user) {
                 return $user;
-            }else{
+            } else {
                 $this->error('无此用户！');
                 $this->goBack();
             }
-        }else{
+        } else {
             $this->error('缺少参数id');
             $this->goBack();
         }
@@ -57,11 +59,11 @@ class UserController extends BaseController
     {
         $user = $this->loadUser();
 
-        $result = yii::$app->userService->delete($user);
-        if($result) {
+        $result = Yii::$app->userService->delete($user);
+        if ($result) {
             $this->success('删除成功！');
             $this->goBack();
-        }else{
+        } else {
             $this->error('删除失败！');
             $this->goBack();
         }
@@ -70,17 +72,17 @@ class UserController extends BaseController
     public function actionCreate()
     {
         $user = new User();
-        if($attributes = Yii::$app->request->post('User')) {
-            $result = Yii::$app->userService->save($user,$attributes);
-            if($result) {
+        if ($attributes = Yii::$app->request->post('User')) {
+            $result = Yii::$app->userService->save($user, $attributes);
+            if ($result) {
                 $this->success('用户信息更改成功！');
                 $this->goBack();
-            }else{
+            } else {
                 $this->error('用户信息更改失败！');
                 $this->goBack();
             }
         }
-        return $this->render('update',[
+        return $this->render('update', [
             'model' => $user
         ]);
     }
@@ -89,12 +91,12 @@ class UserController extends BaseController
     {
         $user = $this->loadUser();
 
-        if($attributes = Yii::$app->request->post('User')) {
-            $result = Yii::$app->userService->save($user,$attributes);
-            if($result) {
+        if ($attributes = Yii::$app->request->post('User')) {
+            $result = Yii::$app->userService->save($user, $attributes);
+            if ($result) {
                 $this->success('用户信息更改成功！');
                 return $this->goBack();
-            }else{
+            } else {
                 $this->error('用户信息更改失败！');
                 return $this->goBack();
             }
@@ -104,9 +106,10 @@ class UserController extends BaseController
             return Yii::$app->getResponse()->redirect("/admin");
         }*/
 
-        return $this->render('update',[
+        return $this->render('update', [
             'model' => $user
         ]);
     }
 }
+
 ?>

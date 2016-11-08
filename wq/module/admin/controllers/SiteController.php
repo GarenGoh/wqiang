@@ -10,7 +10,7 @@ use yii\helpers\ArrayHelper;
 
 class SiteController extends BaseController
 {
-    public  $layout = 'main';
+    public $layout = 'main';
 
     public function behaviors()
     {
@@ -41,7 +41,7 @@ class SiteController extends BaseController
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post','get']
+                    'logout' => ['post', 'get']
                 ]
             ],
         ]);
@@ -56,7 +56,7 @@ class SiteController extends BaseController
     {
         $model = new LoginForm();
         if (Yii::$app->request->isPost) {
-            $model->setAttributes(Yii::$app->request->post(),false);
+            $model->setAttributes(Yii::$app->request->post(), false);
             if ($model->login()) {
                 $this->redirect(['site/index']);
             } else {
@@ -75,7 +75,8 @@ class SiteController extends BaseController
         return $this->goHome();
     }
 
-    public function actionFlush() {
+    public function actionFlush()
+    {
         Yii::$app->cache->flush();
         $this->goBack();
     }

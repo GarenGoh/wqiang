@@ -26,16 +26,16 @@ class ArticleController extends BaseController
 
     public function loadArticle()
     {
-        $id =Yii::$app->request->getQueryParam('id');
-        if($id) {
+        $id = Yii::$app->request->getQueryParam('id');
+        if ($id) {
             $article = Yii::$app->articleService->search(['id' => $id])->one();
-            if($article) {
+            if ($article) {
                 return $article;
-            }else{
+            } else {
                 $this->error('没有该文章');
                 $this->goBack();
             }
-        }else{
+        } else {
             $this->error('缺少参数：id');
             $this->goBack();
         }
@@ -46,10 +46,10 @@ class ArticleController extends BaseController
         $article = $this->loadArticle();
 
         $result = Yii::$app->articleService->delete($article);
-        if($result) {
+        if ($result) {
             $this->success('删除成功！');
             $this->goBack();
-        }else{
+        } else {
             $this->error('删除失败！');
             $this->goBack();
         }
@@ -59,18 +59,18 @@ class ArticleController extends BaseController
     {
         $article = $this->loadArticle();
 
-        if(Yii::$app->request->isPost){
+        if (Yii::$app->request->isPost) {
             $attributes = Yii::$app->request->getBodyParam('Article');
-            $result =Yii::$app->articleService->save($article, $attributes);
-            if($result){
+            $result = Yii::$app->articleService->save($article, $attributes);
+            if ($result) {
                 $this->success('修改成功！');
                 $this->goBack();
-            }else{
+            } else {
                 $this->error('修改失败！');
                 $this->goBack();
             }
         }
-        return $this->render('update',[
+        return $this->render('update', [
             'model' => $article
         ]);
     }
@@ -79,13 +79,13 @@ class ArticleController extends BaseController
     {
         $article = new Article();
 
-        if(Yii::$app->request->isPost) {
+        if (Yii::$app->request->isPost) {
             $attributes = Yii::$app->request->getBodyParam('Article');
-            $result =Yii::$app->articleService->save($article, $attributes);
-            if($result){
+            $result = Yii::$app->articleService->save($article, $attributes);
+            if ($result) {
                 $this->success('修改成功！');
                 $this->goBack();
-            }else{
+            } else {
                 $this->error('修改失败！');
                 $this->goBack();
             }
@@ -95,4 +95,5 @@ class ArticleController extends BaseController
         ]);
     }
 }
+
 ?>

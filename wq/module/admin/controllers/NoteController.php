@@ -26,16 +26,16 @@ class NoteController extends BaseController
 
     private function loadNote()
     {
-        $id =Yii::$app->request->getQueryParam('id');
-        if($id) {
+        $id = Yii::$app->request->getQueryParam('id');
+        if ($id) {
             $note = Yii::$app->noteService->search(['id' => $id])->one();
-            if($note) {
+            if ($note) {
                 return $note;
-            }else{
+            } else {
                 $this->error('没有该便签');
                 $this->goBack();
             }
-        }else{
+        } else {
             $this->error('缺少参数：id');
             $this->goBack();
         }
@@ -46,10 +46,10 @@ class NoteController extends BaseController
         $note = $this->loadNote();
 
         $result = Yii::$app->noteService->delete($note);
-        if($result) {
+        if ($result) {
             $this->success('删除成功！');
             $this->goBack();
-        }else{
+        } else {
             $this->error('删除失败！');
             $this->goBack();
         }
@@ -59,18 +59,18 @@ class NoteController extends BaseController
     {
         $note = $this->loadNote();
 
-        if(Yii::$app->request->isPost){
+        if (Yii::$app->request->isPost) {
             $attributes = Yii::$app->request->getBodyParam('Note');
-            $result =Yii::$app->noteService->save($note, $attributes);
-            if($result){
+            $result = Yii::$app->noteService->save($note, $attributes);
+            if ($result) {
                 $this->success('修改成功！');
                 $this->goBack();
-            }else{
+            } else {
                 $this->error('修改失败！');
                 $this->goBack();
             }
         }
-        return $this->render('update',[
+        return $this->render('update', [
             'model' => $note
         ]);
     }
@@ -79,13 +79,13 @@ class NoteController extends BaseController
     {
         $note = new Note();
 
-        if(Yii::$app->request->isPost) {
+        if (Yii::$app->request->isPost) {
             $attributes = Yii::$app->request->getBodyParam('Note');
-            $result =Yii::$app->noteService->save($note, $attributes);
-            if($result){
+            $result = Yii::$app->noteService->save($note, $attributes);
+            if ($result) {
                 $this->success('修改成功！');
                 $this->goBack();
-            }else{
+            } else {
                 $this->error('修改失败！');
                 $this->goBack();
             }
@@ -95,4 +95,5 @@ class NoteController extends BaseController
         ]);
     }
 }
+
 ?>

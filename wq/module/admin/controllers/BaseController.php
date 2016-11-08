@@ -1,5 +1,6 @@
 <?php
 namespace app\module\admin\controllers;
+
 use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
@@ -37,22 +38,23 @@ abstract class BaseController extends Controller
         $returnUrl = Yii::$app->request->get('return_url', null);
         if ($returnUrl) {
             $this->redirect($returnUrl);
-        } elseif(Yii::$app->request->getReferrer()) {
+        } elseif (Yii::$app->request->getReferrer()) {
             $this->redirect(Yii::$app->request->getReferrer());
-        }else {
-            $this->redirect("/".ADMIN_NAME);
+        } else {
+            $this->redirect("/" . ADMIN_NAME);
         }
         Yii::$app->end();
     }
 
-    public function sort($sort, $desc='id') {
+    public function sort($sort, $desc = 'id')
+    {
         $fieldSort = [];
-        if($sort) {
+        if ($sort) {
             $start = substr($sort, 0, 1);
-            if($start == '-') {
+            if ($start == '-') {
                 $sortsc = SORT_DESC;
                 $field = substr($sort, 1);
-            }else {
+            } else {
                 $sortsc = SORT_ASC;
                 $field = $sort;
             }

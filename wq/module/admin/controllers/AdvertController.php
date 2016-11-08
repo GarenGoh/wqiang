@@ -26,16 +26,16 @@ class AdvertController extends BaseController
 
     private function loadAdvert()
     {
-        $id =Yii::$app->request->getQueryParam('id');
-        if($id) {
+        $id = Yii::$app->request->getQueryParam('id');
+        if ($id) {
             $advert = Yii::$app->advertService->search(['id' => $id])->one();
-            if($advert) {
+            if ($advert) {
                 return $advert;
-            }else{
+            } else {
                 $this->error('没有该文章');
                 $this->goBack();
             }
-        }else{
+        } else {
             $this->error('缺少参数：id');
             $this->goBack();
         }
@@ -46,10 +46,10 @@ class AdvertController extends BaseController
         $advert = $this->loadAdvert();
 
         $result = Yii::$app->advertService->delete($advert);
-        if($result) {
+        if ($result) {
             $this->success('删除成功！');
             $this->goBack();
-        }else{
+        } else {
             $this->error('删除失败！');
             $this->goBack();
         }
@@ -59,18 +59,18 @@ class AdvertController extends BaseController
     {
         $advert = $this->loadAdvert();
 
-        if(Yii::$app->request->isPost){
+        if (Yii::$app->request->isPost) {
             $attributes = Yii::$app->request->getBodyParam('Advert');
-            $result =Yii::$app->advertService->save($advert, $attributes);
-            if($result){
+            $result = Yii::$app->advertService->save($advert, $attributes);
+            if ($result) {
                 $this->success('修改成功！');
                 $this->goBack();
-            }else{
+            } else {
                 $this->error('修改失败！');
                 $this->goBack();
             }
         }
-        return $this->render('update',[
+        return $this->render('update', [
             'model' => $advert
         ]);
     }
@@ -79,13 +79,13 @@ class AdvertController extends BaseController
     {
         $advert = new Advert();
 
-        if(Yii::$app->request->isPost) {
+        if (Yii::$app->request->isPost) {
             $attributes = Yii::$app->request->getBodyParam('Advert');
-            $result =Yii::$app->advertService->save($advert, $attributes);
-            if($result){
+            $result = Yii::$app->advertService->save($advert, $attributes);
+            if ($result) {
                 $this->success('修改成功！');
                 $this->goBack();
-            }else{
+            } else {
                 $this->error('修改失败！');
                 $this->goBack();
             }
@@ -95,4 +95,5 @@ class AdvertController extends BaseController
         ]);
     }
 }
+
 ?>
