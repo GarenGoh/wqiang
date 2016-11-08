@@ -14,13 +14,13 @@ class RegisterForm extends BaseForm
 
     public function rules()
     {
-        $requireFields = ['email', 'password', 'username','rePassword'];
+        $requireFields = ['email', 'password', 'username', 'rePassword'];
 
         $rules = [
             [$requireFields, 'required'],
             [$requireFields, 'filter', 'filter' => 'trim'],
             [$requireFields, 'filter', 'filter' => 'strip_tags'],
-            ['password', 'compare', 'compareAttribute'=>'rePassword','message' => '两次输入的密码不一致！'],
+            ['password', 'compare', 'compareAttribute' => 'rePassword', 'message' => '两次输入的密码不一致！'],
             ['is_agree', 'required', 'message' => '请阅读注册协议，同意协议后方可注册。'],
         ];
 
@@ -48,4 +48,5 @@ class RegisterForm extends BaseForm
         }
     }
 }
+
 ?>

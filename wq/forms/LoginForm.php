@@ -39,11 +39,12 @@ class LoginForm extends BaseForm
     public function validateAccount($attribute)
     {
         $user = $this->getUser();
-        if(!$user) {
+        if (!$user) {
             $this->addError($attribute, '没有该账号！');
             return;
         }
     }
+
     /**
      * Validates the password.
      * This method serves as the inline validation for password.
@@ -56,7 +57,7 @@ class LoginForm extends BaseForm
         if (!$this->hasErrors()) {
 
             $user = $this->getUser();
-            if (!$user || !Yii::$app->security->validatePassword($this->password,$user->password_hash)) {
+            if (!$user || !Yii::$app->security->validatePassword($this->password, $user->password_hash)) {
                 $this->addError($attribute, '账号或密码错误！');
             }
         }
@@ -93,9 +94,9 @@ class LoginForm extends BaseForm
         if ($this->validate()) {
             $user = $this->getUser();
             //$result = Yii::$app->userService->login($user, $this->is_remember);//wuqiang
-            $result = Yii::$app->user->login($user, $this->is_remember ? 14*24*3600 : 0);
+            $result = Yii::$app->user->login($user, $this->is_remember ? 14 * 24 * 3600 : 0);
             if ($result) {
-                $time = time() + (14*24*3600);
+                $time = time() + (14 * 24 * 3600);
                 $usernameCookie = new Cookie();
                 $usernameCookie->name = 'account';
                 $usernameCookie->value = $this->account;

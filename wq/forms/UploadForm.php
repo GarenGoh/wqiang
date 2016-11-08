@@ -23,4 +23,5 @@ class UploadForm extends BaseForm
         ];
     }
 }
+
 ?>
