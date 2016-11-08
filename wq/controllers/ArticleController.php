@@ -8,35 +8,35 @@ class ArticleController extends BaseController
 {
     public function actionPhp()
     {
-        return $this->render('index',[
+        return $this->render('index', [
             'category' => Article::CATEGORY_PHP
         ]);
     }
 
     public function actionLinux()
     {
-        return $this->render('index',[
+        return $this->render('index', [
             'category' => Article::CATEGORY_LINUX
         ]);
     }
 
     public function actionDb()
     {
-        return $this->render('index',[
+        return $this->render('index', [
             'category' => Article::CATEGORY_DB
         ]);
     }
 
     public function actionFrontend()
     {
-        return $this->render('index',[
+        return $this->render('index', [
             'category' => Article::CATEGORY_FRONTEND
         ]);
     }
 
     public function actionLearn()
     {
-        return $this->render('index',[
+        return $this->render('index', [
             'category' => Article::CATEGORY_LEARN
         ]);
     }
@@ -44,7 +44,7 @@ class ArticleController extends BaseController
     public function actionHot_tag()
     {
         $tag = Yii::$app->request->get('tag');
-        return $this->render('index',[
+        return $this->render('index', [
             'tag' => $tag
         ]);
     }
@@ -65,4 +65,5 @@ class ArticleController extends BaseController
         return $this->renderPartial('test');
     }
 }
+
 ?>

@@ -16,4 +16,5 @@ class BaseController extends Controller
         Yii::$app->session->setFlash('app_error_flash_message', $message);
     }
 }
+
 ?>

@@ -19,4 +19,5 @@ class NoteController extends BaseController
         ]);
     }
 }
+
 ?>
