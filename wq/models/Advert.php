@@ -76,7 +76,7 @@ class Advert extends BaseActiveRecord
      */
     public function getImage()
     {
-        return $this->image_id?Yii::$app->fileService->search(['id' => $this->image_id])->one():"";
+        return $this->image_id ? Yii::$app->fileService->search(['id' => $this->image_id])->one() : "";
     }
 
     public static function getTargetMap($target = false)
@@ -93,4 +93,5 @@ class Advert extends BaseActiveRecord
         }
     }
 }
+
 ?>

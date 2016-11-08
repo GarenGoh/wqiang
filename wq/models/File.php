@@ -26,19 +26,20 @@ class File extends BaseActiveRecord
     {
         return [
             [['size'], 'default', 'value' => 0],
-            [['name','type','prefix'], 'required'],
-            [['name','old_name','type','prefix'], 'string', 'max' => 200],
+            [['name', 'type', 'prefix'], 'required'],
+            [['name', 'old_name', 'type', 'prefix'], 'string', 'max' => 200],
         ];
     }
 
     public function getKey()
     {
-        return $this->prefix.$this->name;
+        return $this->prefix . $this->name;
     }
 
     public function getUrl()
     {
-        return Yii::$app->params['uploadDir'].$this->getKey();
+        return Yii::$app->params['uploadDir'] . $this->getKey();
     }
 }
+
 ?>

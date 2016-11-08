@@ -22,7 +22,6 @@ use yii\helpers\Url;
  * @property integer $is_hot
  * @property file $image
  */
-
 class Article extends BaseActiveRecord
 {
     const CATEGORY_PHP = "php";
@@ -81,7 +80,7 @@ class Article extends BaseActiveRecord
             [['keywords'], 'string', 'max' => 100],
             ['created_at', 'default', 'value' => time()],
             ['creator_id', 'default', 'value' => Yii::$app->userService->getId()],
-            ['source', 'filter', 'filter' => function() {
+            ['source', 'filter', 'filter' => function () {
                 return is_array($this->source) ? implode('#o#', $this->source) : $this->source;
             }]
         ];
@@ -92,7 +91,7 @@ class Article extends BaseActiveRecord
      */
     public function getImage()
     {
-        return $this->image_id?Yii::$app->fileService->search(['id' => $this->image_id])->one():"";
+        return $this->image_id ? Yii::$app->fileService->search(['id' => $this->image_id])->one() : "";
     }
 
     /*
@@ -111,4 +110,5 @@ class Article extends BaseActiveRecord
         $this->source = $this->source ? explode('#o#', $this->source) : [];
     }
 }
+
 ?>

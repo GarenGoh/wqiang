@@ -19,23 +19,24 @@ abstract class BaseActiveRecord extends ActiveRecord
             static::BOOLEAN_YES => '是',
             static::BOOLEAN_NO => '否',
         ];
-        return !is_null($status) && $map[$status] ? $map[$status] :$map;
+        return !is_null($status) && $map[$status] ? $map[$status] : $map;
     }
 
     /*
      * 找出字符串中所有的数字；
      * 返回一个由该数字组成的字符串
      */
-    public static function findNum($str='')
+    public static function findNum($str = '')
     {
-        $str=trim($str);
-        if(empty($str)) {
-            return '';}
-        $temp=array('1','2','3','4','5','6','7','8','9','0');
-        $result='';
-        for($i=0;$i<strlen($str);$i++) {
-            if(in_array($str[$i],$temp)) {
-                $result.=$str[$i];
+        $str = trim($str);
+        if (empty($str)) {
+            return '';
+        }
+        $temp = array('1', '2', '3', '4', '5', '6', '7', '8', '9', '0');
+        $result = '';
+        for ($i = 0; $i < strlen($str); $i++) {
+            if (in_array($str[$i], $temp)) {
+                $result .= $str[$i];
             }
         }
         return $result;

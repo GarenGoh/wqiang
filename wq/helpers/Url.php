@@ -19,7 +19,7 @@ class Url extends baseUrl
             $params['return_url'] = Yii::$app->request->getReferrer();
         }
 
-        $route = array_merge(['/'.Yii::$app->requestedRoute], $params);
+        $route = array_merge(['/' . Yii::$app->requestedRoute], $params);
         return Url::to($route);
     }
 
@@ -30,4 +30,5 @@ class Url extends baseUrl
         return ($route == ADMIN_NAME);
     }
 }
+
 ?>

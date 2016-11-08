@@ -45,4 +45,5 @@ class Note extends BaseActiveRecord
         ];
     }
 }
+
 ?>
