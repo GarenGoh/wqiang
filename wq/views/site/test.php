@@ -1,7 +1,6 @@
-
 <h1>音调</h1>
 <audio class="music">
-    <source  src="/music/tkzc.mp3" type="audio/mp3">
+    <source src="/music/tkzc.mp3" type="audio/mp3">
 </audio>
 <p class="note" style="background-color: grey">11111</p>
 <?php
@@ -17,5 +16,5 @@ $js = '
 ';
 //$(".music")[0].currentTime = 0;  //设置当前时间
 //$(".music")[0].duration   //该音乐的总时长
-$this->registerJs($js,\yii\web\View::POS_END);
+$this->registerJs($js, \yii\web\View::POS_END);
 ?>

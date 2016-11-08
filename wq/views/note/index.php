@@ -16,25 +16,25 @@ $notes = $provider->getModels();
 ?>
 <ul class="note-blocks phone-hide">
     <?php
-        foreach($notes as $n) {
-    ?>
-    <li>
-        <?=$n->title?>
-        <div class="popup">
-            <p>
-                <?=nl2br($n->content)?>
-            </p>
-        </div>
-    </li>
-    <?php }?>
+    foreach ($notes as $n) {
+        ?>
+        <li>
+            <?= $n->title ?>
+            <div class="popup">
+                <p>
+                    <?= nl2br($n->content) ?>
+                </p>
+            </div>
+        </li>
+    <?php } ?>
 </ul>
-<?php foreach($notes as $n) { ?>
-<div class="phone-note pc-hide">
-    <h4 class="top">
-        <?=$n->title?>
-    </h4>
-    <p class="body">
-        <?=nl2br($n->content)?>
-    </p>
-</div>
-<?php }?>
+<?php foreach ($notes as $n) { ?>
+    <div class="phone-note pc-hide">
+        <h4 class="top">
+            <?= $n->title ?>
+        </h4>
+        <p class="body">
+            <?= nl2br($n->content) ?>
+        </p>
+    </div>
+<?php } ?>
