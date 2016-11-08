@@ -7,7 +7,7 @@ use app\models\Article;
 <div>
     <div class="header col-md-12">
         <h1 class="title">文章管理</h1>
-        <?= Html::a('<i class="fa fa-plus"></i> 创建文章', ['article/create'], ['class' => 'btn btn-danger pull-right'])?>
+        <?= Html::a('<i class="fa fa-plus"></i> 创建文章', ['article/create'], ['class' => 'btn btn-danger pull-right']) ?>
     </div>
     <div class="col-md-10">
         <div class="table-responsive">
@@ -26,29 +26,29 @@ use app\models\Article;
                     'id',
                     [
                         'attribute' => 'title',
-                        'content' => function($model) {
-                            return Html::a(\app\helpers\Tools::string($model->title,10), $model->url, ['id' => $model->id,'target' => "_blank"]);
+                        'content' => function ($model) {
+                            return Html::a(\app\helpers\Tools::string($model->title, 10), $model->url, ['id' => $model->id, 'target' => "_blank"]);
                         }
                     ],
                     'creator_id',
                     [
                         'attribute' => 'category',
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             return Article::getCategoryMap($model->category);
                         }
                     ],
                     [
                         'attribute' => 'is_enable',
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             $status = $model->is_enable ? 'success' : 'danger';
-                            return '<span class="text-'.$status.'">'.Article::getBooleanMap($model->is_enable).'</span>';
+                            return '<span class="text-' . $status . '">' . Article::getBooleanMap($model->is_enable) . '</span>';
                         }
                     ],
                     [
                         'attribute' => 'is_hot',
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             $status = $model->is_hot ? 'success' : 'danger';
-                            return '<span class="text-'.$status.'">'.Article::getBooleanMap($model->is_hot).'</span>';
+                            return '<span class="text-' . $status . '">' . Article::getBooleanMap($model->is_hot) . '</span>';
                         }
                     ],
                     'read_count',
@@ -57,7 +57,7 @@ use app\models\Article;
                         'format' => ['date', 'php:Y/m/d']
                     ],
                     [
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             $buttons = [];
                             $buttons[] = Html::a('修改', ['article/update', 'id' => $model->id]);
                             $buttons[] = Html::a('删除', ['article/delete', 'id' => $model->id], ['data-method' => 'post', 'data-confirm' => '确定要删除吗？']);
@@ -65,7 +65,7 @@ use app\models\Article;
                         }
                     ],
                 ],
-            ]);?>
+            ]); ?>
         </div>
     </div>
     <div class="col-md-2">

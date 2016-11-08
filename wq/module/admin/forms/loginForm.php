@@ -81,4 +81,5 @@ class LoginForm extends Model
         }
     }
 }
+
 ?>

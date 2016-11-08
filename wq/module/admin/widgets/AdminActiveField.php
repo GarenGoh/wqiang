@@ -37,24 +37,24 @@ class AdminActiveField extends ActiveField
     public function file($options = [], $isImage = false)
     {
         $prefix = $options['prefix'];
-        $fileId = $prefix.'_image';
+        $fileId = $prefix . '_image';
         $inputId = $this->getAttributeId();
 
         $html = Html::activeHiddenInput($this->model, $this->attribute, $options);
-        $html .= '<div id="'.$fileId.'" class="upload">';
-        $html .= '<img style="display:'.($this->model->image?"":"none").';" class="file" src="'.($this->model->image?$this->model->image->url:"").'">';
+        $html .= '<div id="' . $fileId . '" class="upload">';
+        $html .= '<img style="display:' . ($this->model->image ? "" : "none") . ';" class="file" src="' . ($this->model->image ? $this->model->image->url : "") . '">';
         $html .= '
-        <i class="select fa fa-'.($isImage?'picture-o':'file').'"></i>
+        <i class="select fa fa-' . ($isImage ? 'picture-o' : 'file') . '"></i>
         <i style="display:none;" class="uploading fa fa-spinner fa-spin"></i>
         ';
-        $html .= '<input type="file" class="input" name="'.$fileId.'"></div>';
+        $html .= '<input type="file" class="input" name="' . $fileId . '"></div>';
         $this->parts['{input}'] = $html;
         $js = "
             var {$fileId} = $('#{$fileId}');
             var {$fileId}_model = $('#{$inputId}');
 
             {$fileId}.find('.input').fileupload({
-            url: '".Url::to(['/api/file/file', 'prefix' => $prefix, 'name' => $fileId])."',
+            url: '" . Url::to(['/api/file/file', 'prefix' => $prefix, 'name' => $fileId]) . "',
             start: function() {
                 {$fileId}.find('.file').hide();
                 {$fileId}.find('.select').hide();
@@ -99,13 +99,13 @@ class AdminActiveField extends ActiveField
             'value' => isset($value[0]) ? $value[0] : null,
             'placeholder' => '输入链接的文字'
         ];
-        $html .= '<div class="col-lg-6">'.Html::activeTextInput($this->model, $this->attribute.'[]', $option1).'</div>';
+        $html .= '<div class="col-lg-6">' . Html::activeTextInput($this->model, $this->attribute . '[]', $option1) . '</div>';
         $option2 = [
             'class' => 'form-control',
             'value' => isset($value[1]) ? $value[1] : null,
             'placeholder' => '输入链接的地址，一般以http开始'
         ];
-        $html .= '<div class="col-lg-6">'.Html::activeTextInput($this->model, $this->attribute.'[]', $option2).'</div>';
+        $html .= '<div class="col-lg-6">' . Html::activeTextInput($this->model, $this->attribute . '[]', $option2) . '</div>';
         $html .= '</div>';
 
         $this->parts['{input}'] = $html;

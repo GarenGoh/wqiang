@@ -13,10 +13,10 @@ $currentUser = Yii::$app->user->getIdentity();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?=Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language ?>">
 <head>
-    <meta charset="<?=Yii::$app->charset ?>">
-<!--    解决400报错：您提交的数据无法被验证-->
+    <meta charset="<?= Yii::$app->charset ?>">
+    <!--    解决400报错：您提交的数据无法被验证-->
     <?= Html::csrfMetaTags() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= Html::encode($this->title) ?></title>
@@ -29,25 +29,26 @@ $currentUser = Yii::$app->user->getIdentity();
 
 <div id="admin-top">
     <div class="logout">
-        [<a href="<?=Yii::$app->request->hostInfo?>">前台</a>|<a href="<?=Url::to(['site/logout'])?>">退出</a>]
+        [<a href="<?= Yii::$app->request->hostInfo ?>">前台</a>|<a href="<?= Url::to(['site/logout']) ?>">退出</a>]
     </div>
     <div class="admin-avatar">
-        <img src="<?=$currentUser->avatar_id?$currentUser->avatar->url:Yii::$app->params['defaultAvatarUrl']?>">
+        <img src="<?= $currentUser->avatar_id ? $currentUser->avatar->url : Yii::$app->params['defaultAvatarUrl'] ?>">
     </div>
     <div>
         <ul class="admin-navbar">
-            <li class="logo"><a href="<?=Url::to(['site/index'])?>"><img src="<?=Yii::$app->params['logoUrl']?>"></a></li>
-            <li class="nav"><a href="<?=Url::to(['user/index'])?>">用&nbsp;&nbsp;户</a></li>
-            <li class="nav"><a href="<?=Url::to(['article/index'])?>">文&nbsp;&nbsp;章</a></li>
-            <li class="nav"><a href="<?=Url::to(['advert/index'])?>">广&nbsp;告&nbsp;位</a></li>
-            <li class="nav"><a href="<?=Url::to(['note/index'])?>">便&nbsp;&nbsp;签</a></li>
-            <li class="nav"><a href="<?=Url::to(['site/flush'])?>">清理缓存</a></li>
+            <li class="logo"><a href="<?= Url::to(['site/index']) ?>"><img
+                        src="<?= Yii::$app->params['logoUrl'] ?>"></a></li>
+            <li class="nav"><a href="<?= Url::to(['user/index']) ?>">用&nbsp;&nbsp;户</a></li>
+            <li class="nav"><a href="<?= Url::to(['article/index']) ?>">文&nbsp;&nbsp;章</a></li>
+            <li class="nav"><a href="<?= Url::to(['advert/index']) ?>">广&nbsp;告&nbsp;位</a></li>
+            <li class="nav"><a href="<?= Url::to(['note/index']) ?>">便&nbsp;&nbsp;签</a></li>
+            <li class="nav"><a href="<?= Url::to(['site/flush']) ?>">清理缓存</a></li>
         </ul>
     </div>
 </div>
-    <div class="admin-content">
-        <?= $content ?>
-    </div>
+<div class="admin-content">
+    <?= $content ?>
+</div>
 <?php
 $type = '';
 $message = '';
@@ -57,7 +58,7 @@ if ($message = Yii::$app->session->getFlash('admin_success_flash_message')) {
     $message = Yii::$app->session->getFlash('admin_error_flash_message');
     $type = 'alert-danger';
 }
-if($message && $type) {
+if ($message && $type) {
     $alertId = 'alertMessage'; //此 ID 用于控制删除消息框后执行的动作;参考 http://v3.bootcss.com/javascript/#alerts
     $js = <<<JS
 $(document).ready(function(){

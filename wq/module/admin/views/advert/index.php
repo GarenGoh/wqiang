@@ -7,7 +7,7 @@ use app\models\Advert;
 <div>
     <div class="header col-md-12">
         <h1 class="title">广告管理</h1>
-        <?= Html::a('<i class="fa fa-plus"></i> 创建广告', ['advert/create'], ['class' => 'btn btn-danger pull-right'])?>
+        <?= Html::a('<i class="fa fa-plus"></i> 创建广告', ['advert/create'], ['class' => 'btn btn-danger pull-right']) ?>
     </div>
     <div class="col-md-10">
         <div class="table-responsive">
@@ -26,27 +26,27 @@ use app\models\Advert;
                     'id',
                     [
                         'attribute' => 'title',
-                        'content' => function($model) {
-                            return Html::a(\app\helpers\Tools::string($model->title,10), $model->link);
+                        'content' => function ($model) {
+                            return Html::a(\app\helpers\Tools::string($model->title, 10), $model->link);
                         }
                     ],
                     [
                         'attribute' => 'position',
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             return Advert::getPositionMap($model->position_id);
                         }
                     ],
                     [
                         'attribute' => 'target',
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             return Advert::getTargetMap($model->target);
                         }
                     ],
                     [
                         'attribute' => 'is_enable',
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             $status = $model->is_enable ? 'success' : 'danger';
-                            return '<span class="text-'.$status.'">'.Advert::getBooleanMap($model->is_enable).'</span>';
+                            return '<span class="text-' . $status . '">' . Advert::getBooleanMap($model->is_enable) . '</span>';
                         }
                     ],
                     'weight',
@@ -55,7 +55,7 @@ use app\models\Advert;
                         'format' => ['date', 'php:Y/m/d']
                     ],
                     [
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             $buttons = [];
                             $buttons[] = Html::a('修改', ['advert/update', 'id' => $model->id]);
                             $buttons[] = Html::a('删除', ['advert/delete', 'id' => $model->id], ['data-method' => 'post', 'data-confirm' => '确定要删除吗？']);
@@ -63,7 +63,7 @@ use app\models\Advert;
                         }
                     ],
                 ],
-            ]);?>
+            ]); ?>
         </div>
     </div>
     <div class="col-md-2">

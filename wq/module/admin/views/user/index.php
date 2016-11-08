@@ -2,11 +2,12 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\User;
+
 ?>
 <div>
     <div class="header col-md-12">
         <h1 class="title">用户管理</h1>
-        <?= Html::a('<i class="fa fa-plus"></i> 创建用户', ['user/create', 'role' => Yii::$app->request->getQueryParam('role')], ['class' => 'btn btn-danger pull-right'])?>
+        <?= Html::a('<i class="fa fa-plus"></i> 创建用户', ['user/create', 'role' => Yii::$app->request->getQueryParam('role')], ['class' => 'btn btn-danger pull-right']) ?>
     </div>
     <div class="col-md-10" style="float: left">
         <div class="table-responsive">
@@ -27,21 +28,21 @@ use app\models\User;
                     'name',
                     [
                         'attribute' => 'email',
-                        'content' => function($model) {
-                            return '<span class="text-'.($model->is_email_enable?'success':'danger').'">'.$model->email.'</span>';
+                        'content' => function ($model) {
+                            return '<span class="text-' . ($model->is_email_enable ? 'success' : 'danger') . '">' . $model->email . '</span>';
                         }
                     ],
                     [
                         'attribute' => 'mobile',
-                        'content' => function($model) {
-                            return '<span class="text-'.($model->is_mobile_enable?'success':'danger').'">'.$model->mobile.'</span>';
+                        'content' => function ($model) {
+                            return '<span class="text-' . ($model->is_mobile_enable ? 'success' : 'danger') . '">' . $model->mobile . '</span>';
                         }
                     ],
                     [
                         'attribute' => 'is_enable',
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             $status = $model->is_enable ? 'success' : 'danger';
-                            return '<span class="text-'.$status.'">'.User::getBooleanMap($model->is_enable).'</span>';
+                            return '<span class="text-' . $status . '">' . User::getBooleanMap($model->is_enable) . '</span>';
                         }
                     ],
                     [
@@ -53,7 +54,7 @@ use app\models\User;
                         'format' => ['date', 'php:Y/m/d']
                     ],
                     [
-                        'content' => function($model) {
+                        'content' => function ($model) {
                             $buttons = [];
                             $buttons[] = Html::a('修改', ['user/update', 'id' => $model->id]);
                             $buttons[] = Html::a('删除', ['user/delete', 'id' => $model->id], ['data-method' => 'post', 'data-confirm' => '确定要删除吗？']);
