@@ -10,21 +10,21 @@ class ArticleService extends Component
 {
     public function search($where = [])
     {
-        $fields = ['id','category','read_count'];
+        $fields = ['id', 'category', 'read_count'];
         $query = Article::find();
-        foreach($fields as $f) {
-            if(isset($where[$f])) {
+        foreach ($fields as $f) {
+            if (isset($where[$f])) {
                 $query->andFilterWhere([$f => $where[$f]]);
             }
         }
 
         $likeFields = ['title', 'keywords'];
-        foreach($likeFields as $lf) {
-            if(isset($where[$lf]) && $where[$lf]) {
+        foreach ($likeFields as $lf) {
+            if (isset($where[$lf]) && $where[$lf]) {
                 $query->andWhere(['like', $lf, "%{$where[$lf]}%", false]);
             }
         }
-        if(!Url::isAdmin()) {
+        if (!Url::isAdmin()) {
             $query->andWhere(['is_enable' => 1]);
         }
         return $query;
@@ -37,11 +37,12 @@ class ArticleService extends Component
 
     public function save(Article $article, $attributes)
     {
-        if($attributes) {
+        if ($attributes) {
             $article->setAttributes($attributes, false);
         }
 
         return $article->save();
     }
 }
+
 ?>

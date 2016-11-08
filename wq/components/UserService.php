@@ -27,7 +27,7 @@ class UserService extends Component
     public function login(User $user, $isRemember = false)
     {
 
-        $result = Yii::$app->user->login($user, $isRemember ? 14*24*3600 : 0);
+        $result = Yii::$app->user->login($user, $isRemember ? 14 * 24 * 3600 : 0);
 
         if ($result) {
             $user->logged_at = time();
@@ -40,7 +40,7 @@ class UserService extends Component
     public function search($where = [])
     {
         $query = User::find();
-        if(isset($where['id']) && $where['id']) {
+        if (isset($where['id']) && $where['id']) {
             $query->andFilterWhere(['id' => $where['id']]);
         }
         return $query;
@@ -48,7 +48,7 @@ class UserService extends Component
 
     public function isRoot($userId)
     {
-        if(in_array($userId,$this->rootIds)){
+        if (in_array($userId, $this->rootIds)) {
             return true;
         }
     }

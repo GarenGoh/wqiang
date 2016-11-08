@@ -12,15 +12,15 @@ class AdvertService extends Component
 {
     public function search($where = [])
     {
-        $fields = ['id','category'];
+        $fields = ['id', 'category'];
         $query = Advert::find();
-        foreach($fields as $f) {
-            if(isset($where[$f])) {
+        foreach ($fields as $f) {
+            if (isset($where[$f])) {
                 $query->andFilterWhere([$f => $where[$f]]);
             }
         }
 
-        if(!Url::isAdmin()) {
+        if (!Url::isAdmin()) {
             $query->andWhere(['is_enable' => 1]);
         }
         return $query;
@@ -33,8 +33,8 @@ class AdvertService extends Component
 
     public function save(Advert $advert, $attributes)
     {
-        if($attributes) {
-            if(isset($attributes['summary']) && $attributes['summary']) {
+        if ($attributes) {
+            if (isset($attributes['summary']) && $attributes['summary']) {
                 $attributes['summary'] = Tools::string($attributes['summary'], 60);
             }
             $advert->setAttributes($attributes, false);
@@ -43,4 +43,5 @@ class AdvertService extends Component
         return $advert->save();
     }
 }
+
 ?>
