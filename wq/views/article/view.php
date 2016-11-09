@@ -7,6 +7,7 @@ use yii\helpers\Html;
 
 $this->title = $model->title;
 $this->registerMetaTag(["name" => "keywords", "content" => $model->keywords . ',Garen.Goh']);
+$this->registerMetaTag(["name" => "description", "content" => $model->summary]);
 $this->params['pageId'] = 'article-view';
 $hotArticles = Yii::$app->articleService->search(['category' => $model->category])
     ->select(['id', 'title', 'read_count'])

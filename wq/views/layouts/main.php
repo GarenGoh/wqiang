@@ -20,6 +20,7 @@ $navArticle = Article::getCategoryMap();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= $this->metaTags[0] ? $this->metaTags[0] : '<meta name="keywords" content="garen,wqiang,博客,Garen.Goh,PHP, 编程,开发" />' ?>
+    <?= $this->metaTags[1] ? $this->metaTags[1] : '<meta name="description" content="该网站(wqiang)为我(garengoh)的个人博客,主要记录一些有用的技术文章,以及我的学习笔记.">' ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>

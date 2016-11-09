@@ -8,10 +8,10 @@ $where = Yii::$app->request->get();
 
 if (isset($category)) {
     $where['category'] = $category;
-    $this->title = $category;
+    $this->title = Article::getCategoryMap($category);
 } elseif (isset($tag)) {
     $where['keywords'] = $tag;
-    $this->title = $tag;
+    $this->title = '热门标签:'.$tag;
 }
 $query = Yii::$app->articleService->search($where)
     ->orderBy(['id' => SORT_DESC]);
