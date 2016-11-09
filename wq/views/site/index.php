@@ -297,8 +297,9 @@ unset($adverts[0]);
             </div>
             <div class="body">
                 <ul>
-                    <li><a href="https://www.sdk.cn/">SDK.cn</a></li>
-                    <li><a href="http://xiajie.me/">Jerry's Blog</a></li>
+                    <li><a href="https://www.sdk.cn/" target="_blank">SDK.cn</a></li>
+                    <li><a href="http://xiajie.me/" target="_blank">Jerry's Blog</a></li>
+                    <li><a href="http://www.luxingyun.xyz/" target="_blank">Christian's Blog</a></li>
                 </ul>
             </div>
         </div>
