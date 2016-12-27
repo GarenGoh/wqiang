@@ -37,6 +37,10 @@ $config = [
                         'cn3' => 'admin.php',
                         'cn4' => 'cnvi.php',
                     ]
+                ],
+                'test' => [
+                    'class' => 'yii\i18n\PhpMessageSource',//必需
+                    'sourceLanguage' => 'en-US',  //原始语言
                 ]
             ],
         ],
