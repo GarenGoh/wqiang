@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\forms\LoginForm;
+use yii\data\Pagination;
 use yii\web\Response;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -60,6 +61,30 @@ class SiteController extends BaseController
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionArticle()
+    {
+        $page = Yii::$app->request->get('page', 0);
+        $pageSize = 5;
+        $query = Yii::$app->articleService->search();
+        $totalCount = $query->count();
+        $pagination = new Pagination([
+            'totalCount' => $totalCount,
+        ]);
+        $pagination->setPageSize($pageSize);
+        $pagination->setPage($page);
+
+        $articles = $query->offset($pageSize*$page)
+            ->orderBy(['id' => SORT_DESC])
+            ->limit($pagination->limit)
+            ->all();
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        return [
+            'is_end' => $totalCount<=($page*$pageSize)?true:false,
+            'html' => $this->renderPartial('_index-article',['articles' => $articles]),
+            'page' => $page
+        ];
     }
 
     public function actionRegister()
