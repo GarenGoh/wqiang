@@ -66,7 +66,7 @@ class SiteController extends BaseController
     public function actionArticle()
     {
         $page = Yii::$app->request->get('page', 0);
-        $pageSize = 5;
+        $pageSize = 10;
         $query = Yii::$app->articleService->search();
         $totalCount = $query->count();
         $pagination = new Pagination([

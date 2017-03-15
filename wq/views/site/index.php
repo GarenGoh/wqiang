@@ -8,7 +8,7 @@ $this->title = 'Garen 的主页';
 $this->params['pageId'] = 'app-home';
 $articles = Yii::$app->articleService->search()
     ->orderBy(['id' => SORT_DESC])
-    ->limit(5)
+    ->limit(10)
     ->all();
 $adverts = Yii::$app->advertService->search()
     ->orderBy(['weight' => SORT_DESC, 'id' => SORT_DESC])
@@ -285,7 +285,7 @@ $('#fixed-top').sticky({
 ";
 $this->registerJs($js_top, View::POS_END);
 
-$url = Url::to('site/article',true);
+$url = Url::to(['site/article'],true);
 $js_load_more = <<<ARTICLE
 var page = 1;
 var url = '{$url}';
