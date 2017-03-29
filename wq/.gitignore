@@ -32,4 +32,4 @@ config/config.php
 config/config-b.php
 web/images/*
 controllers/TestController.php
-views/test/*
+views/test
