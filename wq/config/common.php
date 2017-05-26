@@ -50,8 +50,8 @@ $config = [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.exmail.qq.com',//每种邮箱的host配置不一样
-                'username' => 'wu.qiang@sdk.cn',
-                'password' => '46663931W.q',
+                'username' => '',
+                'password' => '',
                 'port' => '465',
                 'encryption' => 'ssl',
             ]
